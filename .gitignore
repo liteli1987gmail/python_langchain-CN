@@ -1,4 +1,3 @@
-.vs/
 .vscode/
 .idea/
 # Byte-compiled / optimized / DLL files
@@ -146,10 +145,3 @@ wandb/
 
 *.pkl
 *.bin
-
-# integration test artifacts
-data_map*
-\[('_type', 'fake'), ('stop', None)]
-
-# Replit files
-*replit*

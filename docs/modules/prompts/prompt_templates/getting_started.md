@@ -23,6 +23,15 @@ from langchain import PromptTemplate
 
 template = """
 I want you to act as a naming consultant for new companies.
+
+Here are some examples of good company names:
+
+- search engine, Google
+- social media, Facebook
+- video sharing, YouTube
+
+The name should be short, catchy and easy to remember.
+
 What is a good name for a company that makes {product}?
 """
 
@@ -30,9 +39,6 @@ prompt = PromptTemplate(
     input_variables=["product"],
     template=template,
 )
-prompt.format(product="colorful socks")
-# -> I want you to act as a naming consultant for new companies.
-# -> What is a good name for a company that makes colorful socks?
 ```
 
 
@@ -63,81 +69,30 @@ multiple_input_prompt.format(adjective="funny", content="chickens")
 # -> "Tell me a funny joke about chickens."
 ```
 
-If you do not wish to specify `input_variables` manually, you can also create a `PromptTemplate` using `from_template` class method. `langchain` will automatically infer the `input_variables` based on the `template` passed.
-
-```python
-template = "Tell me a {adjective} joke about {content}."
-
-prompt_template = PromptTemplate.from_template(template)
-prompt_template.input_variables
-# -> ['adjective', 'content']
-prompt_template.format(adjective="funny", content="chickens")
-# -> Tell me a funny joke about chickens.
-```
 
 You can create custom prompt templates that format the prompt in any way you want. For more information, see [Custom Prompt Templates](examples/custom_prompt_template.ipynb).
 
 
 <!-- TODO(shreya): Add link to Jinja -->
 
-## Template formats
+:::{note}
+Currently, the template should be formatted as a Python f-string. We also support Jinja2 templates (see [Using Jinja templates](examples/custom_prompt_template.ipynb)). In the future, we will support more templating languages such as Mako.
+:::
 
-By default, `PromptTemplate` will treat the provided template as a Python f-string. You can specify other template format through `template_format` argument:
+
+## Load a prompt template from LangChainHub
+
+LangChainHub contains a collection of prompts which can be loaded directly via LangChain.
+
 
 ```python
-# Make sure jinja2 is installed before running this
-
-jinja2_template = "Tell me a {{ adjective }} joke about {{ content }}"
-prompt_template = PromptTemplate.from_template(template=jinja2_template, template_format="jinja2")
-
-prompt_template.format(adjective="funny", content="chickens")
-# -> Tell me a funny joke about chickens.
-```
-
-Currently, `PromptTemplate` only supports `jinja2` and `f-string` templating format. If there is any other templating format that you would like to use, feel free to open an issue in the [Github](https://github.com/hwchase17/langchain/issues) page. 
-
-## Validate template
-
-By default, `PromptTemplate` will validate the `template` string by checking whether the `input_variables` match the variables defined in `template`. You can disable this behavior by setting `validate_template` to `False`
-
-```python
-template = "I am learning langchain because {reason}."
-
-prompt_template = PromptTemplate(template=template, 
-                                 input_variables=["reason", "foo"]) # ValueError due to extra variables
-prompt_template = PromptTemplate(template=template, 
-                                 input_variables=["reason", "foo"], 
-                                 validate_template=False) # No error
-```
-
-
-## Serialize prompt template
-
-You can save your `PromptTemplate` into a file in your local filesystem. `langchain` will automatically infer the file format through the file extension name. Currently, `langchain` supports saving template to YAML and JSON file. 
-
-```python
-prompt_template.save("awesome_prompt.json") # Save to JSON file
-```
-
-```python
-from langchain.prompts import load_prompt
-loaded_prompt = load_prompt("awesome_prompt.json")
-
-assert prompt_template == loaded_prompt
-```
-
-`langchain` also supports loading prompt template from LangChainHub, which contains a collection of useful prompts you can use in your project. You can read more about LangChainHub and the prompts available with it [here](https://github.com/hwchase17/langchain-hub).
-
-```python
-
 from langchain.prompts import load_prompt
 
 prompt = load_prompt("lc://prompts/conversation/prompt.json")
 prompt.format(history="", input="What is 1 + 1?")
 ```
 
-You can learn more about serializing prompt template in [How to serialize prompts](examples/prompt_serialization.ipynb).
-
+You can read more about LangChainHub and the prompts available with it [here](https://github.com/hwchase17/langchain-hub).
 
 ## Pass few shot examples to a prompt template
 
@@ -150,6 +105,7 @@ In this example, we'll create a prompt to generate word antonyms.
 ```python
 from langchain import PromptTemplate, FewShotPromptTemplate
 
+
 # First, create the list of few shot examples.
 examples = [
     {"word": "happy", "antonym": "sad"},
@@ -158,10 +114,10 @@ examples = [
 
 # Next, we specify the template to format the examples we have provided.
 # We use the `PromptTemplate` class for this.
-example_formatter_template = """Word: {word}
-Antonym: {antonym}
+example_formatter_template = """
+Word: {word}
+Antonym: {antonym}\n
 """
-
 example_prompt = PromptTemplate(
     input_variables=["word", "antonym"],
     template=example_formatter_template,
@@ -175,14 +131,14 @@ few_shot_prompt = FewShotPromptTemplate(
     example_prompt=example_prompt,
     # The prefix is some text that goes before the examples in the prompt.
     # Usually, this consists of intructions.
-    prefix="Give the antonym of every input\n",
+    prefix="Give the antonym of every input",
     # The suffix is some text that goes after the examples in the prompt.
     # Usually, this is where the user input will go
-    suffix="Word: {input}\nAntonym: ",
+    suffix="Word: {input}\nAntonym:",
     # The input variables are the variables that the overall prompt expects.
     input_variables=["input"],
     # The example_separator is the string we will use to join the prefix, examples, and suffix together with.
-    example_separator="\n",
+    example_separator="\n\n",
 )
 
 # We can now generate a prompt using the `format` method.
@@ -196,7 +152,7 @@ print(few_shot_prompt.format(input="big"))
 # -> Antonym: short
 # ->
 # -> Word: big
-# -> Antonym: 
+# -> Antonym:
 ```
 
 ## Select examples for a prompt template
@@ -228,11 +184,7 @@ example_selector = LengthBasedExampleSelector(
     example_prompt=example_prompt, 
     # This is the maximum length that the formatted examples should be.
     # Length is measured by the get_text_length function below.
-    max_length=25
-    # This is the function used to get the length of a string, which is used
-    # to determine which examples to include. It is commented out because
-    # it is provided as a default value if none is specified.
-    # get_text_length: Callable[[str], int] = lambda x: len(re.split("\n| ", x))
+    max_length=25,
 )
 
 # We can now use the `example_selector` to create a `FewShotPromptTemplate`.

@@ -1,8 +1,8 @@
 API References
 ==========================
 
-| Full documentation on all methods, classes, and APIs in LangChain.
-
+All of LangChain's reference documentation, in one place.
+Full documentation on all methods, classes, and APIs in LangChain.
 
 .. toctree::
    :maxdepth: 1
@@ -14,4 +14,3 @@ API References
    ./reference/modules/chains.rst
    ./reference/agents.rst
    ./reference/modules/utilities.rst
-   ./reference/modules/experimental.rst

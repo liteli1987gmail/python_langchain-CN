@@ -1,6 +1,6 @@
-# Installation
+# 安装文档
 
-## Official Releases
+## 官方版本
 
 LangChain is available on PyPi, so to it is easily installable with:
 
@@ -31,7 +31,7 @@ Note that if you are using `zsh`, you'll need to quote square brackets when pass
 pip install 'langchain[all]'
 ```
 
-## Installing from source
+## 从源码安装
 
 If you want to install from source, you can do so by cloning the repo and running:
 

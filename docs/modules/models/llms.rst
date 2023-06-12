@@ -1,21 +1,20 @@
-LLMs
+大语言模型(LLMs)
 ==========================
 
 .. note::
    `Conceptual Guide <https://docs.langchain.com/docs/components/models/language-model>`_
 
 
-Large Language Models (LLMs) are a core component of LangChain.
-LangChain is not a provider of LLMs, but rather provides a standard interface through which
-you can interact with a variety of LLMs.
+大语言模型(LLMs) 是 LangChain 的核心组件。
+LangChain 不提供LLMs，而是提供一个标准化接口，你可以通过这些接口与各种 LLM 进行交互。
 
-The following sections of documentation are provided:
+下面是一些LLMs的文档：
 
-- `Getting Started <./llms/getting_started.html>`_: An overview of all the functionality the LangChain LLM class provides.
+- `入门指南 <./llms/getting_started.html>`_: LangChain LLM 类提供的所有功能的概述。
 
-- `How-To Guides <./llms/how_to_guides.html>`_: A collection of how-to guides. These highlight how to accomplish various objectives with our LLM class (streaming, async, etc).
+- `操作指引 <./llms/how_to_guides.html>`_: 操作指引的集合。这些重点介绍了如何使用我们的 LLM 类（streaming、async等）实现各种目标。
 
-- `Integrations <./llms/integrations.html>`_: A collection of examples on how to integrate different LLM providers with LangChain (OpenAI, Hugging Face, etc).
+- `集成文档 <./llms/integrations.html>`_: 关于如何将不同的大语言模型(OpenAI、Hugging Face 等)与 LangChain 集成的示例集合。
 
 - `Reference <../../reference/modules/llms.html>`_: API reference documentation for all LLM classes.
 

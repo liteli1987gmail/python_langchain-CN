@@ -1,21 +1,35 @@
-# Autonomous Agents
+自主智能体
 
 
-Autonomous Agents are agents that designed to be more long running.
-You give them one or multiple long term goals, and they independently execute towards those goals.
-The applications combine tool usage and long term memory.
 
-At the moment, Autonomous Agents are fairly experimental and based off of other open-source projects.
-By implementing these open source projects in LangChain primitives we can get the benefits of LangChain - 
-easy switching an experimenting with multiple LLMs, usage of different vectorstores as memory, 
+
+自主智能体是设计成更长期运行的代理。
+您为它们提供一个或多个长期目标，并独立地朝着这些目标执行。
+这些应用程序结合了工具使用和长期记忆。
+
+
+目前，自主智能体还比较实验性，基于其他开源项目。
+通过在LangChain原语中实现这些开源项目，我们可以获得LangChain的好处-轻松切换和尝试多个LLM、使用不同的向量存储作为内存、使用LangChain的工具集。
+easy switching and experimenting with multiple LLMs, usage of different vectorstores as memory, 
+
 usage of LangChain's collection of tools.
 
-## Baby AGI ([Original Repo](https://github.com/yoheinakajima/babyagi))
-
-- [Baby AGI](autonomous_agents/baby_agi.ipynb): a notebook implementing BabyAGI as LLM Chains
-- [Baby AGI with Tools](autonomous_agents/baby_agi_with_agent.ipynb): building off the above notebook, this example substitutes in an agent with tools as the execution tools, allowing it to actually take actions.
 
 
-## AutoGPT ([Original Repo](https://github.com/Significant-Gravitas/Auto-GPT))
-- [AutoGPT](autonomous_agents/autogpt.ipynb): a notebook implementing AutoGPT in LangChain primitives
-- [WebSearch Research Assistant](autonomous_agents/marathon_times.ipynb): a notebook showing how to use AutoGPT plus specific tools to act as research assistant that can use the web.
+婴儿AGI（[原始仓库](https://github.com/yoheinakajima/babyagi))
+
+
+- [婴儿AGI](autonomous_agents/baby_agi.ipynb): 一个实现BabyAGI作为LLM Chains的笔记本
+- [具有工具的婴儿AGI](autonomous_agents/baby_agi_with_agent.ipynb): 基于上面的笔记本，这个例子将代理作为执行工具替换掉了，允许它实际执行动作。
+
+
+
+
+AutoGPT（[原始仓库](https://github.com/Significant-Gravitas/Auto-GPT))
+- [AutoGPT](autonomous_agents/autogpt.ipynb): 一个实现AutoGPT在LangChain原语中的笔记本
+- [WebSearch Research Assistant](autonomous_agents/marathon_times.ipynb): 一个演示如何使用AutoGPT加特定工具作为可以使用Web的研究助手的笔记本。
+
+
+MetaPrompt（[原始仓库](https://github.com/ngoodman/metaprompt))
+- [Meta-Prompt](autonomous_agents/meta_prompt.ipynb): a notebook implementing Meta-Prompt in LangChain primitives
+

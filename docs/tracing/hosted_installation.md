@@ -1,36 +1,45 @@
-# Cloud Hosted Setup
+# 云托管设置
 
-We offer a hosted version of tracing at [langchainplus.vercel.app](https://langchainplus.vercel.app/). You can use this to view traces from your run without having to run the server locally.
+我们提供托管版本的跟踪服务，您可以通过 [langchainplus.vercel.app](https://langchainplus.vercel.app/) 访问。使用此服务可查看您的运行记录，无需在本地运行服务器。
 
-Note: we are currently only offering this to a limited number of users. The hosted platform is VERY alpha, in active development, and data might be dropped at any time. Don't depend on data being persisted in the system long term and don't log traces that may contain sensitive information. If you're interested in using the hosted platform, please fill out the form [here](https://forms.gle/tRCEMSeopZf6TE3b6).
+注意：目前我们仅向部分用户提供此服务。此托管平台处于非常初期的开发阶段，并且数据随时可能会丢失。请勿将可能包含敏感信息的运行记录长期存储在系统中。如果您有兴趣使用托管平台，请填写 [此处的表格](https://forms.gle/tRCEMSeopZf6TE3b6)。
 
-## Installation
+## 安装
 
-1. Login to the system and click "API Key" in the top right corner. Generate a new key and keep it safe. You will need it to authenticate with the system.
+1. 登录系统，点击右上角的\"API Key\"。生成一个新的密钥并妥善保存。您将需要此密钥与系统进行身份验证。
 
-## Environment Setup
+## 环境设置
 
-After installation, you must now set up your environment to use tracing.
+安装后，您现在必须设置环境来使用跟踪功能。
 
-This can be done by setting an environment variable in your terminal by running `export LANGCHAIN_HANDLER=langchain`.
+您可以通过在终端中运行 `export LANGCHAIN_HANDLER=langchain` 命令来设置环境变量。
 
-You can also do this by adding the below snippet to the top of every script. **IMPORTANT:** this must go at the VERY TOP of your script, before you import anything from `langchain`. 
+您也可以通过在每个脚本的顶部添加下面的代码片段来做到这一点。 **重要提示**：此代码片段必须位于脚本的最顶部，即在从 `langchain` 导入任何内容之前。
 
 ```python
 import os
+
 os.environ["LANGCHAIN_HANDLER"] = "langchain"
+
 ```
 
-You will also need to set an environment variable to specify the endpoint and your API key. This can be done with the following environment variables:
 
-1. `LANGCHAIN_ENDPOINT` = "https://langchain-api-gateway-57eoxz8z.uc.gateway.dev"
-2. `LANGCHAIN_API_KEY` - set this to the API key you generated during installation.
+此外，您还需要设置一个环境变量来指定终端节点和您的 API 密钥。您可以通过以下环境变量来完成此操作:
 
-An example of adding all relevant environment variables is below:
+1. `LANGCHAIN_ENDPOINT` = \"https://langchain-api-gateway-57eoxz8z.uc.gateway.dev\"
+2. `LANGCHAIN_API_KEY` - 将其设置为您在安装过程中生成的 API 密钥。
+
+下面是添加所有相关环境变量的示例:
 
 ```python
+
 import os
+
 os.environ["LANGCHAIN_HANDLER"] = "langchain"
+
 os.environ["LANGCHAIN_ENDPOINT"] = "https://langchain-api-gateway-57eoxz8z.uc.gateway.dev"
+
 os.environ["LANGCHAIN_API_KEY"] = "my_api_key"  # Don't commit this to your repo! Better to set it in your terminal.
+
 ```
+

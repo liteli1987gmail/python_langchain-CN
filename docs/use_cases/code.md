@@ -1,26 +1,39 @@
-# Code Understanding
+# 代码理解
 
-Overview
 
-LangChain is a useful tool designed to parse GitHub code repositories. By leveraging VectorStores, Conversational RetrieverChain, and GPT-4, it can answer questions in the context of an entire GitHub repository or generate new code. This documentation page outlines the essential components of the system and guides using LangChain for better code comprehension, contextual question answering, and code generation in GitHub repositories.
+概览
 
-## Conversational Retriever Chain
 
-Conversational RetrieverChain is a retrieval-focused system that interacts with the data stored in a VectorStore. Utilizing advanced techniques, like context-aware filtering and ranking, it retrieves the most relevant code snippets and information for a given user query. Conversational RetrieverChain is engineered to deliver high-quality, pertinent results while considering conversation history and context.
+LangChain 是一个有用的工具，旨在解析 GitHub 代码存储库。通过利用 VectorStores,对话检索链,和 GPT-4,，它可以在整个 GitHub 存储库的上下文中回答问题或生成新的代码。本文档页面概述了系统的基本组件，并指导如何使用 LangChain 实现更好的代码理解,上下文问题回答,和代码生成在 GitHub 存储库中。
 
-LangChain Workflow for Code Understanding and Generation
 
-1. Index the code base: Clone the target repository, load all files within, chunk the files, and execute the indexing process. Optionally, you can skip this step and use an already indexed dataset.
+## 对话检索链
 
-2. Embedding and Code Store: Code snippets are embedded using a code-aware embedding model and stored in a VectorStore.
-Query Understanding: GPT-4 processes user queries, grasping the context and extracting relevant details.
 
-3. Construct the Retriever: Conversational RetrieverChain searches the VectorStore to identify the most relevant code snippets for a given query.
+对话检索链是一个与储存在 VectorStore 中的数据进行交互的检索型系统。利用上下文感知的过滤和排名等高级技术，它为给定用户查询检索最相关的代码片段和信息。对话检索链旨在在考虑对话历史和上下文的情况下提供高质量的、相关的结果。
+
+
+LangChain 用于代码理解和生成的工作流程
+
+
+1. 对代码库进行索引:克隆目标存储库,加载所有文件并对文件进行分块,执行索引过程。可选地，,您可以跳过此步骤并使用已经索引过的数据集。
+
+
+2. 嵌入和代码存储:使用代码感知嵌入模型嵌入代码片段并存储在 VectorStore 中。
+查询理解:GPT-4 处理用户查询，,抓住上下文并提取相关细节。
+
+
+3. 构建检索器:对话检索链搜索 VectorStore，以识别与给定查询最相关的代码片段。
+
 
 4. Build the Conversational Chain: Customize the retriever settings and define any user-defined filters as needed. 
 
-5. Ask questions: Define a list of questions to ask about the codebase, and then use the ConversationalRetrievalChain to generate context-aware answers. The LLM (GPT-4) generates comprehensive, context-aware answers based on retrieved code snippets and conversation history.
 
-The full tutorial is available below.
-- [Twitter the-algorithm codebase analysis with Deep Lake](code/twitter-the-algorithm-analysis-deeplake.ipynb): A notebook walking through how to parse github source code and run queries conversation.
+
+5. 提问: 定义一个关于代码库的问题列表，并使用 ConversationalRetrievalChain 生成上下文感知的答案。LLM（GPT-4）根据检索的代码片段和对话历史生成全面的上下文感知答案。
+
+
+以下是完整的教程。
+- [使用 Deep Lake 对 Twitter 算法代码库进行分析](code/twitter-the-algorithm-analysis-deeplake.ipynb): 一个笔记本演示如何解析 GitHub 源代码并运行查询对话。
 - [LangChain codebase analysis with Deep Lake](code/code-analysis-deeplake.ipynb): A notebook walking through how to analyze and do question answering over THIS code base.
+

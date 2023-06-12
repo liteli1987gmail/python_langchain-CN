@@ -1,93 +1,154 @@
-# Question Answering over Docs
+# 文档问答
 
-> [Conceptual Guide](https://docs.langchain.com/docs/use-cases/qa-docs)
 
-Question answering in this context refers to question answering over your document data.
-For question answering over other types of data, please see other sources documentation like [SQL database Question Answering](./tabular.md) or [Interacting with APIs](./apis.md).
+> [概念指南](https://docs.langchain.com/docs/use-cases/qa-docs)
 
-For question answering over many documents, you almost always want to create an index over the data.
-This can be used to smartly access the most relevant documents for a given question, allowing you to avoid having to pass all the documents to the LLM (saving you time and money).
 
-See [this notebook](../modules/indexes/getting_started.ipynb) for a more detailed introduction to this, but for a super quick start the steps involved are:
+在这个语境下，问答是指针对您的文档数据的问题回答。
+如需针对其他类型的数据进行问答，请参考其他来源文档，例如[SQL 数据库问答](./tabular.md)或[与 API 交互](./apis.md)。
 
-**Load Your Documents**
+
+如果要对许多文档进行问答，则几乎总是要创建一个数据索引。
+这可以用于智能地访问给定问题的最相关文档，从而避免将所有文档传递给 LLM（节省时间和金钱）。
+
+
+有关更详细的介绍，请参见[此笔记本](../modules/indexes/getting_started.ipynb)，但对于超级快速入门，所涉及的步骤是:
+
+
+**加载您的文档**
+
 
 ```python
+
 from langchain.document_loaders import TextLoader
+
 loader = TextLoader('../state_of_the_union.txt')
+
 ```
 
-See [here](../modules/indexes/document_loaders.rst) for more information on how to get started with document loading.
 
-**Create Your Index**
+
+有关如何开始加载文档的更多信息，请参见[此处](../modules/indexes/document_loaders.rst)。
+
+
+**创建您的索引**
+
 
 ```python
+
 from langchain.indexes import VectorstoreIndexCreator
+
 index = VectorstoreIndexCreator().from_loaders([loader])
+
 ```
 
-The best and most popular index by far at the moment is the VectorStore index.
 
-**Query Your Index**
+
+到目前为止，最好、最受欢迎的索引是 VectorStore 索引。
+
+
+**查询您的索引**
+
 
 ```python
+
 query = "What did the president say about Ketanji Brown Jackson"
+
 index.query(query)
+
 ```
 
-Alternatively, use `query_with_sources` to also get back the sources involved
+
+
+或者使用 `query_with_sources` 去得到相应参与的资源。
+
 
 ```python
+
 query = "What did the president say about Ketanji Brown Jackson"
+
 index.query_with_sources(query)
+
 ```
 
-Again, these high level interfaces obfuscate a lot of what is going on under the hood, so please see [this notebook](../modules/indexes/getting_started.ipynb) for a lower level walkthrough.
 
-## Document Question Answering
+
+同样地，这些高级接口模糊了许多底层操作，因此请参见[此笔记本](../modules/indexes/getting_started.ipynb)进行更低级别的漫步。
+
+
+## 文档问答
+
 
 Question answering involves fetching multiple documents, and then asking a question of them.
-The LLM response will contain the answer to your question, based on the content of the documents.
 
-The recommended way to get started using a question answering chain is:
+LLM响应将根据文件内容回答您的问题。
+
+
+使用问答链的推荐方法是:
+
 
 ```python
+
 from langchain.chains.question_answering import load_qa_chain
+
 chain = load_qa_chain(llm, chain_type="stuff")
+
 chain.run(input_documents=docs, question=query)
+
 ```
+
+
 
 The following resources exist:
 
-- [Question Answering Notebook](../modules/chains/index_examples/question_answering.ipynb): A notebook walking through how to accomplish this task.
-- [VectorDB Question Answering Notebook](../modules/chains/index_examples/vector_db_qa.ipynb): A notebook walking through how to do question answering over a vector database. This can often be useful for when you have a LOT of documents, and you don't want to pass them all to the LLM, but rather first want to do some semantic search over embeddings.
 
-## Adding in sources
 
-There is also a variant of this, where in addition to responding with the answer the language model will also cite its sources (eg which of the documents passed in it used).
+- [问答笔记本](../modules/chains/index_examples/question_answering.ipynb): 这是一篇教您如何完成这个任务的笔记本。
+- [VectorDB 问答笔记本](../modules/chains/index_examples/vector_db_qa.ipynb): 这是一篇教您如何在向量数据库上进行问答的笔记本。当您有大量文件，并且不想将它们全部传递给LLM，而是想先在嵌入式向量中进行一些语义搜索时，这通常很有用。
 
-The recommended way to get started using a question answering with sources chain is:
+
+## 添加资源
+
+
+还有一种变体，除了回答问题外，语言模型还会引用其来源（例如，它使用了哪些传入的文件）。
+
+
+使用问答及其来源链的推荐方法是:
+
 
 ```python
+
 from langchain.chains.qa_with_sources import load_qa_with_sources_chain
+
 chain = load_qa_with_sources_chain(llm, chain_type="stuff")
+
 chain({"input_documents": docs, "question": query}, return_only_outputs=True)
+
 ```
+
+
 
 The following resources exist:
 
-- [QA With Sources Notebook](../modules/chains/index_examples/qa_with_sources.ipynb): A notebook walking through how to accomplish this task.
-- [VectorDB QA With Sources Notebook](../modules/chains/index_examples/vector_db_qa_with_sources.ipynb): A notebook walking through how to do question answering with sources over a vector database. This can often be useful for when you have a LOT of documents, and you don't want to pass them all to the LLM, but rather first want to do some semantic search over embeddings.
 
-## Additional Related Resources
+
+- [带来源问答笔记本](../modules/chains/index_examples/qa_with_sources.ipynb): 这是一篇教您如何完成这个任务的笔记本。
+- [VectorDB 带来源问答笔记本](../modules/chains/index_examples/vector_db_qa_with_sources.ipynb): 这是一篇教您如何在向量数据库上进行带来源问答的笔记本。当您有大量文件，并且不想将它们全部传递给LLM，而是想先在嵌入式向量中进行一些语义搜索时，这通常很有用。
+
+
+## 其他相关资源
+
 
 Additional related resources include:
 
-- [Utilities for working with Documents](/modules/utils/how_to_guides.rst): Guides on how to use several of the utilities which will prove helpful for this task, including Text Splitters (for splitting up long documents) and Embeddings & Vectorstores (useful for the above Vector DB example).
-- [CombineDocuments Chains](/modules/indexes/combine_docs.md): A conceptual overview of specific types of chains by which you can accomplish this task.
 
-## End-to-end examples
 
-For examples to this done in an end-to-end manner, please see the following resources:
+- [文档处理工具](/modules/utils/how_to_guides.rst): 关于如何使用多个文档处理工具的指南，这些工具将会对此任务非常有帮助, 包括文本拆分器（用于拆分长文档）和Embeddings & Vectorstores（对于上面的Vector DB示例非常有用）。
+-[合并文档链](/modules/indexes/combine_docs.md): 一种特定类型的链的概念概述，可以通过它来完成此任务。
+
+## 全流程示例
+
+要了解全流程操作示例， 请参阅以下资源:
 
 - [Semantic search over a group chat with Sources Notebook](question_answering/semantic-search-over-chat.ipynb): A notebook that semantically searches over a group chat conversation.
+

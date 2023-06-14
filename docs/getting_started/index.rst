@@ -151,22 +151,22 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-- `查询表格数据 <./use_cases/tabular.html>`_：如果您想使用语言模型查询结构化数据（CSV、SQL、数据框等），建议阅读。
+- `查询表格数据<./use_cases/tabular.html>`_:如果您想使用语言模型查询结构化数据（CSV、SQL、数据框等），建议阅读。
 
 
-- `代码理解 <./use_cases/code.html>`_：如果您想使用语言模型分析代码，建议阅读。
+- `代码理解<./use_cases/code.html>`_:如果您想使用语言模型分析代码，建议阅读。
 
 
-- `与API互动 <./use_cases/apis.html>`_：使语言模型与API互动非常强大。它使它们可以访问最新的信息并允许它们采取行动。
+- `与API互动<./use_cases/apis.html>`_:使语言模型与API互动非常强大。它使它们可以访问最新的信息并允许它们采取行动。
 
 
-- `数据提取 <./use_cases/extraction.html>`_：从文本中提取结构化信息。
+- `数据提取<./use_cases/extraction.html>`_:从文本中提取结构化信息。
 
 
-- `摘要 <./use_cases/summarization.html>`_：压缩较长的文档。数据增强生成的一种类型。
+- `摘要<./use_cases/summarization.html>`_:压缩较长的文档。数据增强生成的一种类型。
 
 
-- `评估 <./use_cases/evaluation.html>`_：使用传统指标评估生成模型很困难。一种有前途的方法是使用语言模型本身进行评估。
+- `评估<./use_cases/evaluation.html>`_:使用传统指标评估生成模型很困难。一种有前途的方法是使用语言模型本身进行评估。
 
 
 
@@ -219,10 +219,10 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-- `LangChain安装 <./reference/installation.html>`_
+- `LangChain安装<./reference/installation.html>`_
 
 
-- `参考文档 <./reference.html>`_
+- `参考文档<./reference.html>`_
 
 
 .. toctree::
@@ -259,13 +259,13 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-- `集成 <./integrations.html>`_：指南，介绍如何将其他产品与 LangChain 配合使用。
+- `集成<./integrations.html>`_:指南，介绍如何将其他产品与 LangChain 配合使用。
 
 
-- `依赖项 <./dependents.html>`_：使用 LangChain 的存储库列表。
+- `依赖项<./dependents.html>`_:使用 LangChain 的存储库列表。
 
 
-- `部署 <./ecosystem/deployments.html>`_：一系列部署 LangChain 应用程序的说明、代码片段和模板存储库。
+- `部署<./ecosystem/deployments.html>`_:一系列部署 LangChain 应用程序的说明、代码片段和模板存储库。
 
 
 

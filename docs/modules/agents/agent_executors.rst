@@ -4,7 +4,7 @@
 
 
 
-.. 注解::
+.. note::
 
    `概念指南<https://docs.langchain.com/docs/components/agents/agent-executor>`_
 

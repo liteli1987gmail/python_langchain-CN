@@ -16,15 +16,15 @@ LangChain与多个LLM、系统和产品集成。
 
 
 
-- `LLM提供者<./modules/models/llms/integrations.html>`_
-- `聊天模型提供商<./modules/models/chat/integrations.html>`_
-- `文本嵌入模型提供商<./modules/models/text_embedding.html>`_
-- `文档加载器集成<./modules/indexes/document_loaders.html>`_
-- `文本分割器集成<./modules/indexes/text_splitters.html>`_
-- `向量存储提供商<./modules/indexes/vectorstores.html>`_
-- `检索器提供商<./modules/indexes/retrievers.html>`_
-- `工具提供商<./modules/agents/tools.html>`_
-- `工具包集成<./modules/agents/toolkits.html>`_
+- `LLM Providers <./modules/models/llms/integrations.html>`_
+- `Chat Model Providers <./modules/models/chat/integrations.html>`_
+- `Text Embedding Model Providers <./modules/models/text_embedding.html>`_
+- `Document Loader Integrations <./modules/indexes/document_loaders.html>`_
+- `Text Splitter Integrations <./modules/indexes/text_splitters.html>`_
+- `Vectorstore Providers <./modules/indexes/vectorstores.html>`_
+- `Retriever Providers <./modules/indexes/retrievers.html>`_
+- `Tool Providers <./modules/agents/tools.html>`_
+- `Toolkit Integrations <./modules/agents/toolkits.html>`_
 
 
 

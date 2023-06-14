@@ -1,14 +1,9 @@
-文档压缩器
-
+文档压缩器 Document Compressors
 ===============================
 
-
-
-.. 自动模块化:: langchain.retrievers.document_compressors  # 文档压缩器
-
-   :成员:
-
-   :未文档化的成员:
+.. automodule:: langchain.retrievers.document_compressors
+   :members:
+   :undoc-members:
 
 
 

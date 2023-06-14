@@ -2,18 +2,14 @@
 ==========================
 
 
-
-| **LangChain** 是一个开发由语言模型驱动的应用程序框架。我们相信，最强大和不同的应用程序不仅会调用语言模型，还将是：1. *数据智能*：将语言模型连接到其他数据源2. *代理能力*：允许语言模型与其环境交互
-1. *Data-aware*: connect a language model to other sources of data
-
-2. *Agentic*: allow a language model to interact with its environment
-
-
+| **LangChain** 是一个由语言模型驱动的应用程序开发框架。我们相信，最强大和独特的应用程序不仅仅调用语言模型，还会具备以下特点：
+1. *数据感知*：将语言模型与其他数据源进行连接
+2. *主动性*：允许语言模型与其环境进行交互
 
 | LangChain框架是根据这些原则设计的。
 
 
-| 这是关于Python的具体部分。有关LangChain的纯概念指南，请参见`此处 <https://docs.langchain.com/docs/>`_。有关JavaScript文档，请参见`此处 <https://js.langchain.com/docs/>`_。
+| 这是关于Python的具体部分。有关LangChain的纯概念指南，请参见`here <https://docs.langchain.com/docs/>`_。有关JavaScript文档，请参见`此处 <https://js.langchain.com/docs/>`_。
 
 
 入门指南
@@ -55,7 +51,7 @@ Modules
 
 
 | 这些模块是我们认为任何LLM驱动应用程序的构建块的核心抽象。对于每个模块，LangChain都提供标准、可扩展的接口。LangChain还提供外部集成甚至预制的端到端实现。
-For each module LangChain provides standard, extendable interfaces. LangChain also provides external integrations and even end-to-end implementations for off-the-shelf use.
+
 
 
 
@@ -116,27 +112,29 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 |用于常见LangChain用例的最佳实践和内置实现：
 
 
-- `Autonomous Agents <./use_cases/autonomous_agents.html>`_: Autonomous agents are long-running agents that take many steps in an attempt to accomplish an objective. Examples include AutoGPT and BabyAGI.
 
-- `Agent Simulations <./use_cases/agent_simulations.html>`_: Putting agents in a sandbox and observing how they interact with each other and react to events can be an effective way to evaluate their long-range reasoning and planning abilities.
 
-- `Personal Assistants <./use_cases/personal_assistants.html>`_: One of the primary LangChain use cases. Personal assistants need to take actions, remember interactions, and have knowledge about your data.
+- `Autonomous Agents <./use_cases/autonomous_agents.html>`_: 自主代理是长时间运行的代理程序，它们采取许多步骤以尝试实现目标。例如AutoGPT和BabyAGI。
 
-- `Question Answering <./use_cases/question_answering.html>`_: Another common LangChain use case. Answering questions over specific documents, only utilizing the information in those documents to construct an answer.
+- `Agent Simulations <./use_cases/agent_simulations.html>`_: 将代理程序放入沙箱中，观察它们如何相互作用和对事件做出反应，可以是一种评估其长期推理和规划能力的有效方法。
 
-- `Chatbots <./use_cases/chatbots.html>`_: Language models love to chat, making this a very natural use of them.
+- `Personal Assistants <./use_cases/personal_assistants.html>`_: LangChain的主要用例之一。个人助手需要采取行动，记住交互，并了解您的数据。
 
-- `Querying Tabular Data <./use_cases/tabular.html>`_: Recommended reading if you want to use language models to query structured data (CSVs, SQL, dataframes, etc).
+- `Question Answering <./use_cases/question_answering.html>`_: 另一个常见的LangChain用例。回答特定文档上的问题，仅利用这些文档中的信息构建答案。
 
-- `Code Understanding <./use_cases/code.html>`_: Recommended reading if you want to use language models to analyze code.
+- `Chatbots <./use_cases/chatbots.html>`_: 语言模型喜欢聊天，这使得它们成为非常自然的用途。
 
-- `Interacting with APIs <./use_cases/apis.html>`_: Enabling language models to interact with APIs is extremely powerful. It gives them access to up-to-date information and allows them to take actions.
+- `Querying Tabular Data <./use_cases/tabular.html>`_: 如果您想使用语言模型查询结构化数据（CSV、SQL、数据框等），建议阅读此文。
 
-- `Extraction <./use_cases/extraction.html>`_: Extract structured information from text.
+- `Code Understanding <./use_cases/code.html>`_: 如果您想使用语言模型分析代码，请阅读此文。
 
-- `Summarization <./use_cases/summarization.html>`_: Compressing longer documents. A type of Data-Augmented Generation.
+- `Interacting with APIs <./use_cases/apis.html>`_: 使语言模型能够与API交互非常强大。它为它们提供了访问最新信息并采取行动的能力。
 
-- `Evaluation <./use_cases/evaluation.html>`_: Generative models are hard to evaluate with traditional metrics. One promising approach is to use language models themselves to do the evaluation.
+- `Extraction <./use_cases/extraction.html>`_: 从文本中提取结构化信息。
+
+- `Summarization <./use_cases/summarization.html>`_: 压缩更长的文档。数据增强生成的一种类型。
+
+- `Evaluation <./use_cases/evaluation.html>`_: 使用传统度量方法很难评估生成模型。一种有前途的方法是使用语言模型本身进行评估。
 
 
 
@@ -223,12 +221,11 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-- `Integrations <./integrations.html>`_: Guides for how other products can be used with LangChain.
+- `Integrations <./integrations.html>`_: 如何使用LangChain与其他产品集成的指南。
 
-- `Dependents <./dependents.html>`_: List of repositories that use LangChain.
+- `Dependents <./dependents.html>`_: 使用LangChain的存储库列表。
 
-- `Deployments <./ecosystem/deployments.html>`_: A collection of instructions, code snippets, and template repositories for deploying LangChain apps.
-
+- `Deployments <./ecosystem/deployments.html>`_: 部署LangChain应用的指南、代码片段和模板存储库合集。
 
 
 .. toctree::
@@ -248,37 +245,24 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 其他资源
 ---------------------
 
+| 额外的资源，我们认为在您开发应用程序时可能会有用！
 
 
-| Additional resources we think may be useful as you develop your application!
+- `LangChainHub <https://github.com/hwchase17/langchain-hub>`_: LangChainHub是一个共享和探索其他提示、链式和代理的地方。
 
+- `Gallery <https://github.com/kyrolabs/awesome-langchain>`_: 一个收集使用Langchain的优秀项目的集合，由`Kyrolabs <https://kyrolabs.com>`_编译。有助于寻找灵感和示例实现。
 
+- `Deploying LLMs in Production <./additional_resources/deploy_llms.html>`_: 有关在生产中部署LLMs的最佳实践和教程的合集。
 
-- `LangChainHub <https://github.com/hwchase17/langchain-hub>`_: LangChainHub是一个共享和探索其他提示、链式和代理的地方。#The LangChainHub is a place to share and explore other prompts, chains, and agents.
+- `Tracing <./additional_resources/tracing.html>`_: 使用跟踪在LangChain中可视化链式和代理的执行的指南。
 
+- `Model Laboratory <./additional_resources/model_laboratory.html>`_: 尝试使用不同的提示、模型和链式是开发最佳应用程序的重要部分。ModelLaboratory使这个过程变得容易。
 
-- `Gallery <https://github.com/kyrolabs/awesome-langchain>`_: 一个收集使用Langchain的优秀项目的集合，由`Kyrolabs <https://kyrolabs.com>`_编译。有助于寻找灵感和示例实现。#A collection of great projects that use Langchain, compiled by the folks at `Kyrolabs <https://kyrolabs.com>`_. Useful for finding inspiration and example implementations.
+- `Discord <https://discord.gg/6adMQxSpJS>`_: 加入我们的Discord，讨论有关LangChain的所有事情！
 
+- `YouTube <./additional_resources/youtube.html>`_: LangChain教程和视频的集合。
 
-- `Deploying LLMs in Production <./additional_resources/deploy_llms.html>`_: 有关在生产中部署LLMs的最佳实践和教程的集合。#A collection of best practices and tutorials for deploying LLMs in production.
-
-
-- `Tracing <./additional_resources/tracing.html>`_: 使用跟踪在LangChain中可视化链式和代理的执行的指南。#A guide on using tracing in LangChain to visualize the execution of chains and agents.
-
-
-- `Model Laboratory <./additional_resources/model_laboratory.html>`_: 尝试使用不同的提示、模型和链式是开发最佳应用程序的重要部分。ModelLaboratory使这个过程变得容易。#Experimenting with different prompts, models, and chains is a big part of developing the best possible application. The ModelLaboratory makes it easy to do so.
-
-
-- `Discord <https://discord.gg/6adMQxSpJS>`_: 加入我们的Discord，讨论有关LangChain的所有事情！#Join us on our Discord to discuss all things LangChain!
-
-
-- `YouTube <./additional_resources/youtube.html>`_: LangChain教程和视频的集合。#A collection of the LangChain tutorials and videos.
-
-
-- `Production Support <https://forms.gle/57d8AmXBYp8PP8tZA>`_: As you move your LangChains into production, we'd love to offer more comprehensive support. Please fill out this form and we'll set up a dedicated support Slack channel.
-
-
-
+- `Production Support <https://forms.gle/57d8AmXBYp8PP8tZA>`_: 当您将LangChains移至生产环境时，我们很乐意提供更全面的支持。请填写此表格，我们将建立一个专门的支持Slack频道。
 
 
 .. toctree::

@@ -1,11 +1,6 @@
-向量存储
-
+向量存储 Vector Stores
 =============================
 
-
-
-..自动模块：langchain.vectorstores
-
-   :成员：
-
-   :未记录的成员：
+.. automodule:: langchain.vectorstores
+   :members:
+   :undoc-members:

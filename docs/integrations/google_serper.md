@@ -1,27 +1,37 @@
-Google Serper（谷歌搜索API）
+谷歌Serper
 
-本页介绍如何在LangChain中使用[Serper]（https : //serper.dev）Google Search API。 Serper是一种低成本的Google搜索API，可用于添加来自Google搜索的答案框、知识图和有机结果数据。
-它分为两个部分：设置和特定的Google Serper包装器的引用。
 
-## 设置
-- 转到[serper.dev]（https : //serper.dev）注册免费帐户
-- 获取API密钥并将其设置为环境变量（` SERPER_API_KEY`）
+本页介绍如何在LangChain中使用Serper](https://serper.dev)谷歌搜索API。Serper是一个低成本的谷歌搜索API，可用于从谷歌搜索中添加答案框、知识图和有机结果数据。
+它分为两个部分：设置和对特定谷歌Serper包装器的引用。
 
-## 包装器
 
-### 实用程序
+设置
+- 前往serper.dev](https://serper.dev)注册一个免费帐户
+- 获取API密钥并将其设置为环境变量（`SERPER_API_KEY`）
 
-存在一个GoogleSerperAPIWrapper实用程序，将此API包装起来。 要导入此实用程序: 
+
+包装器
+
+
+实用工具
+
+
+存在一个名为GoogleSerperAPIWrapper的实用工具，用于包装此API。要导入此实用工具：
+
 
 ```python
+
 from langchain.utilities import GoogleSerperAPIWrapper
 
 ```
 
 
-您可以将其用作Self Ask链的一部分: 
+
+您可以将其用作Self Ask链的一部分：
+
 
 ```python
+
 from langchain.utilities import GoogleSerperAPIWrapper
 
 from langchain.llms.openai import OpenAI
@@ -69,40 +79,37 @@ self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open c
 ```
 
 
-#### 输出
+
+输出
 ```
-Entering new AgentExecutor chain...
 
- Yes.
-
-Follow up: Who is the reigning men's U.S. Open champion?
-
-Intermediate answer: Current champions Carlos Alcaraz, 2022 men's singles champion.
-
-Follow up: Where is Carlos Alcaraz from?
-
-Intermediate answer: El Palmar, Spain
-
-So the final answer is: El Palmar, Spain
+输入新的AgentExecutor链...
+是的。
+后续问题：谁是男子美国公开赛的现任冠军？
+中间答案：当前冠军是卡洛斯·阿尔卡拉斯，2022年男子单打冠军。
+后续问题：卡洛斯·阿尔卡拉斯来自哪里？
+中间答案：西班牙埃尔帕尔马尔。
+所以最终答案是：西班牙埃尔帕尔马尔。
 
 
-
-> Finished chain.
-
+> 链结束。
 
 
-'El Palmar, Spain'
-
+'西班牙埃尔帕尔马尔'
 ```
 
 
-有关此包装器的更详细演练，请参见[此笔记本电脑]（../modules/agents/tools/examples/google_serper.ipynb）。
 
-### 工具
+有关此包装器的更详细演练，请参见此笔记本](../modules/agents/tools/examples/google_serper.ipynb)。
 
-您还可以轻松加载此包装器作为工具（与代理一起使用）。 
-您可以使用的方法是: 
+
+工具
+
+
+您还可以将此包装器轻松加载为工具（供代理使用）。
+您可以通过以下方式实现：
 ```python
+
 from langchain.agents import load_tools
 
 tools = load_tools(["google-serper"])
@@ -110,5 +117,5 @@ tools = load_tools(["google-serper"])
 ```
 
 
-For more information on this, see [this page](../modules/agents/tools/getting_started.md)
 
+有关更多信息，请参见此页面](../modules/agents/tools/getting_started.md)

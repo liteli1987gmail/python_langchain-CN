@@ -1,18 +1,29 @@
-Toolkits
+工具包
 ==============
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/agents/toolkit>`_
 
 
-This section of documentation covers agents with toolkits - eg an agent applied to a particular use case.
+注意：
+   `概念指南 <https://docs.langchain.com/docs/components/agents/toolkit>`_
 
-See below for a full list of agent toolkits
+
+
+
+
+本文档部分介绍了带有工具包的代理 - 例如应用于特定用例的代理。
+
+
+请参阅下面的完整代理工具包列表
+
+
 
 
 .. toctree::
+
    :maxdepth: 1
    :glob:
 
+
    ./toolkits/examples/*
+
 

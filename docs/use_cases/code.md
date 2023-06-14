@@ -1,39 +1,52 @@
 # 代码理解
 
 
-概览
 
-
-LangChain 是一个有用的工具，旨在解析 GitHub 代码存储库。通过利用 VectorStores,对话检索链,和 GPT-4,，它可以在整个 GitHub 存储库的上下文中回答问题或生成新的代码。本文档页面概述了系统的基本组件，并指导如何使用 LangChain 实现更好的代码理解,上下文问题回答,和代码生成在 GitHub 存储库中。
-
-
-## 对话检索链
-
-
-对话检索链是一个与储存在 VectorStore 中的数据进行交互的检索型系统。利用上下文感知的过滤和排名等高级技术，它为给定用户查询检索最相关的代码片段和信息。对话检索链旨在在考虑对话历史和上下文的情况下提供高质量的、相关的结果。
-
-
-LangChain 用于代码理解和生成的工作流程
-
-
-1. 对代码库进行索引:克隆目标存储库,加载所有文件并对文件进行分块,执行索引过程。可选地，,您可以跳过此步骤并使用已经索引过的数据集。
-
-
-2. 嵌入和代码存储:使用代码感知嵌入模型嵌入代码片段并存储在 VectorStore 中。
-查询理解:GPT-4 处理用户查询，,抓住上下文并提取相关细节。
-
-
-3. 构建检索器:对话检索链搜索 VectorStore，以识别与给定查询最相关的代码片段。
-
-
-4. Build the Conversational Chain: Customize the retriever settings and define any user-defined filters as needed. 
+概述
 
 
 
-5. 提问: 定义一个关于代码库的问题列表，并使用 ConversationalRetrievalChain 生成上下文感知的答案。LLM（GPT-4）根据检索的代码片段和对话历史生成全面的上下文感知答案。
+LangChain是一个用于解析GitHub代码库的有用工具。通过利用VectorStores、Conversational RetrieverChain和GPT-4，它可以在整个GitHub代码库的上下文中回答问题或生成新的代码。本文档页面概述了系统的基本组件，并指导如何使用LangChain来提高对GitHub代码库的代码理解、上下文问答和代码生成能力。
 
 
-以下是完整的教程。
-- [使用 Deep Lake 对 Twitter 算法代码库进行分析](code/twitter-the-algorithm-analysis-deeplake.ipynb): 一个笔记本演示如何解析 GitHub 源代码并运行查询对话。
-- [LangChain codebase analysis with Deep Lake](code/code-analysis-deeplake.ipynb): A notebook walking through how to analyze and do question answering over THIS code base.
+
+## 对话式检索链
+
+
+
+Conversational RetrieverChain是一个以检索为重点的系统，它与存储在VectorStore中的数据进行交互。利用上下文感知的过滤和排序等先进技术，它检索与用户查询相关的最相关的代码片段和信息。Conversational RetrieverChain经过精心设计，可以考虑到会话历史和上下文，提供高质量、相关的结果。
+
+
+
+LangChain用于代码理解和生成的工作流程
+
+
+
+1. 对代码库进行索引：克隆目标代码库，加载其中的所有文件，对文件进行分块，执行索引过程。可选择跳过此步骤并使用已经索引过的数据集。
+
+
+
+2. 嵌入和代码存储：使用代码感知嵌入模型对代码片段进行嵌入，并存储在VectorStore中。
+
+查询理解：GPT-4处理用户查询，抓取上下文并提取相关细节。
+
+
+
+3. 构建检索器：Conversational RetrieverChain搜索VectorStore，以确定给定查询的最相关代码片段。
+
+
+
+4. 构建对话链：根据需要自定义检索器设置，并定义任何用户定义的过滤器。
+
+
+
+5. 提问问题：定义一个关于代码库的问题列表，然后使用Conversational RetrievalChain生成上下文感知的答案。基于检索到的代码片段和会话历史，LLM（GPT-4）生成全面、上下文感知的答案。
+
+
+
+完整的教程如下。
+
+- [用Deep Lake分析Twitter的算法代码库](code/twitter-the-algorithm-analysis-deeplake.ipynb)：通过演示如何解析GitHub源代码并进行对话查询的笔记本。
+
+- [用Deep Lake分析LangChain代码库](code/code-analysis-deeplake.ipynb)：通过演示如何分析并对此代码库进行问答的笔记本。
 

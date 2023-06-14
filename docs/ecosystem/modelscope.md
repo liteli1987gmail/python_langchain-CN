@@ -1,23 +1,31 @@
-# 模型范围
+# ModelScope
+翻译的中文结果
 
 
-本页面介绍如何在 LangChain 中使用 modelscope 生态系统。
-它被分为两部分：安装和设置，然后引用特定的模型封装器。
+This page covers how to use the modelscope ecosystem within LangChain.
+翻译的中文结果
+It is broken into two parts: installation and setup, and then references to specific modelscope wrappers.
+翻译的中文结果
 
 
-## 安装和设置
+## Installation and Setup
+翻译的中文结果
 
 
-* 用 `pip install modelscope` 安装 Python SDK
+* Install the Python SDK with `pip install modelscope`
+翻译的中文结果
 
 
-## 封装器
+## Wrappers
+翻译的中文结果
 
 
-### 嵌入
+### Embeddings
+翻译的中文结果
 
 
-存在一个 modelscope Embeddings 封装器，可以通过以下方式访问
+There exists a modelscope Embeddings wrapper, which you can access with 
+翻译的中文结果
 
 
 ```python
@@ -29,4 +37,4 @@ from langchain.embeddings import ModelScopeEmbeddings
 
 
 For a more detailed walkthrough of this, see [this notebook](../modules/models/text_embedding/examples/modelscope_hub.ipynb)
-
+翻译的中文结果

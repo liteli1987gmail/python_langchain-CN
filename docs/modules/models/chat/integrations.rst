@@ -1,10 +1,20 @@
-Integrations
+集成
+
 =============
 
-The examples here all highlight how to integrate with different chat models.
+
+
+这里的示例都突出了如何与不同的聊天模型集成。
+
+
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
+
+   ：最大深度：1
+
+   ：全局：
+
+
 
    ./integrations/*
+

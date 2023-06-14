@@ -1,10 +1,20 @@
-Generic Functionality
+通用功能性
+
 =====================
 
-The examples here all address certain "how-to" guides for working with LLMs.
+
+
+这里的所有示例都涉及与LLMs一起使用的某些"如何"指南。
+
+
 
 .. toctree::
-   :maxdepth: 1
+
+   :最大深度：1
+
    :glob:
 
+
+
    ./examples/*
+

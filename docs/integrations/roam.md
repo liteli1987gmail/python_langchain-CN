@@ -1,25 +1,16 @@
-# Roam（Roam）
+Roam（流浪）
 
-
->[ROAM](https://roamresearch.com/) is a note-taking tool for networked thought, designed to create a personal knowledge base.（[ROAM](https://roamresearch.com/)是一款网络思维笔记工具，旨在创建个人知识库。）
+ROAM（https://roamresearch.com/）是一个网络思维的笔记工具，旨在创建个人知识库。
  
+安装和设置
 
-## Installation and Setup（安装与设置）
-
-
-There isn't any special setup for it.（没有任何特殊设置。）
+它没有特殊的设置。
 
 
 
+文档加载器
 
-
-
-## Document Loader（文档加载器）
-
-
-See a [usage example](../modules/indexes/document_loaders/examples/roam.ipynb).
-
-
+查看一个使用示例（../modules/indexes/document_loaders/examples/roam.ipynb）。
 
 ```python
 

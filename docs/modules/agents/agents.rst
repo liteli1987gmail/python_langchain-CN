@@ -1,26 +1,40 @@
-Agents
+代理
 =============
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/agents/agent>`_
 
 
-In this part of the documentation we cover the different types of agents, disregarding which specific tools they are used with.
+注：
+   `概念指南 <https://docs.langchain.com/docs/components/agents/agent>`_
 
-For a high level overview of the different types of agents, see the below documentation.
+
+
+
+
+在这个文档部分中，我们涵盖了不同类型的代理，不考虑它们使用的具体工具。
+
+
+有关不同类型代理的高级别概述，请参见以下文档。
+
 
 .. toctree::
+
    :maxdepth: 1
    :glob:
+
 
    ./agents/agent_types.md
 
-For documentation on how to create a custom agent, see the below.
+
+有关如何创建自定义代理的文档，请参见以下内容。
+
+
 
 
 .. toctree::
+
    :maxdepth: 1
    :glob:
+
 
    ./agents/custom_agent.ipynb
    ./agents/custom_llm_agent.ipynb
@@ -29,11 +43,16 @@ For documentation on how to create a custom agent, see the below.
    ./agents/custom_multi_action_agent.ipynb
    ./agents/custom_agent_with_tool_retrieval.ipynb
 
-We also have documentation for an in-depth dive into each agent type.
+
+我们还有针对每种代理类型的深入了解文档。
+
 
 .. toctree::
+
    :maxdepth: 1
    :glob:
 
+
    ./agents/examples/*
+
 

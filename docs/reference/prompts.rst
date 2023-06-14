@@ -1,12 +1,23 @@
-Prompts
+提示
 ==============
 
-The reference guides here all relate to objects for working with Prompts.
+
+
+这里的参考指南都涉及用于处理提示的对象。
+
+
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
 
-   modules/prompts
-   modules/example_selector
-   modules/output_parsers
+   ：最大深度：1
+
+   ：全局：
+
+
+
+   模块/提示
+
+   模块/示例选择器
+
+   模块/输出解析器
+

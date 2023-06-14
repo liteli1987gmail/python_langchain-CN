@@ -1,21 +1,39 @@
-# LanceDB（Lance 数据库）
+LanceDB
 
-本页面介绍如何在 LangChain 中使用 [LanceDB](https://github.com/lancedb/lancedb)。
-它分为两部分：安装和设置，,然后是对特定 LanceDB 封装的引用。
 
-## 安装和设置
 
-- 用 `pip install lancedb` 安装 Python SDK。
+本页面介绍如何在LangChain中使用LanceDB](https://github.com/lancedb/lancedb)。
 
-## 封装
+它分为两个部分：安装和设置，以及特定的LanceDB包装器的参考。
 
-### VectorStore
 
-有一个 LanceDB 数据库的封装，允许您将其用作向量库，,无论用于语义搜索还是示例选择。
 
-要导入此向量库:
+安装和设置
 
-```python
+
+
+- 使用 `pip install lancedb` 安装Python SDK
+
+
+
+包装器
+
+
+
+向量存储
+
+
+
+存在一个围绕LanceDB数据库的包装器，可以将其用作向量存储，
+
+无论是用于语义搜索还是示例选择。
+
+
+
+要导入此向量存储：
+
+
+
 ```python
 
 from langchain.vectorstores import LanceDB
@@ -23,5 +41,6 @@ from langchain.vectorstores import LanceDB
 ```
 
 
-For a more detailed walkthrough of the LanceDB wrapper, see [this notebook](../modules/indexes/vectorstores/examples/lancedb.ipynb)
+
+有关LanceDB包装器的详细演示，请参阅此笔记本](../modules/indexes/vectorstores/examples/lancedb.ipynb)
 

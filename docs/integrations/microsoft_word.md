@@ -1,19 +1,24 @@
-# Microsoft Word（微软 Word）
+Microsoft Word（微软 Word）
 
 
->[Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word) 是微软开发的一款文字处理软件。
+
+Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word) 是由微软开发的文字处理器。
 
 
-## 安装和设置
+
+安装和设置
 
 
-安装和设置过程与常规软件相同，无需额外步骤。
+
+无需特别设置。
 
 
-## 文档加载器
+
+文档加载器
 
 
-See a [usage example](../modules/indexes/document_loaders/examples/microsoft_word.ipynb).
+
+查看使用示例](../modules/indexes/document_loaders/examples/microsoft_word.ipynb)。
 
 
 

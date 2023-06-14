@@ -1,11 +1,11 @@
-Vespa（音译为“唯思帕”）
+Vespa是一个功能齐全的搜索引擎和向量数据库。
 
 
->[Vespa](https://vespa.ai/)是一个功能完备的搜索引擎和向量数据库。
->它支持向量搜索（ANN）,词汇搜索,以及在同一查询中搜索结构化数据,。
+Vespa是一个功能齐全的搜索引擎和向量数据库。 Vespa](https://vespa.ai/)。
+它支持向量搜索 (ANN)，词汇搜索以及在结构化数据中搜索，所有这些都可以在同一个查询中完成。
  
 
-##安装和设置
+安装和设置
 
 
 
@@ -13,7 +13,6 @@ Vespa（音译为“唯思帕”）
 ```bash
 
 pip install pyvespa
-
 ```
 
 
@@ -22,11 +21,10 @@ pip install pyvespa
 
 
 
-## Retriever
+检索器
 
 
-
-查看[使用示例](../modules/indexes/retrievers/examples/vespa.ipynb)。
+查看使用示例](../modules/indexes/retrievers/examples/vespa.ipynb)。
 
 
 ```python

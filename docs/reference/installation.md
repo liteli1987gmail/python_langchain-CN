@@ -1,59 +1,75 @@
-## 安装（Installation）
+安装
 
 
-## 官方发布（Official Releases）
+
+官方发布
 
 
-LangChain可在PyPi中获得，因此很容易安装（so to it is easily installable with:）
+
+LangChain可在PyPi上获得，因此可以轻松安装:
+
 
 
 ```
+
 pip install langchain
 
 ```
 
 
 
-这将安装LangChain的最小要求。（That will install the bare minimum requirements of LangChain.）
-当与各种模型提供商、数据库等集成时，LangChain的很多价值就会显现出来。（A lot of the value of LangChain comes when integrating it with various model providers, datastores, etc.）
-默认情况下，不会安装执行这些操作所需的依赖项。（By default, the dependencies needed to do that are NOT installed.）
-但是，还有两种其他方式可以安装LangChain，这样可以引入这些依赖项。（However, there are two other ways to install LangChain that do bring in those dependencies.）
+这将安装LangChain的最低要求。
 
+当与各种模型提供程序、数据存储等集成时，LangChain的价值很大。
 
-要安装所需的常见LLM提供商模块，请运行:（To install modules needed for the common LLM providers, run:）
+默认情况下，不会安装执行此操作所需的依赖项。
 
-
-```
-pip install langchain[llms]
-
-```
+然而，有两种其他方式可以安装LangChain来引入这些依赖项。
 
 
 
-要安装所有集成所需的模块，请运行:（To install all modules needed for all integrations, run:）
+要安装常见LLM提供程序所需的模块，请运行:
+
 
 
 ```
-pip install langchain[all]
+
+pip install langchainllms]
 
 ```
 
 
 
-请注意，如果您使用`zsh`，则需要引用方括号，将它们作为命令的参数传递。例如:（Note that if you are using `zsh`, you'll need to quote square brackets when passing them as an argument to a command. For example:）
+要安装所有集成所需的模块，请运行:
+
 
 
 ```
-pip install 'langchain[all]'
+
+pip install langchainall]
 
 ```
 
 
 
-## 从源代码安装（Installing from source）
+请注意，如果您使用的是`zsh`，在将方括号作为参数传递给命令时，您需要将它们引用起来，例如:
 
 
-如果您想从源代码安装，您可以克隆该存储库并运行:（If you want to install from source, you can do so by cloning the repo and running:）
+
+```
+
+pip install 'langchainall]'
+
+```
+
+
+
+从源代码安装
+
+
+
+如果您想从源代码安装，可以通过克隆存储库并运行以下命令来完成:
+
 
 
 ```

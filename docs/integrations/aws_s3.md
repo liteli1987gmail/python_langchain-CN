@@ -1,38 +1,36 @@
-# AWS S3目录
+AWS S3目录
 
 
->[Amazon Simple Storage Service (Amazon S3)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html)是一种对象存储服务。
+Amazon Simple Storage Service（Amazon S3）是一个对象存储服务。
 
 
->[AWS S3目录](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html)
+AWS S3目录
 
 
->[AWS S3桶](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingBucket.html)
+AWS S3存储桶
 
 
 
 
-## 安装与设置
+安装和设置
 
 
 ```bash
 
-pip install boto3
-
+pip安装boto3
 ```
 
 
 
 
 
-## 文档加载器
+文档加载器
 
 
-查看[S3DirectoryLoader的使用示例](../modules/indexes/document_loaders/examples/aws_s3_directory.ipynb)。
+查看S3DirectoryLoader的使用示例（../modules/indexes/document_loaders/examples/aws_s3_directory.ipynb）。
 
 
-See a [usage example for S3FileLoader](../modules/indexes/document_loaders/examples/aws_s3_file.ipynb).
-
+查看S3FileLoader的使用示例（../modules/indexes/document_loaders/examples/aws_s3_file.ipynb）。
 
 
 ```python

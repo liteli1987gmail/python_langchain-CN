@@ -1,15 +1,28 @@
-# Telegram（电报）
-
->[Telegram Messenger](https://web.telegram.org/a/) 是一种全球通用的免费,跨平台,加密,基于云的及中心化即时通讯服务。该应用程序还提供可选的端对端加密聊天、视频通话,VoIP,文件共享和其他几个功能。
+电报
 
 
-## 安装和设置
 
-请参见 [设置说明](../modules/indexes/document_loaders/examples/telegram.ipynb)。
+电报信使是一种全球可访问的免费增值、跨平台、加密的基于云的中央即时通信服务。该应用程序还提供可选的端到端加密聊天和视频通话、VoIP、文件共享和其他几种功能。
 
-## 文档加载器
 
-请参见[使用示例](../modules/indexes/document_loaders/examples/telegram.ipynb)。
+
+
+
+安装和设置
+
+
+
+请参阅设置说明。
+
+
+
+文档加载器
+
+
+
+请参阅使用示例。
+
+
 
 ```python
 

@@ -1,27 +1,17 @@
-# WhatsApp（WhatsApp）
+WhatsApp
+
+>WhatsApp](https://www.whatsapp.com/)（也被称为`WhatsApp Messenger`）是一个免费的、跨平台的、集中式即时通讯（IM）和互联网电话（VoIP）服务。它允许用户发送文本和语音消息，进行语音和视频通话以及共享图像、文档、用户位置和其他内容。
 
 
->[WhatsApp](https://www.whatsapp.com/) (also called `WhatsApp Messenger`) is a freeware, cross-platform, centralized instant messaging (IM) and voice-over-IP (VoIP) service. It allows users to send text and voice messages, make voice and video calls, and share images, documents, user locations, and other content.（WhatsApp是一种免费、跨平台的即时通讯和语音IP服务，也称为WhatsApp Messenger。它允许用户发送文本和语音信息、进行语音和视频通话、共享图像、文档、用户位置和其他内容。）
+安装和设置
 
-
-
-
-## Installation and Setup（安装和设置）
-
-
-There isn't any special setup for it.（没有任何特殊的设置）
+没有任何特殊设置。
 
 
 
+文档加载器
 
-
-
-## Document Loader（文档加载器）
-
-
-See a [usage example](../modules/indexes/document_loaders/examples/whatsapp_chat.ipynb).
-
-
+查看使用示例](../modules/indexes/document_loaders/examples/whatsapp_chat.ipynb)。
 
 ```python
 

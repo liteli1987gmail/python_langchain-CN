@@ -1,27 +1,24 @@
-# spaCy
+spaCy中文翻译（标题）
 
->[spaCy](https://spacy.io/) is an open-source software library for advanced natural language processing, written in the programming languages Python and Cython.
- 
-
-## Installation and Setup
+spaCy是一款开源软件库，用于高级自然语言处理，采用Python和Cython编写。（来源：spaCy](https://spacy.io/)）
+（空行将原封不动）
+安装和设置（标题）
 
 
 ```bash
-pip install spacy
 
+pip安装spacy
 ```
 
 
 
 
+文本分割器（标题）
 
-## Text Splitter
-
-
-See a [usage example](../modules/indexes/text_splitters/examples/spacy.ipynb).
-
+查看使用示例（../modules/indexes/text_splitters/examples/spacy.ipynb）
 
 ```python
+
 from langchain.llms import SpacyTextSplitter
 
 ```

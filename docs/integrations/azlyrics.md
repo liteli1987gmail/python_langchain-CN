@@ -1,15 +1,15 @@
-# AZLyrics（AZ歌词网）
+AZLyrics
 
->[AZLyrics](https://www.azlyrics.com/)是一个大型合法的日益增长的歌词集合。
+AZLyrics是一个大型的、合法的、每天都在不断增长的歌词收集网站。
 
-## 安装和设置
+安装和设置
 
-它没有任何特殊的设置。
+没有任何特殊的设置。
 
 
-## 文档加载器
+文档加载器
 
-请参见[使用示例](../modules/indexes/document_loaders/examples/azlyrics.ipynb)。
+查看一个使用示例。
 
 ```python
 

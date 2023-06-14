@@ -1,23 +1,43 @@
-# 入门指南
+# 入门
 
-在本教程中，我们将学习：
-- 什么是提示模板以及为什么需要它
-- 如何创建提示模板
-- 如何将少量示例传递给提示模板
-- 如何为提示模板选择示例
+
+
+在本教程中，我们将学习以下内容：
+
+- 什么是提示模板，以及为什么需要它，
+
+- 如何创建提示模板，
+
+- 如何向提示模板传递少量示例，
+
+- 如何为提示模板选择示例。
+
+
 
 ## 什么是提示模板？
 
-提示模板是指生成提示的可重复方式。它包含一个文本字符串（“模板”），可以从最终用户那里取得一组参数并生成提示。
 
-提示模板可能包含:
-- 指示语言模型的指令
-- 一组少量示例，以帮助语言模型生成更好的响应
-- 对语言模型的问题。
 
-以下代码片段包含提示模板的示例：
+提示模板是指一种可重复生成提示的方式。它包含一个文本字符串（"模板"），可以从最终用户那里获取一组参数并生成提示。
+
+
+
+提示模板可以包含以下内容：
+
+- 发送给语言模型的指令，
+
+- 一组少量示例，以帮助语言模型生成更好的响应，
+
+- 发送给语言模型的问题。
+
+
+
+以下代码片段是一个提示模板的示例：
+
+
 
 ```python
+
 from langchain import PromptTemplate
 
 
@@ -52,12 +72,20 @@ prompt.format(product="colorful socks")
 
 
 
+
+
 ## 创建提示模板
 
-您可以使用 `PromptTemplate` 类创建简单的硬编码提示模板。提示模板可以接受任意数量的输入变量，并可以进行格式化以生成提示。
+
+
+您可以使用 `PromptTemplate` 类创建简单的硬编码提示。提示模板可以接受任意数量的输入变量，并可以进行格式化以生成提示。
+
+
+
 
 
 ```python
+
 from langchain import PromptTemplate
 
 
@@ -99,9 +127,13 @@ multiple_input_prompt.format(adjective="funny", content="chickens")
 ```
 
 
-如果您不希望手动指定 `input_variables`，也可以使用 `from_template` 类方法创建 `PromptTemplate`。`Langchain` 将基于传递的 `template` 推断出 `input_variables`。
+
+如果您不希望手动指定 `input_variables`，还可以使用 `from_template` 类方法创建 `PromptTemplate`。`langchain` 将根据传递的 `template` 推断出 `input_variables`。
+
+
 
 ```python
+
 template = "Tell me a {adjective} joke about {content}."
 
 
@@ -119,16 +151,23 @@ prompt_template.format(adjective="funny", content="chickens")
 ```
 
 
-您可以创建自定义提示模板，以任何您想要的方式格式化提示。有关更多信息，请参见 [Custom Prompt Templates](examples/custom_prompt_template.ipynb)。
+
+您可以创建自定义的提示模板，以任何您想要的方式格式化提示。有关更多信息，请参阅自定义提示模板](examples/custom_prompt_template.ipynb)。
 
 
-<!-- TODO(shreya): Add link to Jinja -->
+
+
+
+<！- TODO（shreya）：添加到Jinja的链接 - >
+
 
 
 ## 模板格式
 
 
-默认情况下，,`PromptTemplate`将把提供的模板视为Python f-string。您可以通过`template_format`参数指定其他模板格式。
+
+默认情况下，`PromptTemplate` 将提供的模板视为 Python f 字符串。您可以通过 `template_format` 参数指定其他模板格式：
+
 
 
 ```python
@@ -151,13 +190,16 @@ prompt_template.format(adjective="funny", content="chickens")
 
 
 
-目前，,`PromptTemplate`仅支持`jinja2`和`f-string`模板格式。如果您想使用其他模板格式，请随时在[Github](https://github.com/hwchase17/langchain/issues)页面上提出问题。
+目前，`PromptTemplate` 仅支持 `jinja2` 和 `f-string` 模板格式。如果您想使用其他模板格式，请随时在Github](https://github.com/hwchase17/langchain/issues)页面中提出问题。
+
 
 
 ## 验证模板
 
 
-默认情况下，,`PromptTemplate`将通过检查`input_variables`是否与`template`中定义的变量匹配来验证`template`字符串。您可以通过将`validate_template`设置为`False`来禁用此行为。
+
+默认情况下，`PromptTemplate` 将通过检查 `input_variables` 是否与 `template` 中定义的变量匹配来验证 `template` 字符串。您可以通过将 `validate_template` 设置为 `False` 来禁用此行为
+
 
 
 ```python
@@ -185,7 +227,9 @@ prompt_template = PromptTemplate(template=template,
 ## 序列化提示模板
 
 
-您可以将`PromptTemplate`保存到本地文件系统中的文件中。 `langchain`将通过文件扩展名自动推断文件格式。目前，,`langchain`支持将模板保存为YAML和JSON文件。
+
+您可以将 `PromptTemplate` 保存到本地文件系统中。`langchain` 将通过文件扩展名自动推断文件格式。目前，`langchain` 支持将模板保存为 YAML 和 JSON 文件。
+
 
 
 ```python
@@ -210,7 +254,8 @@ assert prompt_template == loaded_prompt
 
 
 
-`langchain`还支持从LangChainHub加载提示模板，其中包含了一些有用的提示，您可以在项目中使用。您可以在[这里](https://github.com/hwchase17/langchain-hub)了解有关LangChainHub和可用提示的更多信息。
+`langchain` 还支持从 LangChainHub 加载提示模板，其中包含一组在项目中可用的有用提示。您可以在这里](https://github.com/hwchase17/langchain-hub)了解有关 LangChainHub 及其可用提示的更多信息。
+
 
 
 ```python
@@ -229,22 +274,26 @@ prompt.format(history="", input="What is 1 + 1?")
 
 
 
-您可以在[如何序列化提示](examples/prompt_serialization.ipynb)中了解更多有关序列化提示模板的信息。
+您可以在如何序列化提示](examples/prompt_serialization.ipynb)中了解更多关于序列化提示模板的信息。
 
 
 
 
-## 将少量样例传递给提示模板
 
-
-Few shot examples are a set of examples that can be used to help the language model generate a better response.
+## 向提示模板传递少量示例
 
 
 
-使用`FewShotPromptTemplate`可生成带有少量示例的提示。该类需要一个`PromptTemplate`和少数示例的列表。然后，它使用这些少数示例对提示模板进行格式化。
+几个示例是一组可用于帮助语言模型生成更好响应的示例。
 
 
-在这个例子中，我们将创建一个提示生成单词反义词的提示。
+
+要使用少量示例生成提示，可以使用 `FewShotPromptTemplate`。这个类接受一个 `PromptTemplate` 和一个少量示例的列表。然后，它使用少量示例格式化提示模板。
+
+
+
+在本例中，我们将创建一个用于生成单词反义词的提示。
+
 
 
 ```python
@@ -303,13 +352,13 @@ few_shot_prompt = FewShotPromptTemplate(
 
     # Usually, this consists of intructions.
 
-    prefix="Give the antonym of every input",
+    prefix="Give the antonym of every input\n",
 
     # The suffix is some text that goes after the examples in the prompt.
 
     # Usually, this is where the user input will go
 
-    suffix="Word: {input}Antonym: ",
+    suffix="Word: {input}\nAntonym: ",
 
     # The input variables are the variables that the overall prompt expects.
 
@@ -317,7 +366,7 @@ few_shot_prompt = FewShotPromptTemplate(
 
     # The example_separator is the string we will use to join the prefix, examples, and suffix together with.
 
-    example_separator="",
+    example_separator="\n",
 
 )
 
@@ -354,13 +403,17 @@ print(few_shot_prompt.format(input="big"))
 ## 选择提示模板的示例
 
 
-如果你有大量的示例，你可以使用`ExampleSelector`来选择最有信息量的一部分示例供语言模型使用。这将帮助你生成更可能生成良好响应的提示。
+
+如果有大量示例，您可以使用 `ExampleSelector` 来选择一组对语言模型最有信息量的示例。这将帮助您生成一个更有可能生成良好响应的提示。
 
 
-下面，我们将使用`LengthBasedExampleSelector`，它根据输入长度选择示例。当你担心构建的提示会超过上下文窗口的长度时，这非常有用。对于更长的输入，它会选择较少的示例包含在内，而对于较短的输入，它会选择更多的示例。
+
+下面，我们将使用 `LengthBasedExampleSelector`，它基于输入的长度选择示例。这在您担心构建的提示超出上下文窗口的长度时非常有用。对于较长的输入，它将选择较少的示例进行包含，而对于较短的输入，它将选择更多示例。
 
 
-我们将使用上一节示例，但这次我们将使用`LengthBasedExampleSelector`来选择示例。
+
+我们将继续使用上一节的示例，但这次我们将使用 `LengthBasedExampleSelector` 来选择示例。
+
 
 
 ```python
@@ -413,7 +466,7 @@ example_selector = LengthBasedExampleSelector(
 
     # it is provided as a default value if none is specified.
 
-    # get_text_length: Callable[[str], int] = lambda x: len(re.split("| ", x))
+    # get_text_length: Callable[[str], int] = lambda x: len(re.split("\n| ", x))
 
 )
 
@@ -431,11 +484,11 @@ dynamic_prompt = FewShotPromptTemplate(
 
     prefix="Give the antonym of every input",
 
-    suffix="Word: {input}Antonym:",
+    suffix="Word: {input}\nAntonym:",
 
     input_variables=["input"],
 
-    example_separator="",
+    example_separator="\n\n",
 
 )
 
@@ -487,7 +540,8 @@ print(dynamic_prompt.format(input="big"))
 
 
 
-相比之下，如果我们提供一个非常长的输入，`LengthBasedExampleSelector`将选择较少的示例包含在提示中。
+相反，如果我们提供了非常长的输入，`LengthBasedExampleSelector` 将选择较少的示例包含在提示中。
+
 
 
 ```python
@@ -514,10 +568,11 @@ print(dynamic_prompt.format(input=long_string))
 
 
 
-<!-- TODO(shreya): Add correct link here. -->
+<！- TODO（shreya）：在此处添加正确的链接。 - >
 
-LangChain带有几个可用的示例选择器。有关如何使用它们的更多详细信息，请参见[示例选择器](../example_selectors.rst)。
+LangChain 提供了一些示例选择器供您使用。有关如何使用它们的更多详细信息，请参阅示例选择器](../example_selectors.rst)。
 
 
-You can create custom example selectors that select examples based on any criteria you want. For more details on how to do this, see [Creating a custom example selector](../example_selectors/examples/custom_example_selector.md).
+
+您可以创建自定义示例选择器，根据任何您想要的条件选择示例。有关如何操作的更多详细信息，请参阅创建自定义示例选择器](../example_selectors/examples/custom_example_selector.md)。
 

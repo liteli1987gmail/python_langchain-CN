@@ -1,26 +1,51 @@
-How-To Guides
+如何指南
+
 =============
 
-Types
+
+
+类型
+
 -----
 
-The first set of examples all highlight different types of memory.
+
+
+第一组示例都突出不同类型的内存。
+
+
+
 
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
 
-   ./types/*
+   :maxdepth: 1（最大深度为1）
+
+   :glob:（通配符）
 
 
-Usage
+
+   ./types/*（./types/*）
+
+
+
+
+
+用法
+
 -----
 
-The examples here all highlight how to use memory in different ways.
+
+
+这里的示例都突出了不同方式使用内存的方法。
+
+
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
 
-   ./examples/*
+   :maxdepth: 1（最大深度为1）
+
+   :glob:（通配符）
+
+
+
+   ./examples/*（./examples/*）

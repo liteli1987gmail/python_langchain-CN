@@ -1,16 +1,16 @@
-# Prediction Guard
+# 预测保护
 
 
 
->[Prediction Guard](https://docs.predictionguard.com/) gives a quick and easy access to state-of-the-art open and closed access LLMs, without  needing to spend days and weeks figuring out all of the implementation details, managing a bunch of different API specs, and setting up the infrastructure for model deployments.
+>[预测保护](https://docs.predictionguard.com/)提供了一种快速简便的方法，可以使用最先进的开放和封闭访问LLMs，无需花费数天或数周来理解所有实现细节，管理大量不同的API规范，并设置模型部署的基础设施。
 
 
 
 
 
-## Installation and Setup
+## 安装和设置
 
-- Install the Python SDK:
+- 安装Python SDK：
 
 ```bash
 
@@ -20,11 +20,11 @@ pip install predictionguard
 
 
 
-- Get an Prediction Guard access token (as described [here](https://docs.predictionguard.com/)) and set it as an environment variable (`PREDICTIONGUARD_TOKEN`)
+- 获取预测保护的访问令牌（请参见[这里](https://docs.predictionguard.com/)）并将其设置为环境变量（`PREDICTIONGUARD_TOKEN`）
 
 
 
-## LLM 
+## LLM
 
 
 
@@ -36,9 +36,9 @@ from langchain.llms import PredictionGuard
 
 
 
-### Example
+### 示例
 
-You can provide the name of the Prediction Guard model as an argument when initializing the LLM:
+当初始化LLM时，您可以将Prediction Guard模型的名称作为参数提供：
 
 ```python
 
@@ -48,7 +48,7 @@ pgllm = PredictionGuard(model="MPT-7B-Instruct")
 
 
 
-You can also provide your access token directly as an argument:
+您还可以直接提供访问令牌作为参数：
 
 ```python
 
@@ -58,7 +58,7 @@ pgllm = PredictionGuard(model="MPT-7B-Instruct", token="<your access token>")
 
 
 
-Also, you can provide an "output" argument that is used to structure/ control the output of the LLM:
+此外，您可以提供一个“output”参数，用于结构化/控制LLM的输出：
 
 ```python
 
@@ -68,7 +68,7 @@ pgllm = PredictionGuard(model="MPT-7B-Instruct", output={"type": "boolean"})
 
 
 
-#### Basic usage of the controlled or guarded LLM:
+#### 控制或受保护的LLM的基本用法：
 
 ```python
 
@@ -98,11 +98,11 @@ template = """Respond to the following query based on the context.
 
 Context: EVERY comment, DM + email suggestion has led us to this EXCITING announcement! 🎉 We have officially added TWO new candle subscription box options! 📦
 
-Exclusive Candle Box - 80 
+Exclusive Candle Box - $80 
 
-Monthly Candle Box - 45 (NEW!)
+Monthly Candle Box - $45 (NEW!)
 
-Scent of The Month Box - 28 (NEW!)
+Scent of The Month Box - $28 (NEW!)
 
 Head to stories to get ALLL the deets on each box! 👆 BONUS: Save 50% on your first box with code 50OFF! 🎉
 
@@ -150,7 +150,7 @@ pgllm(prompt.format(query="What kind of post is this?"))
 
 
 
-#### Basic LLM Chaining with the Prediction Guard:
+#### Prediction Guard的基本LLM链接：
 
 ```python
 

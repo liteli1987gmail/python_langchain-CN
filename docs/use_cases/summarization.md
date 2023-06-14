@@ -1,16 +1,21 @@
-## 摘要（Summarization）
-
-
-> [概念指南](https://docs.langchain.com/docs/use-cases/summarization)（Conceptual Guide）
+概述
 
 
 
-
-摘要是创建多个长文档的较小摘要。
-这对于将长文档凝结成信息核心非常有用。
+> 概念指南](https://docs.langchain.com/docs/use-cases/summarization)
 
 
-开始使用摘要链的推荐方法是:
+
+
+
+Summarization涉及创建多个较长文档的较小摘要。
+
+这对于提取长文档的核心信息非常有用。
+
+
+
+使用summarization链的推荐方法是：
+
 
 
 ```python
@@ -25,11 +30,13 @@ chain.run(docs)
 
 
 
-The following resources exist:
+存在以下资源：
 
-- [摘要笔记本](../modules/chains/index_examples/summarize.ipynb): 一本笔记本教你如何完成这个任务。
+- Summarization Notebook](../modules/chains/index_examples/summarize.ipynb)：通过此笔记本可以了解如何完成此任务。
 
 
-其他相关资源包括:
-- [Utilities for working with Documents](../reference/utils.rst): Guides on how to use several of the utilities which will prove helpful for this task, including Text Splitters (for splitting up long documents).
+
+其他相关资源包括：
+
+- 用于处理文档的实用工具](../reference/utils.rst)：介绍如何使用几个实用工具，对于此任务非常有帮助，包括文本分割器（用于拆分长文档）。
 

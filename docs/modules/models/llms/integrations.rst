@@ -1,10 +1,23 @@
-Integrations
+集成
+
 =============
 
-The examples here are all "how-to" guides for how to integrate with various LLM providers.
+
+
+这里的示例都是如何与各种LLM提供商集成的“如何”指南。
+
+
 
 .. toctree::
+
    :maxdepth: 1
+中文备注：用于设置允许的最大目录深度。
+
    :glob:
+中文备注：告诉Sphinx在搜索指定目录时要使用Unix式文件名模式匹配（globbing）。
+
+
 
    ./integrations/*
+中文备注：这是搜索包含集成模块的子目录的目录路径。
+

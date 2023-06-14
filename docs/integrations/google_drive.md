@@ -1,16 +1,21 @@
-# 谷歌云盘
+谷歌云盘
 
 
->[谷歌云盘](https://zh.wikipedia.org/wiki/谷歌云端硬盘) 是由谷歌开发的文件存储和同步服务。
+
+>谷歌云盘](https://en.wikipedia.org/wiki/Google_Drive)是由谷歌开发的文件存储和同步服务。
 
 
-目前只支持 `谷歌文档`。
+
+目前仅支持`Google Docs`。
 
 
-## 安装与设置
+
+## 安装和设置
 
 
-首先，您需要安装几个Python包。
+
+首先，需要安装几个Python包。
+
 
 
 ```bash
@@ -21,10 +26,11 @@ pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib
 
 
 
-## 文档加载器
+## 文档加载
 
 
-See a [usage example and authorizing instructions](../modules/indexes/document_loaders/examples/google_drive.ipynb).
+
+请参阅使用示例和授权说明](../modules/indexes/document_loaders/examples/google_drive.ipynb)。
 
 
 

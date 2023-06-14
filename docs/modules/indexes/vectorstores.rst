@@ -1,27 +1,53 @@
-Vectorstores
+向量存储
+
 ==========================
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/indexing/vectorstore>`_
 
 
-Vectorstores are one of the most important components of building indexes.
+注意：
 
-For an introduction to vectorstores and generic functionality see:
+   `概念指南 <https://docs.langchain.com/docs/components/indexing/vectorstore>`_
+
+
+
+
+
+向量存储是构建索引中最重要的组件之一。
+
+
+
+关于向量存储和通用功能的介绍，请参见:
+
+
 
 .. toctree::
+
    :maxdepth: 1
+
    :glob:
+
+
 
    ./vectorstores/getting_started.ipynb
 
 
-We also have documentation for all the types of vectorstores that are supported.
-Please see below for that list.
+
+
+
+我们还有支持的所有类型的向量存储文档。请看下面的列表。
+
+请看下面的列表。
+
+
+
 
 
 .. toctree::
+
    :maxdepth: 1
+
    :glob:
+
+
 
    ./vectorstores/examples/*

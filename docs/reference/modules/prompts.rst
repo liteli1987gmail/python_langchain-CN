@@ -1,5 +1,7 @@
-PromptTemplates
+提示模板
 ========================
 
-.. automodule:: langchain.prompts
-   :members:
+
+
+..自动模块：langchain.prompts(注： automodule:: 是指自动生成一个具有各个模块的文档)
+    :成员：

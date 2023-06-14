@@ -1,30 +1,39 @@
-# Beam{梁}
+梁
 
 
-> [Beam{梁}](https://docs.beam.cloud/introduction) 使在GPU上运行代码，部署可扩展WEB API和计划cron jobs，执行大规模并行工作负载-无需管理任何基础设施。
-> schedule cron jobs, and run massively parallel workloads — without managing any infrastructure.
+
+Beam](https://docs.beam.cloud/introduction)使在GPU上运行代码、部署可扩展的Web API
+
+>计划cron作业，并运行大规模并行工作负载-无需管理任何基础设施。
 
  
 
 
 
-## 安装和设置
+安装和设置
 
 
-- [创建一个账户](https://www.beam.cloud/)
-- 使用`curl https://raw.githubusercontent.com/slai-labs/get-beam/main/get-beam.sh -sSfL | sh`安装Beam CLI
-- 注册API密钥，使用`beam configure`
-- 设置环境变量(`BEAM_CLIENT_ID`)和(`BEAM_CLIENT_SECRET`)
-- 安装Beam SDK{软件开发工具包}:
+
+-创建一个帐户](https://www.beam.cloud/)
+
+-使用`curl https://raw.githubusercontent.com/slai-labs/get-beam/main/get-beam.sh -sSfL | sh` 安装Beam CLI
+
+-使用`beam configure`注册API密钥
+
+-设置环境变量(`BEAM_CLIENT_ID`)和(`BEAM_CLIENT_SECRET`)
+
+-安装Beam SDK:
+
 ```bash
 
-pip install beam-sdk
+pip安装Beam SDK
 
 ```
 
 
 
-## LLM{兰姆语言模型}
+LLM
+
 
 
 
@@ -37,11 +46,13 @@ from langchain.llms.beam import Beam
 
 
 
-### Beam app{应用程序}的示例
+Beam应用程序示例
 
 
-这是你一旦开始应用程序开发时将使用的环境。它还用于定义从模型中返回的最大响应长度。
-It's also used to define the maximum response length from the model.
+
+这是您开始应用程序后将要开发的环境。
+
+它还用于定义来自模型的最大响应长度。
 
 ```python
 
@@ -81,10 +92,12 @@ llm = Beam(model_name="gpt2",
 
 
 
-### Deploy the Beam app
+部署Beam应用程序
 
-### 部署Beam app
-一旦定义，你可以通过调用模型的`_deploy()`方法来部署Beam应用程序。
+
+
+一旦定义，您可以通过调用模型的`_deploy()`方法来部署Beam应用程序。
+
 
 
 ```python
@@ -95,11 +108,13 @@ llm._deploy()
 
 
 
-### 调用Beam app
+调用Beam应用程序
 
 
-一旦部署了Beam模型，,它可以通过调用模型的`_call()`方法来调用。这将返回GPT2文本响应到您的提示符。
-This returns the GPT2 text response to your prompt.
+
+一旦Beam模型被部署，可以通过调用模型的`_call()`方法来调用它。
+
+这将返回对您的提示的GPT2文本响应。
 
 
 
@@ -111,7 +126,7 @@ response = llm._call("Running machine learning on a remote GPU")
 
 
 
-An example script which deploys the model and calls it would be:
+部署模型并调用它的示例脚本如下：
 
 
 

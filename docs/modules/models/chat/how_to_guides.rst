@@ -1,10 +1,20 @@
-How-To Guides
+使用指南
+
 =============
 
-The examples here all address certain "how-to" guides for working with chat models.
+
+
+这里的示例都涉及使用聊天模型的某些“使用指南”。
+
+
 
 .. toctree::
-   :maxdepth: 1
-   :glob:
 
-   ./examples/*
+   :最大深度: 1
+
+   :全局:
+
+
+
+   ./示例/*
+

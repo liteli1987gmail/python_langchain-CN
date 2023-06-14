@@ -1,30 +1,22 @@
-# 黑曜石
+Obsidian（黑曜石）
+
+Obsidian（黑曜石）是一个功能强大且可扩展的知识库，它在你的本地纯文本文件夹之上运行。
+备注：obsidian的中文意思是黑曜石。
+
+安装和配置
+
+所有的指令示例都在下面。
+
+备注：这里缺少内容。
 
 
-> [Obsidian](https://obsidian.md/) 是一款功能强大且可扩展的知识库
-，它可以在您的本地纯文本文件夹之上运行。
-
-
-## 安装和设置
-
-
-所有说明请参见以下示例。
-
-
-## 文档加载器
-
-
-
-
-请查看[使用示例](../modules/indexes/document_loaders/examples/obsidian.ipynb)。
-
-
+查看一个用法示例。
 
 
 ```python
+
 from langchain.document_loaders import ObsidianLoader
 
 ```
-
 
 

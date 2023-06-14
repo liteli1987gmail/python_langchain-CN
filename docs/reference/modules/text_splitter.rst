@@ -1,6 +1,11 @@
-Text Splitter
+文本分割器
+
 ==============================
 
-.. automodule:: langchain.text_splitter
-   :members:
-   :undoc-members:
+
+
+.. 自动模块:: langchain.text_splitter  # Text Splitter
+
+   :成员:
+
+   :未记录的成员:

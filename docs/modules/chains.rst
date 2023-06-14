@@ -1,30 +1,41 @@
-Chains
+链
 ==========================
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/chains>`_
 
 
-Using an LLM in isolation is fine for some simple applications,
-but many more complex ones require chaining LLMs - either with each other or with other experts.
-LangChain provides a standard interface for Chains, as well as some common implementations of chains for ease of use.
+注：
+ `概念指南 <https://docs.langchain.com/docs/components/chains>`_
 
-The following sections of documentation are provided:
 
-- `Getting Started <./chains/getting_started.html>`_: A getting started guide for chains, to get you up and running quickly.
 
-- `How-To Guides <./chains/how_to_guides.html>`_: A collection of how-to guides. These highlight how to use various types of chains.
 
-- `Reference <../reference/modules/chains.html>`_: API reference documentation for all Chain classes.
+在某些简单的应用程序中，单独使用LLM是可以的，
+但更复杂的应用程序需要将LLM链接起来-可能是彼此链接，也可能是与其他专家链接。
+LangChain提供了标准的**链**接口，以及几种常见的链实现。
+
+
+|
+- `快速上手指南<./chains/getting_started.html>`_: 链的概述。
+
+
+- `操作指南<./chains/how_to_guides.html>`_: 关于各种类型的链的操作指南。
+
+
+- `参考文档<../reference/modules/chains.html>`_: 所有链类的API参考文档。
+
+
+
 
 
 
 .. toctree::
+
    :maxdepth: 1
-   :caption: 思维链
-   :name: Chains
+   :caption: 链
+   :name: 链
    :hidden:
+
 
    ./chains/getting_started.ipynb
    ./chains/how_to_guides.rst
-   Reference<../reference/modules/chains.rst>
+   参考文档<../reference/modules/chains.rst>

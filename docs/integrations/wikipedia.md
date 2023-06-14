@@ -1,16 +1,20 @@
-# 维基百科
-
-
->[Wikipedia](https://wikipedia.org/)是一个由志愿者社群,即维基人,通过开放协作和使用名为MediaWiki的wiki编辑系统撰写和维护的多语种免费在线百科全书。 `维基百科`是历史上最大的和最受欢迎的参考工具。
+维基百科
 
 
 
+维基百科是一个多语言的免费在线百科全书，由志愿者社区（称为维基人）通过开放协作和使用名为MediaWiki的基于维基的编辑系统编写和维护。 维基百科是历史上最大、最广为阅读的参考工作。
 
-## 安装和设置
+
+
+
+
+安装和设置
+
 
 
 ```bash
-pip install wikipedia
+
+pip安装维基百科
 
 ```
 
@@ -20,23 +24,28 @@ pip install wikipedia
 
 
 
-## 文档加载器
+文档加载器
 
 
-请查看[使用范例](../modules/indexes/document_loaders/examples/wikipedia.ipynb)。
+
+请参阅使用示例](../modules/indexes/document_loaders/examples/wikipedia.ipynb)。
+
 
 
 ```python
+
 from langchain.document_loaders import WikipediaLoader
 
 ```
 
 
 
-## 检索器
+检索器
 
 
-请查看[使用范例](../modules/indexes/retrievers/examples/wikipedia.ipynb)。
+
+请参阅使用示例](../modules/indexes/retrievers/examples/wikipedia.ipynb)。
+
 
 
 ```python

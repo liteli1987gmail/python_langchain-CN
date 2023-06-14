@@ -1,38 +1,76 @@
 模型
+
 ==========================
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/models>`_
 
 
-文档的这一部分涉及 LangChain 中使用的不同类型的模型。
-在这个页面上，我们将在较高层次上介绍模型类型，但我们为每种模型类型提供了单独的页面。
-这些页面包含使用该模型的更详细的“操作方法”指南，以及不同模型提供商的列表。
+注释：
 
-**LLMs**
-
-大语言模型(LLMs)是我们要介绍的第一类模型。
-模型输入的是字符串，返回的也是字符串。
+   `概念指南 <https://docs.langchain.com/docs/components/models>`_
 
 
-**Chat 模型(Chat Models)**
-
-Chat 模型是我们要介绍的第二类模型。
-这类模型的底层是由language model来支持，API会更加结构后一些。
-具体来说，这些模型将Chat Message列表作为输入，并返回Chat Message。
-
-**预置文本模型(Text Embedding Models)**
-
-预置文本模型(Text Embedding Models)是我们要介绍的第三类模型。
-这类模型输入文本，返回floats列表。
 
 
-Go Deeper
----------
+
+本文档的这一部分涉及LangChain中使用的不同类型的模型。
+
+在此页面上，我们将高层次地介绍模型类型，
+
+但我们为每种模型类型都单独提供了页面。
+
+这些页面包含了更详细的使用该模型的“如何”指南，
+
+以及不同模型提供商的列表。
+
+
+
+|
+
+- `入门 <./models/getting_started.html>`_：模型概述。
+
+
+
+
+
+模型类型
+
+-----------
+
+
+
+- `LLMs <./models/llms.html>`_：**Large Language Models (LLMs)**将文本字符串作为输入并返回文本字符串作为输出。
+
+
+
+- `聊天模型 <./models/chat.html>`_：**Chat Models**通常由语言模型支持，但它们的API更加结构化。
+
+  具体而言，这些模型将聊天消息列表作为输入，然后返回聊天消息。
+
+
+
+- `文本嵌入模型 <./models/text_embedding.html>`_：**Text embedding models**将文本作为输入并返回浮点数列表。
+
+
+
+
 
 .. toctree::
+
    :maxdepth: 1
 
+   :caption: 模型
+
+   :name: models
+
+   :hidden:
+
+
+
+   ./models/getting_started.html
+
    ./models/llms.rst
+
    ./models/chat.rst
+
    ./models/text_embedding.rst
+

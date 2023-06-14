@@ -1,8 +1,16 @@
-How-To Guides
+如何指南
+
 =============
 
-If you're new to the library, you may want to start with the `Quickstart <./getting_started.html>`_.
 
-The user guide here shows different types of output parsers.
+
+如果您是第一次使用这个库，您可能需要从`快速入门指南<./getting_started.html>`_开始。
+（Quickstart为英文原文标题）
+
+
+这里的用户指南显示了不同类型的输出解析器。
+
+
+
 
 

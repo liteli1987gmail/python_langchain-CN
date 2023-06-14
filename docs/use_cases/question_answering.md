@@ -1,21 +1,29 @@
-# 文档问答
+问题回答在文档中
 
 
-> [概念指南](https://docs.langchain.com/docs/use-cases/qa-docs)
+
+> 概念指南](https://docs.langchain.com/docs/use-cases/qa-docs)
 
 
-在这个语境下，问答是指针对您的文档数据的问题回答。
-如需针对其他类型的数据进行问答，请参考其他来源文档，例如[SQL 数据库问答](./tabular.md)或[与 API 交互](./apis.md)。
+
+在此背景下，问题回答指的是在您的文档数据上进行的问题回答。
+
+对于其他类型的数据的问题回答，请参阅其他源的文档，如SQL数据库问题回答](./tabular.md)或与API交互](./apis.md)。
 
 
-如果要对许多文档进行问答，则几乎总是要创建一个数据索引。
-这可以用于智能地访问给定问题的最相关文档，从而避免将所有文档传递给 LLM（节省时间和金钱）。
+
+对于多文档的问题回答，您几乎总是希望在数据上创建索引。
+
+这可以用于智能地访问与给定问题相关联的最相关文档，使您无需将所有文档传递给LLM（节省时间和金钱）。
 
 
-有关更详细的介绍，请参见[此笔记本](../modules/indexes/getting_started.ipynb)，但对于超级快速入门，所涉及的步骤是:
+
+有关更详细的介绍，请参阅此笔记本](../modules/indexes/getting_started.ipynb)，但对于超快速入门，所涉及的步骤是：
+
 
 
 **加载您的文档**
+
 
 
 ```python
@@ -28,10 +36,12 @@ loader = TextLoader('../state_of_the_union.txt')
 
 
 
-有关如何开始加载文档的更多信息，请参见[此处](../modules/indexes/document_loaders.rst)。
+请参阅此处](../modules/indexes/document_loaders.rst)以获取有关如何开始加载文档的更多信息。
+
 
 
 **创建您的索引**
+
 
 
 ```python
@@ -44,10 +54,12 @@ index = VectorstoreIndexCreator().from_loaders([loader])
 
 
 
-到目前为止，最好、最受欢迎的索引是 VectorStore 索引。
+目前最好、最流行的索引是VectorStore索引。
+
 
 
 **查询您的索引**
+
 
 
 ```python
@@ -60,7 +72,8 @@ index.query(query)
 
 
 
-或者使用 `query_with_sources` 去得到相应参与的资源。
+或使用`query_with_sources`也可以返回涉及的源
+
 
 
 ```python
@@ -73,18 +86,22 @@ index.query_with_sources(query)
 
 
 
-同样地，这些高级接口模糊了许多底层操作，因此请参见[此笔记本](../modules/indexes/getting_started.ipynb)进行更低级别的漫步。
+同样，这些高级接口隐藏了许多底层操作，请参阅此笔记本](../modules/indexes/getting_started.ipynb)以获取较低级别的逐步说明。
 
 
-## 文档问答
+
+## 文档问题回答
 
 
-Question answering involves fetching multiple documents, and then asking a question of them.
 
-LLM响应将根据文件内容回答您的问题。
+问题回答涉及获取多个文档，然后对其进行提问。
+
+LLM的响应将根据文档的内容包含您的问题的答案。
 
 
-使用问答链的推荐方法是:
+
+使用问题回答链的推荐方法是：
+
 
 
 ```python
@@ -99,21 +116,26 @@ chain.run(input_documents=docs, question=query)
 
 
 
-The following resources exist:
+以下资源可用：
 
 
 
-- [问答笔记本](../modules/chains/index_examples/question_answering.ipynb): 这是一篇教您如何完成这个任务的笔记本。
-- [VectorDB 问答笔记本](../modules/chains/index_examples/vector_db_qa.ipynb): 这是一篇教您如何在向量数据库上进行问答的笔记本。当您有大量文件，并且不想将它们全部传递给LLM，而是想先在嵌入式向量中进行一些语义搜索时，这通常很有用。
+- 问题回答笔记本](../modules/chains/index_examples/question_answering.ipynb)：这是一个通过如何完成此任务的示例。
+
+- VectorDB问题回答笔记本](../modules/chains/index_examples/vector_db_qa.ipynb)：这是一个通过向量数据库进行问题回答的示例。当您有大量文档需要处理，而且不想将它们全部传递给LLM，而是首先想要对嵌入进行一些语义搜索时，这通常非常有用。
 
 
-## 添加资源
+
+## 添加来源
 
 
-还有一种变体，除了回答问题外，语言模型还会引用其来源（例如，它使用了哪些传入的文件）。
+
+还有一种变体，除了回答问题外，语言模型还会引用其来源（例如，它使用了传递给它的哪些文档）。
 
 
-使用问答及其来源链的推荐方法是:
+
+使用带有来源的问题回答链的推荐方法是：
+
 
 
 ```python
@@ -128,27 +150,37 @@ chain({"input_documents": docs, "question": query}, return_only_outputs=True)
 
 
 
-The following resources exist:
+以下资源可用：
 
 
 
-- [带来源问答笔记本](../modules/chains/index_examples/qa_with_sources.ipynb): 这是一篇教您如何完成这个任务的笔记本。
-- [VectorDB 带来源问答笔记本](../modules/chains/index_examples/vector_db_qa_with_sources.ipynb): 这是一篇教您如何在向量数据库上进行带来源问答的笔记本。当您有大量文件，并且不想将它们全部传递给LLM，而是想先在嵌入式向量中进行一些语义搜索时，这通常很有用。
+- 带有来源的问题回答笔记本](../modules/chains/index_examples/qa_with_sources.ipynb)：这是一个通过如何完成此任务的示例。
+
+- VectorDB带来源的问题回答笔记本](../modules/chains/index_examples/vector_db_qa_with_sources.ipynb)：这是一个通过向量数据库进行带来源的问题回答的示例。当您有大量文档需要处理，而且不想将它们全部传递给LLM，而是首先想要对嵌入进行一些语义搜索时，这通常非常有用。
+
 
 
 ## 其他相关资源
 
 
-Additional related resources include:
+
+其他相关资源包括：
 
 
 
-- [文档处理工具](/modules/utils/how_to_guides.rst): 关于如何使用多个文档处理工具的指南，这些工具将会对此任务非常有帮助, 包括文本拆分器（用于拆分长文档）和Embeddings & Vectorstores（对于上面的Vector DB示例非常有用）。
--[合并文档链](/modules/indexes/combine_docs.md): 一种特定类型的链的概念概述，可以通过它来完成此任务。
+- 用于处理文档的实用程序](/modules/utils/how_to_guides.rst)：介绍如何使用几种对于此任务非常有用的实用程序，包括文本分割器（用于拆分长文档）和嵌入和向量存储（对于上述向量数据库示例非常有用）。
 
-## 全流程示例
+- CombineDocuments链](/modules/indexes/combine_docs.md)：介绍了一些特定类型的链的概念概述，您可以使用这些链来完成此任务。
 
-要了解全流程操作示例， 请参阅以下资源:
 
-- [Semantic search over a group chat with Sources Notebook](question_answering/semantic-search-over-chat.ipynb): A notebook that semantically searches over a group chat conversation.
+
+## 端到端示例
+
+
+
+有关以端到端方式完成此任务的示例，请参阅以下资源：
+
+
+
+- 在群聊中进行语义搜索的笔记本](question_answering/semantic-search-over-chat.ipynb)：这是一个对群聊对话进行语义搜索的示例。
 

@@ -1,6 +1,12 @@
-SearxNG Search
+SearxNG 搜索
+
 =============================
 
-.. automodule:: langchain.utilities.searx_search
+
+
+自动模块：langchain.utilities.searx_search
+
    :members:
+
    :undoc-members:
+

@@ -1,59 +1,92 @@
-Indexes
+索引
 ==========================
 
-.. note::
-   `Conceptual Guide <https://docs.langchain.com/docs/components/indexing>`_
 
 
-Indexes refer to ways to structure documents so that LLMs can best interact with them.
-This module contains utility functions for working with documents, different types of indexes, and then examples for using those indexes in chains.
+注意：
+   `概念指南 <https://docs.langchain.com/docs/components/indexing>`_
 
-The most common way that indexes are used in chains is in a "retrieval" step.
-This step refers to taking a user's query and returning the most relevant documents.
-We draw this distinction because (1) an index can be used for other things besides retrieval, and (2) retrieval can use other logic besides an index to find relevant documents.
-We therefore have a concept of a "Retriever" interface - this is the interface that most chains work with.
 
-Most of the time when we talk about indexes and retrieval we are talking about indexing and retrieving unstructured data (like text documents).
-For interacting with structured data (SQL tables, etc) or APIs, please see the corresponding use case sections for links to relevant functionality.
-The primary index and retrieval types supported by LangChain are currently centered around vector databases, and therefore
-a lot of the functionality we dive deep on those topics.
 
-For an overview of everything related to this, please see the below notebook for getting started:
+
+
+**索引** 指的是结构化文档的方法，以便于LLMs能够最好地与它们交互。
+
+
+
+索引在链中最常见的用途是在“检索”步骤中使用。
+
+此步骤是指获取用户的查询并返回最相关的文档。
+
+我们之所以做出这种区分，是因为（1）索引可以用于除检索以外的其他事情，并且
+
+（2）检索可以使用除索引以外的其他逻辑来查找相关文档。
+
+因此，我们有一个**Retriever** 接口的概念 - 这是大多数链所使用的接口。
+
+
+
+大多数情况下，当我们谈论索引和检索时，我们正在谈论索引和检索
+
+非结构化数据（例如文本文档）。
+
+要与结构化数据（SQL 表等）或 API 进行交互，请参阅相应的用例
+
+章节，了解相关功能的链接。
+
+
+
+|
+
+- `入门 <./indexes/getting_started.html>`_：索引的概述。
+
+
+
+
+
+索引类型
+
+---------------------
+
+
+
+- `文档加载程序 <./indexes/document_loaders.html>`_：如何从各种来源加载文档。
+
+
+
+- `文本拆分器 <./indexes/text_splitters.html>`_：**文本拆分器** 的概述和不同类型。
+
+
+
+- `向量存储 <./indexes/vectorstores.html>`_： **向量存储** 的概述和不同类型。
+
+
+
+- `检索器 <./indexes/retrievers.html>`_：**检索器** 的概述和不同类型。
+
+
+
+
+
+
 
 .. toctree::
+
    :maxdepth: 1
+
+   :hidden:
+
+
 
    ./indexes/getting_started.ipynb
 
-We then provide a deep dive on the four main components.
-
-**Document Loaders**
-
-How to load documents from a variety of sources.
-
-**Text Splitters**
-
-An overview of the abstractions and implementions around splitting text.
-
-
-**VectorStores**
-
-An overview of VectorStores and the many integrations LangChain provides.
-
-
-**Retrievers**
-
-An overview of Retrievers and the implementations LangChain provides.
-
-Go Deeper
----------
-
-
-.. toctree::
-   :maxdepth: 1
-
    ./indexes/document_loaders.rst
+
    ./indexes/text_splitters.rst
+
    ./indexes/vectorstores.rst
+
    ./indexes/retrievers.rst
+
+
 

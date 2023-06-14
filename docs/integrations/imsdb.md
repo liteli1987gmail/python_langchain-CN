@@ -1,19 +1,25 @@
-# IMSDb（互联网电影剧本数据库）
+IMSDB
 
 
->[IMSDb](https://imsdb.com/) is the `Internet Movie Script Database`.（IMSDb是互联网电影剧本数据库）
-> 
 
-## Installation and Setup（安装和设置）
+【IMSDb】（https://imsdb.com/）是互联网电影剧本数据库。
 
+ 
 
-There isn't any special setup for it.（没有特殊的设置）
-
-
-## Document Loader（文档加载器）
+安装和设置
 
 
-See a [usage example](../modules/indexes/document_loaders/examples/imsdb.ipynb).（请参见使用示例）
+
+没有任何特殊设置。
+
+
+
+文档加载器
+
+
+
+查看【使用示例】（../modules/indexes/document_loaders/examples/imsdb.ipynb）。
+
 
 
 

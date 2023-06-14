@@ -1,16 +1,29 @@
-# ForefrontAI（前沿人工智能）
+# ForefrontAI
 
-该页面涵盖了如何在LangChain内使用ForefrontAI生态系统。
-它被分为两部分:安装和设置,然后参考特定的ForefrontAI包装器。
+
+
+本页面介绍了如何在LangChain中使用ForefrontAI生态系统。
+
+它分为两个部分：安装和设置，以及对特定ForefrontAI包装器的引用。
+
+
 
 ## 安装和设置
-- 获取ForefrontAI API密钥并将其设置为环境变量（`FOREFRONTAI_API_KEY`）
+
+- 获取一个ForefrontAI API密钥，并将其设置为环境变量（`FOREFRONTAI_API_KEY`）
+
+
 
 ## 包装器
 
+
+
 ### LLM
 
-存在一个ForefrontAI LLM封装器,您可以使用以下方式访问它
+
+
+存在一个ForefrontAI LLM包装器，你可以通过以下方式访问
+
 ```python
 
 from langchain.llms import ForefrontAI

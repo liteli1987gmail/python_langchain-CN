@@ -1,15 +1,19 @@
-Zilliz注释：
-
-
->[Zilliz Cloud](https://zilliz.com/doc/quick_start)是一个完全托管在云上的服务，用于`LF AI Milvus®`。
+# Zilliz
 
 
 
+>[Zilliz Cloud](https://zilliz.com/doc/quick_start) is a fully managed service on cloud for `LF AI Milvus®`,
 
-## 安装和设置
 
 
-安装Python SDK:
+
+
+## 安装与设置
+
+
+
+安装Python SDK：
+
 ```bash
 
 pip install pymilvus
@@ -21,8 +25,10 @@ pip install pymilvus
 ## 向量存储
 
 
-Zilliz索引的包装器允许您将其用作向量存储，无论是用于语义搜索还是示例选择。
-这个包装器支持的示例选择。
+
+Zilliz索引的封装使其可以用作向量存储，
+无论是用于语义搜索还是示例选择。
+
 
 
 ```python
@@ -33,5 +39,5 @@ from langchain.vectorstores import Milvus
 
 
 
-For a more detailed walkthrough of the Miluvs wrapper, see [this notebook](../modules/indexes/vectorstores/examples/zilliz.ipynb)
+有关Miluvs封装的更详细步骤，请参阅此笔记本](../modules/indexes/vectorstores/examples/zilliz.ipynb)
 

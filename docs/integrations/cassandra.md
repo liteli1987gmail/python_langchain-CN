@@ -1,36 +1,30 @@
-# CassandraCassandra
+Cassandra是免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多通用服务器上提供高可用性，没有单点故障。
 
 
->[Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra) is a free and open-source, distributed, wide-column  store, NoSQL database management system designed to handle large amounts of data across many commodity servers,  providing high availability with no single point of failure. `Cassandra` offers support for clusters spanning  multiple datacenters, with asynchronous masterless replication allowing low latency operations for all clients.  `Cassandra` was designed to implement a combination of `Amazon's Dynamo` distributed storage and replication  techniques combined with `Google's Bigtable` data and storage engine model.
-> store, NoSQL database management system designed to handle large amounts of data across many commodity servers, 
-
-> providing high availability with no single point of failure. `Cassandra` offers support for clusters spanning 
-
-> multiple datacenters, with asynchronous masterless replication allowing low latency operations for all clients. 
-
-> `Cassandra` was designed to implement a combination of `Amazon's Dynamo` distributed storage and replication 
-
-> techniques combined with `Google's Bigtable` data and storage engine model.
-
+Cassandra是一种免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多商品服务器上提供高可用性，没有单点故障。Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra)
+Cassandra是一种免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多商品服务器上提供高可用性，没有单点故障。
+Cassandra支持跨多个数据中心的集群，并通过异步无主复制为所有客户端提供低延迟操作。
+Cassandra支持跨多个数据中心的集群，并通过异步无主复制为所有客户端提供低延迟操作。
+Cassandra的设计目标是实现`Amazon的Dynamo`分布式存储和复制技术与`Google的Bigtable`数据和存储引擎模型的结合。
+Cassandra的设计目标是实现`Amazon的Dynamo`分布式存储和复制技术与`Google的Bigtable`数据和存储引擎模型的结合。
  
 
-## Installation and Setup安装和配置
+安装和设置
 
 
 ```bash
 
 pip install cassandra-drive
-
 ```
 
 
 
 
 
-## Memory内存
+内存
 
 
-See a [usage example](../modules/memory/examples/cassandra_chat_message_history.ipynb).可以查看一下[使用示例](../modules/memory/examples/cassandra_chat_message_history.ipynb)。
+请参阅使用示例](../modules/memory/examples/cassandra_chat_message_history.ipynb)。
 
 
 ```python

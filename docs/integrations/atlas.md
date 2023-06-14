@@ -1,41 +1,30 @@
-# AtlasDB（Atlas数据库）
-
-
-本页介绍如何在LangChain中使用Nomic的Atlas生态系统。
-它被分成两部分：安装和设置（installation and setup），然后是对特定Atlas包装器的引用。
-
-
+AtlasDB
+此页面介绍了如何在LangChain中使用Nomic的Atlas生态系统。
+它分为两个部分：安装和设置，以及对特定Atlas包装器的引用。
+ 
 安装和设置
-- 使用'pip install nomic'安装Python包。
-- Nomic也包含在LangChain的poetry extras中的'poetry install -E all'中。
-
-
+ - 用`pip install nomic`安装Python包
+ - Nomic也包含在langchains poetry extras `poetry install -E all`中
+ 
 包装器
-
-
+ 
 VectorStore
-
-
-周围存在一个关于Atlas神经数据库的包装器，允许您将其用作矢量存储器。
-这个矢量存储器还使您完全访问基础AtlasProject对象，这将允许您使用Atlas地图交互的全部范围，例如批量标记和自动主题建模。
-有关更详细信息，请参见[Atlas文档](https://docs.nomic.ai/atlas_api.html)。
-
-
-
-
-
-
-
-
-
-
-导入此矢量存储器：
+ 
+存在一个围绕Atlas神经数据库的包装器，它允许您将其用作VectorStore。
+此VectorStore还为您提供对底层AtlasProject对象的完全访问权限，从而允许您使用Atlas地图交互的全部功能范围，如批量标记和自动主题建模。
+请参阅Atlas文档](https://docs.nomic.ai/atlas_api.html)以获取更详细的信息。
+ 
+ 
+ 
+ 
+ 
+ 
+导入此VectorStore:
 ```python
+
 from langchain.vectorstores import AtlasDB
 
 ```
 
-
-
-For a more detailed walkthrough of the AtlasDB wrapper, see [this notebook](../modules/indexes/vectorstores/examples/atlas.ipynb)
-
+ 
+有关AtlasDB包装器的更详细说明，请参阅此笔记本](../modules/indexes/vectorstores/examples/atlas.ipynb)

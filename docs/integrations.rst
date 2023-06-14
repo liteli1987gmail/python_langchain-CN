@@ -34,8 +34,7 @@ LangChain与多个LLM、系统和产品集成。
 
 
 
-| LangChain依赖于`数百个Python软件包<https://github.com/hwchase17/langchain/network/dependencies>`_。
-
+| LangChain depends on `several hungered Python packages <https://github.com/hwchase17/langchain/network/dependencies>`_.
 
 
 

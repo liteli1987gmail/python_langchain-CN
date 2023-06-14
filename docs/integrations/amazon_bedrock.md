@@ -1,4 +1,4 @@
-Amazon床岩
+# Amazon床岩
 
 
 >Amazon床岩](https://aws.amazon.com/bedrock/)是一个完全托管的服务，通过API使领先的人工智能初创公司和亚马逊的功能模型可用，因此您可以从各种功能模型中选择最适合您的用例的模型。

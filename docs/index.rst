@@ -24,44 +24,32 @@
 | 如何开始使用LangChain创建语言模型应用程序。
 
 
-- `快速入门指南 <./getting_started/getting_started.html>`_
-
+- `Quickstart Guide <./getting_started/getting_started.html>`_
 
 | 概念和术语。
 
 
-- `概念和术语 <./getting_started/concepts.html>`_
+- `Concepts and terminology <./getting_started/concepts.html>`_
 
 
 | 社区专家创建并在YouTube上介绍的教程
 
 
-- `教程 <./getting_started/tutorials.html>`_
+- `Tutorials <./getting_started/tutorials.html>`_
 
 
 .. toctree::
-
    :maxdepth: 2
-
    :caption: Getting Started
-
    :name: getting_started
-
    :hidden:
 
-
-
    getting_started/getting_started.md
-
    getting_started/concepts.md
-
    getting_started/tutorials.md
 
 
-
-
-
-模块
+Modules
 -----------
 
 
@@ -77,26 +65,19 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 | 这些模块（从最简单到最复杂）如下：
 
 
-- `模型 <./modules/models.html>`_：支持的模型类型和集成。
+- `Models <./modules/models.html>`_: Supported model types and integrations.
 
-
-- `提示 <./modules/prompts.html>`_：提示管理、优化和序列化。
-
+- `Prompts <./modules/prompts.html>`_: Prompt management, optimization, and serialization.
 
 - `Memory <./modules/memory.html>`_: Memory refers to state that is persisted between calls of a chain/agent.
 
+- `Indexes <./modules/indexes.html>`_: Language models become much more powerful when combined with application-specific data - this module contains interfaces and integrations for loading, querying and updating external data.
 
+- `Chains <./modules/chains.html>`_: Chains are structured sequences of calls (to an LLM or to a different utility).
 
-- `Indexes <./modules/indexes.html>`_: 语言模型结合应用程序特定的数据更加强大，该模块包含用于加载、查询和更新外部数据的接口和集成。
+- `Agents <./modules/agents.html>`_: An agent is a Chain in which an LLM, given a high-level directive and a set of tools, repeatedly decides an action, executes the action and observes the outcome until the high-level directive is complete.
 
-
-- `Chains <./modules/chains.html>`_: 链是调用（到LLM或不同的实用程序）的结构化序列。
-
-
-- `Agents <./modules/agents.html>`_: 代理是指LLM在高级指令和一组工具的情况下，重复决策、执行操作并观察结果，直到完成高级指令的链。
-
-
-- `Callbacks <./modules/callbacks/getting_started.html>`_: 回调允许您记录和流式传输任何链的中间步骤，使得观察、调试和评估应用程序的内部变得容易。
+- `Callbacks <./modules/callbacks/getting_started.html>`_: Callbacks let you log and stream the intermediate steps of any chain, making it easy to observe, debug, and evaluate the internals of an application.
 
 
 .. toctree::
@@ -135,38 +116,27 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 |用于常见LangChain用例的最佳实践和内置实现：
 
 
-- `自主代理 <./use_cases/autonomous_agents.html>`_: 自主代理是长时间运行的代理，需要执行许多步骤以完成目标。示例包括AutoGPT和BabyAGI。
+- `Autonomous Agents <./use_cases/autonomous_agents.html>`_: Autonomous agents are long-running agents that take many steps in an attempt to accomplish an objective. Examples include AutoGPT and BabyAGI.
 
+- `Agent Simulations <./use_cases/agent_simulations.html>`_: Putting agents in a sandbox and observing how they interact with each other and react to events can be an effective way to evaluate their long-range reasoning and planning abilities.
 
-- `代理模拟 <./use_cases/agent_simulations.html>`_: 将代理置于沙盒中，观察它们相互交互和对事件的反应，可以有效地评估它们的长距离推理和规划能力。
+- `Personal Assistants <./use_cases/personal_assistants.html>`_: One of the primary LangChain use cases. Personal assistants need to take actions, remember interactions, and have knowledge about your data.
 
-
-- `个人助手 <./use_cases/personal_assistants.html>`_: 其中一个主要的LangChain用例。个人助手需要采取行动、记住交互并具有关于您的数据的知识。
-
-
-- `问答 <./use_cases/question_answering.html>`_: 另一个常见的LangChain用例。仅利用这些文档中的信息来构建答案，回答特定文件中的问题。
-
+- `Question Answering <./use_cases/question_answering.html>`_: Another common LangChain use case. Answering questions over specific documents, only utilizing the information in those documents to construct an answer.
 
 - `Chatbots <./use_cases/chatbots.html>`_: Language models love to chat, making this a very natural use of them.
 
+- `Querying Tabular Data <./use_cases/tabular.html>`_: Recommended reading if you want to use language models to query structured data (CSVs, SQL, dataframes, etc).
 
+- `Code Understanding <./use_cases/code.html>`_: Recommended reading if you want to use language models to analyze code.
 
-- `查询表格数据 <./use_cases/tabular.html>`_：如果您想使用语言模型查询结构化数据（CSV、SQL、数据框等），建议阅读。
+- `Interacting with APIs <./use_cases/apis.html>`_: Enabling language models to interact with APIs is extremely powerful. It gives them access to up-to-date information and allows them to take actions.
 
+- `Extraction <./use_cases/extraction.html>`_: Extract structured information from text.
 
-- `代码理解 <./use_cases/code.html>`_：如果您想使用语言模型分析代码，建议阅读。
+- `Summarization <./use_cases/summarization.html>`_: Compressing longer documents. A type of Data-Augmented Generation.
 
-
-- `与API互动 <./use_cases/apis.html>`_：使语言模型与API互动非常强大。它使它们可以访问最新的信息并允许它们采取行动。
-
-
-- `数据提取 <./use_cases/extraction.html>`_：从文本中提取结构化信息。
-
-
-- `摘要 <./use_cases/summarization.html>`_：压缩较长的文档。数据增强生成的一种类型。
-
-
-- `评估 <./use_cases/evaluation.html>`_：使用传统指标评估生成模型很困难。一种有前途的方法是使用语言模型本身进行评估。
+- `Evaluation <./use_cases/evaluation.html>`_: Generative models are hard to evaluate with traditional metrics. One promising approach is to use language models themselves to do the evaluation.
 
 
 
@@ -219,27 +189,21 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-- `LangChain安装 <./reference/installation.html>`_
+- `LangChain Installation <./reference/installation.html>`_
 
-
-- `参考文档 <./reference.html>`_
+- `Reference Documentation <./reference.html>`_
 
 
 .. toctree::
-
    :maxdepth: 1
-
    :caption: Reference
-
    :name: reference
-
    :hidden:
 
-
-
    ./reference/installation.md
-
    ./reference.rst
+
+
 
 
 
@@ -250,46 +214,33 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 
-| LangChain 集成了许多不同的 LLM、系统和产品。| 从另一方面来看，许多系统和产品依赖于 LangChain。| 它创造了一个充满活力和蓬勃发展的生态系统。
-| From the other side, many systems and products depend on LangChain.
-
-| It creates a vibrant and thriving ecosystem.
-
+| LangChain 集成了许多不同的 LLM、系统和产品。
+| 从另一方面来看，许多系统和产品依赖于 LangChain。
+| 它创造了一个充满活力和蓬勃发展的生态系统。
 
 
 
 
-- `集成 <./integrations.html>`_：指南，介绍如何将其他产品与 LangChain 配合使用。
 
 
-- `依赖项 <./dependents.html>`_：使用 LangChain 的存储库列表。
+- `Integrations <./integrations.html>`_: Guides for how other products can be used with LangChain.
 
+- `Dependents <./dependents.html>`_: List of repositories that use LangChain.
 
-- `部署 <./ecosystem/deployments.html>`_：一系列部署 LangChain 应用程序的说明、代码片段和模板存储库。
-
+- `Deployments <./ecosystem/deployments.html>`_: A collection of instructions, code snippets, and template repositories for deploying LangChain apps.
 
 
 
 .. toctree::
-
    :maxdepth: 2
-
    :glob:
-
    :caption: Ecosystem
-
    :name: ecosystem
-
    :hidden:
 
-
-
    ./integrations.rst
-
    ./dependents.md
-
    ./ecosystem/deployments.md
-
 
 
 
@@ -331,32 +282,17 @@ For each module LangChain provides standard, extendable interfaces. LangChain al
 
 
 .. toctree::
-
    :maxdepth: 1
-
    :caption: Additional Resources
-
    :name: resources
-
    :hidden:
 
-
-
    LangChainHub <https://github.com/hwchase17/langchain-hub>
-
    ./additional_resources/deployments.md
-
    ./additional_resources/deploy_llms.rst
-
    Gallery <https://github.com/kyrolabs/awesome-langchain>
-
    ./additional_resources/tracing.md
-
    ./additional_resources/model_laboratory.ipynb
-
    Discord <https://discord.gg/6adMQxSpJS>
-
    ./additional_resources/youtube.md
-
    Production Support <https://forms.gle/57d8AmXBYp8PP8tZA>
-

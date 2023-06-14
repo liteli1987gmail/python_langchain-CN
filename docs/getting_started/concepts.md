@@ -1,4 +1,4 @@
-概念
+# 概念
 
 
 开发LLM应用程序时常用的概念和术语。
@@ -6,7 +6,7 @@
 以及在LangChain中使用该概念的地方。
 
 
-思维链
+## 思维链
 
 
 “思维链（CoT）”是一种提示技术，用于鼓励模型生成一系列中间推理步骤。
@@ -19,7 +19,7 @@
 
 
 
-行动计划生成
+## 行动计划生成
 
 
 “行动计划生成”是一种使用语言模型生成行动方案的提示技术。
@@ -32,7 +32,7 @@
 
 
 
-ReAct
+## ReAct
 
 
 “ReAct”是将思维链提示与行动计划生成相结合的提示技术。
@@ -45,7 +45,7 @@ ReAct
 
 
 
-自问
+## 自问
 
 
 “自问”是在思维链提示的基础上构建的提示方法。
@@ -58,7 +58,7 @@ ReAct
 
 
 
-提示链接
+## 提示链接
 
 
 “提示链接”是将多个LLM调用组合在一起，其中一步的输出成为下一步的输入。
@@ -74,22 +74,15 @@ ReAct
 
 
 
-## Memetic Proxy
+## Memetic Proxy 模因代理
 
-模因代理
+
 “模因代理”鼓励LLM以某种方式回应，将讨论框架化为模型所了解并导致该类型响应的上下文。
 例如，学生和教师之间的对话。
-will result in that type of response.
 
-For example, as a conversation between a student and a teacher.
 
-自一致性
+##  自一致性 Self Consistency
 - [Paper](https://arxiv.org/pdf/2102.07350.pdf)
-
-
-
-## Self Consistency
-
 
 
 “自一致性”是一种解码策略，它对一组多样化的推理路径进行抽样，然后选择最一致的答案。
@@ -100,7 +93,7 @@ For example, as a conversation between a student and a teacher.
 
 
 
-启示
+## 启示
 
 
 “启示”也称为“第一人称指令”。
@@ -111,7 +104,7 @@ For example, as a conversation between a student and a teacher.
 
 
 
-记忆提示
+## 记忆提示
 
 
 “记忆提示”保持错误和用户反馈的记忆，并使用它们来防止重复错误。

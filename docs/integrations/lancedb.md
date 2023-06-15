@@ -1,14 +1,13 @@
-LanceDB
+# LanceDB 安装和设置
+
+
+这个页面介绍如何在LangChain中使用[LanceDB](https://github.com/lancedb/lancedb)。
+
+它分为两部分：安装和设置，以及对特定LanceDB包装器的引用。
 
 
 
-本页面介绍如何在LangChain中使用LanceDB](https://github.com/lancedb/lancedb)。
-
-它分为两个部分：安装和设置，以及特定的LanceDB包装器的参考。
-
-
-
-安装和设置
+## 安装和设置
 
 
 
@@ -16,21 +15,20 @@ LanceDB
 
 
 
-包装器
+## 包装器
 
 
 
-向量存储
+### VectorStore
 
 
 
-存在一个围绕LanceDB数据库的包装器，可以将其用作向量存储，
-
+存在一个LanceDB数据库的包装器，可用于作为矢量存储，
 无论是用于语义搜索还是示例选择。
 
 
 
-要导入此向量存储：
+要导入这个矢量存储：
 
 
 
@@ -42,5 +40,5 @@ from langchain.vectorstores import LanceDB
 
 
 
-有关LanceDB包装器的详细演示，请参阅此笔记本](../modules/indexes/vectorstores/examples/lancedb.ipynb)
+有关LanceDB包装器的更详细介绍，请参阅[此笔记本](../modules/indexes/vectorstores/examples/lancedb.ipynb)
 

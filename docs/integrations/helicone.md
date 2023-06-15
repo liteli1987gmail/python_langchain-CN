@@ -1,28 +1,27 @@
-Helicone
+# Helicone 涡轮
+
+
+本页面介绍如何在LangChain中使用[Helicone](https://helicone.ai)生态系统。
 
 
 
-This page covers how to use the Helicone（https://helicone.ai） ecosystem within LangChain.
+## Helicone 是什么？
 
 
 
-What is Helicone?
+Helicone是一个[开放源代码](https://github.com/Helicone/helicone)的可观测性平台，代理您的OpenAI流量并为您提供有关开销、延迟和使用情况的重要见解。
 
 
 
-Helicone is an open source（https://github.com/Helicone/helicone） observability platform that proxies your OpenAI traffic and provides you key insights into your spend, latency and usage.
+![Helicone 涡轮](../_static/HeliconeDashboard.png)
 
 
 
-!Helicone](../_static/HeliconeDashboard.png)
+## 快速入门
 
 
 
-Quick start
-
-
-
-With your LangChain environment you can just add the following parameter.
+使用您的LangChain环境，您只需添加以下参数。
 
 
 
@@ -34,15 +33,15 @@ export OPENAI_API_BASE="https://oai.hconeai.com/v1"
 
 
 
-Now head over to helicone.ai（https://helicone.ai/onboarding?step=2） to create your account, and add your OpenAI API key within our dashboard to view your logs.
+现在转到[helicone.ai](https://helicone.ai/onboarding?step=2)创建您的帐户，并在我们的控制面板中添加您的OpenAI API密钥以查看日志。
 
 
 
-!Helicone](../_static/HeliconeKeys.png)
+![Helicone 涡轮](../_static/HeliconeKeys.png)
 
 
 
-How to enable Helicone caching
+## 如何启用 Helicone 缓存
 
 
 
@@ -58,7 +57,7 @@ openai.api_base = "https://oai.hconeai.com/v1"
 
 llm = OpenAI(temperature=0.9, headers={"Helicone-Cache-Enabled": "true"})
 
-text = "What is a helicone?"
+text = "什么是涡轮？"
 
 print(llm(text))
 
@@ -66,11 +65,11 @@ print(llm(text))
 
 
 
-Helicone caching docs（https://docs.helicone.ai/advanced-usage/caching）
+[Helicone 缓存文档](https://docs.helicone.ai/advanced-usage/caching)
 
 
 
-How to use Helicone custom properties
+## 如何使用 Helicone 自定义属性
 
 
 
@@ -94,7 +93,7 @@ llm = OpenAI(temperature=0.9, headers={
 
       })
 
-text = "What is a helicone?"
+text = "什么是涡轮？"
 
 print(llm(text))
 
@@ -102,5 +101,5 @@ print(llm(text))
 
 
 
-Helicone property docs（https://docs.helicone.ai/advanced-usage/custom-properties）
+[Helicone 自定义属性文档](https://docs.helicone.ai/advanced-usage/custom-properties)
 

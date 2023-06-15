@@ -1,22 +1,30 @@
-谷歌Serper
+# Google Serper谷歌搜索引擎
 
 
-本页介绍如何在LangChain中使用Serper](https://serper.dev)谷歌搜索API。Serper是一个低成本的谷歌搜索API，可用于从谷歌搜索中添加答案框、知识图和有机结果数据。
-它分为两个部分：设置和对特定谷歌Serper包装器的引用。
+本页面介绍如何在LangChain中使用[Serper](https://serper.dev)谷歌搜索API。Serper是一个低成本的谷歌搜索API，可用于添加谷歌搜索的答案框、知识图谱和有机结果数据。
+
+它分为两部分：设置和特定谷歌Serper包装器的引用。
 
 
-设置
-- 前往serper.dev](https://serper.dev)注册一个免费帐户
+
+## 设置
+
+- 前往[serper.dev](https://serper.dev)注册一个免费账户
+
 - 获取API密钥并将其设置为环境变量（`SERPER_API_KEY`）
 
 
-包装器
+
+## 包装器
 
 
-实用工具
+
+### 实用工具
 
 
-存在一个名为GoogleSerperAPIWrapper的实用工具，用于包装此API。要导入此实用工具：
+
+存在一个名为GoogleSerperAPIWrapper的实用工具，用于包装该API。导入该工具的方法如下：
+
 
 
 ```python
@@ -27,7 +35,8 @@ from langchain.utilities import GoogleSerperAPIWrapper
 
 
 
-您可以将其用作Self Ask链的一部分：
+您可以将其作为Self Ask链的一部分使用：
+
 
 
 ```python
@@ -64,7 +73,7 @@ tools = [
 
         func=search.run,
 
-        description="useful for when you need to ask with search"
+        description="在需要进行搜索时非常有用"
 
     )
 
@@ -74,40 +83,54 @@ tools = [
 
 self_ask_with_search = initialize_agent(tools, llm, agent=AgentType.SELF_ASK_WITH_SEARCH, verbose=True)
 
-self_ask_with_search.run("What is the hometown of the reigning men's U.S. Open champion?")
+self_ask_with_search.run("请问最新一届美国网球公开赛男子单打冠军的家乡是哪里？")
 
 ```
 
 
 
-输出
+#### 输出结果
+
 ```
 
-输入新的AgentExecutor链...
-是的。
-后续问题：谁是男子美国公开赛的现任冠军？
-中间答案：当前冠军是卡洛斯·阿尔卡拉斯，2022年男子单打冠军。
-后续问题：卡洛斯·阿尔卡拉斯来自哪里？
-中间答案：西班牙埃尔帕尔马尔。
-所以最终答案是：西班牙埃尔帕尔马尔。
+进入新的AgentExecutor链...
+
+ 是的。
+
+后续问题：谁是最新一届美国网球公开赛男子单打冠军？
+
+中间答案：目前的冠军是2022年男子单打冠军Carlos Alcaraz。
+
+后续问题：Carlos Alcaraz来自哪里？
+
+中间答案：西班牙的El Palmar
+
+因此最终答案是：El Palmar, Spain
 
 
-> 链结束。
+
+> 链条执行结束。
 
 
-'西班牙埃尔帕尔马尔'
+
+'El Palmar, Spain'
+
 ```
 
 
 
-有关此包装器的更详细演练，请参见此笔记本](../modules/agents/tools/examples/google_serper.ipynb)。
+有关此包装器的详细介绍，请参阅[此笔记本](../modules/agents/tools/examples/google_serper.ipynb)。
 
 
-工具
+
+### 工具
 
 
-您还可以将此包装器轻松加载为工具（供代理使用）。
-您可以通过以下方式实现：
+
+您还可以将此包装器轻松加载为工具（用于与Agent配合使用）。
+
+您可以使用以下方法实现：
+
 ```python
 
 from langchain.agents import load_tools
@@ -118,4 +141,5 @@ tools = load_tools(["google-serper"])
 
 
 
-有关更多信息，请参见此页面](../modules/agents/tools/getting_started.md)
+有关更多信息，请参阅[此页面](../modules/agents/tools/getting_started.md)
+

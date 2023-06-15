@@ -1,20 +1,34 @@
-Chroma（https://docs.trychroma.com/getting-started）是一个用于构建带有嵌入向量的AI应用程序的数据库。
+# CerebriumAI
 
-安装和设置
+
+
+本页面涵盖了如何在LangChain中使用CerebriumAI生态系统。
+
+它分为两个部分：安装和设置，以及特定CerebriumAI封装的参考。
+
+
 
 ## 安装和设置
 
-```bash
+- 使用`pip install cerebrium`进行安装
 
-pip安装chromadb
-```
-
+- 获取CerebriumAI的API密钥并设置为环境变量（`CEREBRIUMAI_API_KEY`）
 
 
-## VectorStore
 
-存在一个Chroma向量数据库的包装器，允许您将其用作向量存储，无论是用于语义搜索还是示例选择。
-无论是用于语义搜索还是示例选择。
+## 封装
+
+
+
+### LLM
+
+
+
+存在一个CerebriumAI的LLM封装，您可以通过以下方式访问
+
+whether for semantic search or example selection.
+
+from langchain.llms import CerebriumAI
 
 ```python
 
@@ -23,11 +37,18 @@ from langchain.vectorstores import Chroma
 ```
 
 
-有关Chroma包装器的更详细操作说明，请参见此笔记本](../modules/indexes/vectorstores/getting_started.ipynb)
 
-## 检索器
+For a more detailed walkthrough of the Chroma wrapper, see [this notebook](../modules/indexes/vectorstores/getting_started.ipynb)
 
-查看使用示例](../modules/indexes/retrievers/examples/chroma_self_query.ipynb)。
+
+
+## Retriever
+
+
+
+See a [usage example](../modules/indexes/retrievers/examples/chroma_self_query.ipynb).
+
+
 
 ```python
 

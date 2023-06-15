@@ -1,18 +1,24 @@
-# AnalyticDB
-
-本页面介绍如何在LangChain中使用AnalyticDB生态系统。
-
-### VectorStore
-
-存在一个围绕AnalyticDB的包装器，允许您将其用作向量存储，无论是用于语义搜索还是示例选择。
-在导入这个向量存储之前，请确保您已经具备以下条件：
-
-要导入此向量存储：
-```python
-
-from langchain.vectorstores import AnalyticDB
-
-```
+# Amazon Bedrock 亚马逊基岩
 
 
-有关AnalyticDB包装器的更详细的演示，请参见此笔记本](../modules/indexes/vectorstores/examples/analyticdb.ipynb)
+>[Amazon Bedrock](https://aws.amazon.com/bedrock/)是一个完全托管的服务，通过API提供来自领先人工智能初创公司和亚马逊的模型，因此您可以从各种FMs中选择找到最适合您的用例的模型。
+
+
+## 安装和设置
+
+
+There exists a wrapper around AnalyticDB, allowing you to use it as a vectorstore,
+
+pip install boto3
+
+
+
+
+## LLM
+
+
+查看 [用法示例](../modules/models/llms/integrations/bedrock.ipynb).
+
+
+For a more detailed walkthrough of the AnalyticDB wrapper, see [this notebook](../modules/indexes/vectorstores/examples/analyticdb.ipynb)
+

@@ -1,8 +1,8 @@
 
 
-[comment: 请在这里提供一个参考示例 "docs/integrations/arxiv.md"]::
+[comment: 请在此处提供一个参考示例"docs/integrations/arxiv.md"]::
 
-[comment: 使用此模板在 "docs/integrations/" 创建一个新的 .md 文件]::
+[comment: 使用此模板在"docs/integrations/"中创建新的.md文件]::
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-[comment: 只允许一个标题/H1！]::
+[comment: 只允许一个Tile/H1！]::
 
 
 
@@ -18,11 +18,11 @@
 
  
 
-[comment: 描述：阅读此描述后，读者应决定是否足够好以尝试/阅读，或者]::
+[comment: 说明：读者阅读完此说明后，应决定是否足够好以尝试/继续阅读或]::
 
-[comment: 转到下一个集成文档。]::
+[comment: 转到阅读下一个集成文档。]::
 
-[comment: 描述中应包括一个指向源的链接以进行后续阅读。]::
+[comment: 说明中应包含一个到源地址的链接以供后续阅读。]::
 
 
 
@@ -30,33 +30,33 @@
 
 
 
-[comment: 安装和设置：为令牌等进行所有必要的额外软件包安装和设置]::
+[comment: 安装和设置：所有必要的附加包安装和设置以供Tokens等使用]::
 
 
 
 ```bash
 
-pip 安装 package_name_REPLACE_ME
+pip install package_name_REPLACE_ME
 
 ```
 
 
 
-[comment: 或者这段文字：]::
+[comment: 或者使用以下文本：]::
 
-无需特别设置。
-
-
+它没有任何特殊设置。
 
 
 
-[comment: 下一个 H2/## 部分的名称是集成模块，如 "LLM"，"文本嵌入模型" 等]::
 
-[comment: 见 "index.html" 页中的 "模块"]::
 
-[comment: 每个 H2 部分都应包括示例的链接和导入集成类的 Python 代码]::
+[comment: 接下来的H2/##部分包括集成模块的名称，如"LLM"，"Text Embedding Models"等]::
 
-[comment: 以下是几个示例部分。删除所有不必要的部分，添加未提供的必要部分。]::
+[comment: 查看"index.html"页面中的"Modules"]::
+
+[comment: 每个H2部分应包括一个示例链接和一个导入集成类的Python代码]::
+
+[comment: 下面是几个示例部分。删除所有不必要的部分。添加所有必要的未提供的部分。]::
 
 
 

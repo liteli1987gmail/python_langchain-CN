@@ -1,8 +1,8 @@
-Microsoft OneDrive
+# Microsoft OneDrive
 
 
 
->Microsoft OneDrive](https://en.wikipedia.org/wiki/OneDrive) (曾称 `SkyDrive`) 是由 Microsoft 运营的文件托管服务。
+>[Microsoft OneDrive](https://en.wikipedia.org/wiki/OneDrive) (formerly `SkyDrive`) 是由Microsoft运营的文件托管服务。
 
 
 
@@ -10,7 +10,7 @@ Microsoft OneDrive
 
 
 
-首先，您需要安装一个 Python 包。
+首先，您需要安装一个Python包。
 
 
 
@@ -22,7 +22,7 @@ pip install o365
 
 
 
-然后按照这里](../modules/indexes/document_loaders/examples/microsoft_onedrive.ipynb)的说明进行操作。
+然后按照[这里的指示](../modules/indexes/document_loaders/examples/microsoft_onedrive.ipynb)进行操作。
 
 
 
@@ -30,7 +30,7 @@ pip install o365
 
 
 
-请参考此处的用法示例](../modules/indexes/document_loaders/examples/microsoft_onedrive.ipynb)。
+查看[使用示例](../modules/indexes/document_loaders/examples/microsoft_onedrive.ipynb)。
 
 
 

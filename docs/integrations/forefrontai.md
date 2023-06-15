@@ -1,31 +1,32 @@
-# ForefrontAI
+# Figma画板
 
 
 
-本页面介绍了如何在LangChain中使用ForefrontAI生态系统。
-
-它分为两个部分：安装和设置，以及对特定ForefrontAI包装器的引用。
+> [Figma](https://www.figma.com/) 是一个用于界面设计的协作性网络应用。
 
 
 
 ## 安装和设置
 
-- 获取一个ForefrontAI API密钥，并将其设置为环境变量（`FOREFRONTAI_API_KEY`）
+
+
+Figma API需要一个`访问令牌`，`节点ID`和一个`文件键`。
 
 
 
-## 包装器
+`文件键`可以从URL中获取。https://www.figma.com/file/{文件键}/示例文件名
 
 
 
-### LLM
+`节点ID`也可以在URL中找到。点击任何内容并寻找'?node-id={节点ID}'参数。
 
 
 
-存在一个ForefrontAI LLM包装器，你可以通过以下方式访问
+`访问令牌`的使用说明请参阅[此处](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)。
 
-```python
 
-from langchain.llms import ForefrontAI
 
-```
+## 文档加载器
+
+
+

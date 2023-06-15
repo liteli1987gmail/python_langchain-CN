@@ -1,24 +1,23 @@
-Microsoft Word（微软 Word）
+# Microsoft PowerPoint 微软演示文稿
+
+
+> [Microsoft PowerPoint](https://en.wikipedia.org/wiki/Microsoft_PowerPoint) 是微软的演示文稿程序。
 
 
 
-Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word) 是由微软开发的文字处理器。
+## 安装和设置
 
 
 
-安装和设置
+没有任何特殊设置。
 
 
 
-无需特别设置。
+## 文档加载器
 
 
 
-文档加载器
-
-
-
-查看使用示例](../modules/indexes/document_loaders/examples/microsoft_word.ipynb)。
+查看一个 [使用示例](../modules/indexes/document_loaders/examples/microsoft_powerpoint.ipynb)。
 
 
 
@@ -26,7 +25,7 @@ Microsoft Word](https://www.microsoft.com/en-us/microsoft-365/word) 是由微软
 
 ```python
 
-from langchain.document_loaders import UnstructuredWordDocumentLoader
+from langchain.document_loaders import UnstructuredPowerPointLoader
 
 ```
 

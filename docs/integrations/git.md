@@ -1,8 +1,7 @@
-# Git
+# Git 版本控制系统
 
 
-
-Git是一个分布式版本控制系统，用于跟踪任何一组计算机文件的更改，通常在软件开发过程中用于协同开发源代码。
+>[Git](https://en.wikipedia.org/wiki/Git) 是一个分布式版本控制系统，用于跟踪计算机文件的更改，通常用于在软件开发过程中，协同开发源代码的程序员之间协调工作。
 
 
 
@@ -10,13 +9,13 @@ Git是一个分布式版本控制系统，用于跟踪任何一组计算机文�
 
 
 
-首先，您需要安装`GitPython` Python包。
+首先，您需要安装 `GitPython` python 包。
 
 
 
 ```bash
 
-pip install GitPython
+pip 安装 GitPython
 
 ```
 
@@ -26,7 +25,7 @@ pip install GitPython
 
 
 
-请参阅使用示例](../modules/indexes/document_loaders/examples/git.ipynb)。
+查看一个 [使用示例](../modules/indexes/document_loaders/examples/git.ipynb)。
 
 
 

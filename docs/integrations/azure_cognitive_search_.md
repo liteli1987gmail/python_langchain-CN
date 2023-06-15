@@ -1,24 +1,32 @@
-# Azure认知搜索
+# Azure Blob Storage 存储服务
 
 
 
->Azure认知搜索](https://learn.microsoft.com/zh-cn/azure/search/search-what-is-azure-search)（曾被称为`Azure Search`）是一种云搜索服务，为开发人员提供基础设施、API和工具，用于构建丰富的搜索体验，包括对Web、移动和企业应用中的私有异构内容进行搜索。
+>[Azure Blob Storage](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) 是微软的云对象存储解决方案。Blob Storage 专为存储海量非结构化数据而优化。非结构化数据指不符合特定数据模型或定义的数据，比如文本或二进制数据。
 
 
 
->搜索是向用户呈现文本的任何应用程序的基础，常见场景包括目录或文档搜索、在线零售应用或对专有内容进行数据探索。创建搜索服务时，您将使用以下功能：
+>[Azure Files](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction) 提供完全托管的
 
->- 全文搜索引擎，用于对包含用户拥有的内容的搜索索引进行全文搜索
+>云中的文件共享，可通过行业标准的 Server Message Block (`SMB`) 协议、
 
->- 丰富的索引，包括词法分析和可选的AI增强，用于内容提取和转换
-
->- 用于文本搜索、模糊搜索、自动完成、地理搜索等的丰富查询语法
-
->- 通过Azure SDK中的REST API和客户端库进行编程
-
->- 数据层、机器学习层和AI（认知服务）中的Azure集成
+>网络文件系统 (`NFS`) 协议和 `Azure Files REST API` 进行访问。`Azure Files` 基于 `Azure Blob Storage`。
 
 
+
+`Azure Blob Storage` 的设计目标是：
+
+- 直接向浏览器提供图像或文档。
+
+- 存储用于分布式访问的文件。
+
+- 流式传输视频和音频。
+
+- 写入日志文件。
+
+- 存储用于备份和恢复、灾难恢复和归档的数据。
+
+- 存储用于本地或 Azure 托管服务的分析数据。
 
 
 
@@ -26,23 +34,15 @@
 
 
 
-参见设置说明](https://learn.microsoft.com/zh-cn/azure/search/search-create-service-portal)。
+
+
+pip install azure-storage-blob
 
 
 
 
 
-## 检索器
 
 
-
-参见使用示例](../modules/indexes/retrievers/examples/azure_cognitive_search.ipynb)。
-
-
-
-```python
-
-from langchain.retrievers import AzureCognitiveSearchRetriever
-
-```
+## 文档加载器
 

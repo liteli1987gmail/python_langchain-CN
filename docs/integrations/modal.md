@@ -1,19 +1,27 @@
-模态框
+# Modal 模态框
 
 
-本页面介绍了如何在LangChain中使用模态框生态系统。
-它分为两个部分：安装和设置，然后参考特定的模态包装器。
+
+This page covers how to use the Modal ecosystem within LangChain. 这个页面介绍了如何在LangChain中使用Modal生态系统。
+
+It is broken into two parts: installation and setup, and then references to specific Modal wrappers. 它分为两个部分：安装和设置，然后引用特定的Modal包装器。
 
 
-安装和设置
-- 使用`pip install modal-client`安装
-- 运行`modal token new`
+
+## Installation and Setup 安装和设置
+
+- Install with `pip install modal-client`  使用`pip install modal-client`进行安装
+
+- Run `modal token new` 运行`modal token new`
 
 
-定义你的模态函数和Webhooks
+
+## Define your Modal Functions and Webhooks 定义Modal函数和Webhooks
 
 
-您必须包含一个提示。有一个严格的响应结构。
+
+You must include a prompt. There is a rigid response structure. 必须包含提示信息。这有一个固定的响应结构。
+
 
 
 ```python
@@ -34,7 +42,8 @@ def my_webhook(item: Item):
 
 
 
-一个使用GPT2的示例：
+An example with GPT2:  GPT2的示例:
+
 
 
 ```python
@@ -105,13 +114,16 @@ def get_text(item: Item):
 
 
 
-包装器
+## Wrappers 包装器
 
 
-LLM
+
+### LLM
 
 
-存在一个模态LLM包装器，可以通过访问
+
+There exists an Modal LLM wrapper, which you can access with  存在一个Modal LLM包装器，您可以通过以下方式访问：
+
 ```python
 
 from langchain.llms import Modal

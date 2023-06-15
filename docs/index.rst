@@ -61,20 +61,19 @@ Modules
 | 这些模块（从最简单到最复杂）如下：
 
 
-- `Models <./modules/models.html>`_: Supported model types and integrations.
+- `Models <./modules/models.html>`_: 支持的模型类型和集成。
 
-- `Prompts <./modules/prompts.html>`_: Prompt management, optimization, and serialization.
+- `Prompts <./modules/prompts.html>`_: 提示管理、优化和序列化。
 
-- `Memory <./modules/memory.html>`_: Memory refers to state that is persisted between calls of a chain/agent.
+- `Memory <./modules/memory.html>`_: Memory指的是在链/代理调用之间持久化的状态。
 
-- `Indexes <./modules/indexes.html>`_: Language models become much more powerful when combined with application-specific data - this module contains interfaces and integrations for loading, querying and updating external data.
+- `Indexes <./modules/indexes.html>`_: 当与特定应用程序数据结合使用时，语言模型变得更加强大。该模块包含用于加载、查询和更新外部数据的接口和集成。
 
-- `Chains <./modules/chains.html>`_: Chains are structured sequences of calls (to an LLM or to a different utility).
+- `Chains <./modules/chains.html>`_: 链是一系列调用（对LLM或不同实用程序的调用）的结构化顺序。
 
-- `Agents <./modules/agents.html>`_: An agent is a Chain in which an LLM, given a high-level directive and a set of tools, repeatedly decides an action, executes the action and observes the outcome until the high-level directive is complete.
+- `Agents <./modules/agents.html>`_: 代理是一个链，其中一个LLM在给定高级指令和一组工具的情况下，重复决定一个动作，执行该动作并观察结果，直到高级指令完成。
 
-- `Callbacks <./modules/callbacks/getting_started.html>`_: Callbacks let you log and stream the intermediate steps of any chain, making it easy to observe, debug, and evaluate the internals of an application.
-
+- `Callbacks <./modules/callbacks/getting_started.html>`_: 回调允许您记录和流式传输任何链的中间步骤，从而轻松观察、调试和评估应用程序的内部。
 
 .. toctree::
    :maxdepth: 1

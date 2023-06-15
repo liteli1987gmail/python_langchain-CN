@@ -1,14 +1,17 @@
-Arxiv(天狗)
+# Argilla 粘土
+
+
+![Argilla - LLMs的开源数据平台](https://argilla.io/og.png)
 
 
 
->arXiv(天狗)](https://arxiv.org/)是一个开放获取的存档库，收录了200万篇涵盖物理学、
+>[Argilla](https://argilla.io/)是一个用于LLMs的开源数据整理平台。
 
->数学、计算机科学、数量生物学、数量金融、统计学、电气工程、
+> 通过使用Argilla，每个人都可以通过更快的数据整理构建强大的语言模型
 
->系统科学和经济学等领域的学术文章。
+> 使用人工和机器反馈来支持MLOps周期中的每个步骤
 
-
+> 从数据标记到模型监控。
 
 
 
@@ -16,51 +19,47 @@ Arxiv(天狗)
 
 
 
-首先，您需要安装`arxiv` Python包。
+首先，您需要按照以下步骤安装`argilla` Python包:
 
 
-
-```bash
-
-pip install arxiv
 
 ```
 
+pip install argilla --upgrade
 
-
-其次，您需要安装`PyMuPDF` Python包，可将从`arxiv.org`站点下载的PDF文件转换为文本格式。
-
-
-
-```bash
-
-pip install pymupdf
-
-```
+Second, you need to install `PyMuPDF` python package which transforms PDF files downloaded from the `arxiv.org` site into the text format.
 
 
 
-## 文档加载器
+如果您已经运行了Argilla服务器，则可以开始使用；但如果您
+
+没有，请按照下面的步骤安装它。
 
 
 
-请参阅使用示例](../modules/indexes/document_loaders/examples/arxiv.ipynb)。
+如果您没有，可以参考[Argilla - 🚀快速入门](https://docs.argilla.io/en/latest/getting_started/quickstart.html#Running-Argilla-Quickstart) 在HuggingFace Spaces、本地或服务器上部署Argilla。
 
 
 
-```python
+## 追踪
+
+
+
+请参阅[ArgillaCallbackHandler的使用示例](../modules/callbacks/examples/examples/argilla.ipynb)。
+
+
 
 from langchain.document_loaders import ArxivLoader
 
-```
+from langchain.callbacks import ArgillaCallbackHandler
 
 
 
-## 检索器
+## Retriever
 
 
 
-请参阅使用示例](../modules/indexes/retrievers/examples/arxiv.ipynb)。
+See a [usage example](../modules/indexes/retrievers/examples/arxiv.ipynb).
 
 
 

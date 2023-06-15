@@ -3,20 +3,27 @@
 
 
 
-本教程为您介绍如何使用LangChain构建端到端的语言模型应用程序。
+
+这个教程将带您快速了解如何使用LangChain构建端到端语言模型应用程序。
+
 
 
 ## 安装
 
 
+
 要开始使用LangChain，请使用以下命令安装LangChain：
+
 
 
 ```bash
 
 pip install langchain
-# or
+
+# 或
+
 conda install langchain -c conda-forge
+
 ```
 
 
@@ -26,30 +33,37 @@ conda install langchain -c conda-forge
 ## 环境设置
 
 
-使用LangChain通常需要与一个或多个模型提供者、数据存储、API等进行集成。
+
+通常，使用LangChain会需要与一个或多个模型提供者、数据存储和API等进行集成。
 
 
-在本示例中，我们将使用OpenAI的API，因此我们首先需要安装他们的SDK：
+
+对于这个示例，我们将使用OpenAI的API，所以我们首先需要安装他们的SDK：
+
 
 
 ```bash
 
 pip install openai
+
 ```
 
 
 
-然后，我们需要在终端中设置环境变量。
+然后我们需要在终端中设置环境变量。
+
 
 
 ```bash
 
 export OPENAI_API_KEY="..."
+
 ```
 
 
 
-或者，您可以在Jupyter笔记本（或Python脚本）中执行此操作：
+或者，您可以在Jupyter笔记本（或Python脚本）中执行以下操作：
+
 
 
 ```python
@@ -62,7 +76,8 @@ os.environ["OPENAI_API_KEY"] = "..."
 
 
 
-如果您想要动态设置API密钥，可以在初始化OpenAI类时使用openai_api_key参数，例如，每个用户的API密钥。
+如果您想动态设置API密钥，可以在初始化OpenAI类时使用openai_api_key参数，比如每个用户的API密钥。
+
 
 
 ```python
@@ -78,25 +93,33 @@ llm = OpenAI(openai_api_key="OPENAI_API_KEY")
 ## 构建语言模型应用程序：LLMs
 
 
-既然我们已经安装了LangChain并设置了环境，我们可以开始构建语言模型应用程序了。
 
-
-LangChain提供了许多模块，可用于构建语言模型应用程序。可以组合这些模块以创建更复杂的应用程序，或者单独用于简单的应用程序。
-
+现在我们已经安装了LangChain并设置了环境，我们可以开始构建我们的语言模型应用程序。
 
 
 
+LangChain提供了许多模块，可用于构建语言模型应用程序。模块可以组合在一起以创建更复杂的应用程序，也可以单独用于简单的应用程序。
 
 
-## LLMs：从语言模型获取预测
 
 
-LangChain的最基本构建块是在某个输入上调用LLM。
-让我们通过一个简单的例子来演示如何做到这一点。
-为此，让我们假设我们正在构建一个根据公司所做的产品生成公司名称的服务。
 
 
-为了做到这一点，我们首先需要导入LLM封装器。
+
+## LLMs：从语言模型获取预测结果
+
+
+
+LangChain的最基本的构建块是对某个输入调用LLM。
+
+让我们通过一个简单的例子来了解如何做到这一点。
+
+为此，假设我们正在构建一个基于公司所制造产品的公司名称生成服务。
+
+
+
+为了做到这一点，我们首先需要导入LLM包装器。
+
 
 
 ```python
@@ -107,8 +130,10 @@ from langchain.llms import OpenAI
 
 
 
-然后，我们可以使用任何参数来初始化封装器。
-在这个例子中，我们可能希望输出更随机，因此我们将使用高温度进行初始化。
+然后我们可以使用任何参数来初始化包装器。
+
+在这个例子中，我们可能希望输出的结果更随机些，所以我们将使用较高的temperature值进行初始化。
+
 
 
 ```python
@@ -119,12 +144,13 @@ llm = OpenAI(temperature=0.9)
 
 
 
-现在，我们可以在某个输入上调用它！
+现在我们可以对某个输入进行调用！
+
 
 
 ```python
 
-text = "What would be a good company name for a company that makes colorful socks?"
+text = "关于一家生产多彩袜子的公司，有什么好的公司名称可以给推荐一下？"
 
 print(llm(text))
 
@@ -132,14 +158,16 @@ print(llm(text))
 
 
 
-```python
+```pycon
 
-乐趣之足
+充满趣味的脚
+
 ```
 
 
 
-有关如何在LangChain中使用LLMs的更多详细信息，请参阅[LLM入门指南](../modules/models/llms/getting_started.ipynb)。
+有关在LangChain中使用LLMs的更多细节，请参阅[LLM入门指南](../modules/models/llms/getting_started.ipynb)。
+
 
 
 
@@ -147,19 +175,27 @@ print(llm(text))
 ## 提示模板：管理LLMs的提示
 
 
-调用LLM是一个很好的第一步，但这只是一个开始。
-通常，在应用程序中使用LLM时，您不会直接将用户输入发送到LLM。
-相反，您可能会使用用户输入构造提示，然后将其发送到LLM。
+
+调用LLM只是一个很好的第一步，但这只是一个开始。
+
+通常情况下，当您在应用程序中使用LLM时，您不会直接将用户输入发送到LLM。
+
+相反，您可能希望选择性地接收用户输入并构建提示，然后将提示发送到LLM。
 
 
-例如，在之前的例子中，我们传入的文本是固定的，要求为一个制造彩色袜子的公司提供名称。
-在这个想象中的服务中，我们希望只采用描述公司所做产品的用户输入，并使用该信息格式化提示。
+
+例如，在前面的示例中，我们传递的文本是硬编码的，要求为一家制造彩色袜子的公司提供名称。
+
+在这个想象中的服务中，我们只希望获取描述公司所做工作的用户输入，并使用这些信息格式化提示。
 
 
-使用LangChain很容易做到这一点！
+
+使用LangChain很容易实现这个功能！
+
 
 
 首先让我们定义提示模板：
+
 
 
 ```python
@@ -172,7 +208,7 @@ prompt = PromptTemplate(
 
     input_variables=["product"],
 
-    template="What is a good name for a company that makes {product}?",
+    template="一家制造{product}的公司需要一个好的名字，您有什么推荐吗？",
 
 )
 
@@ -180,12 +216,13 @@ prompt = PromptTemplate(
 
 
 
-现在让我们看看它是如何工作的！我们可以调用`format`方法进行格式化。
+让我们看看它是如何工作的！我们可以调用`.format`方法进行格式化。
+
 
 
 ```python
 
-print(prompt.format(product="colorful socks"))
+print(prompt.format(product="彩色袜子"))
 
 ```
 
@@ -193,14 +230,15 @@ print(prompt.format(product="colorful socks"))
 
 ```pycon
 
-一个制造彩色袜子的公司的好名字是什么？
+一家制造彩色袜子的公司需要一个好的名字，您有什么推荐吗？
+
 ```
 
 
 
 
 
-有关更多详细信息，请参阅提示入门指南](../modules/prompts/chat_prompt_template.ipynb)。
+有关更多详细信息，请查看[提示入门指南](../modules/prompts/chat_prompt_template.ipynb)。
 
 
 
@@ -209,19 +247,25 @@ print(prompt.format(product="colorful socks"))
 
 
 
-## 链式流程：将LLMs和提示组合成多步工作流
+
+## 链式操作：将LLMs和提示组合成多步工作流
 
 
-迄今为止，我们只使用了单个原语（即LLMs和提示模板）。但是，一个真实的应用程序不仅仅是一个原语，而是它们的组合。
+
+到目前为止，我们已经单独讨论了PromptTemplate和LLM原语。但是实际上，一个真实的应用程序不仅仅是一个原语，而是其中的组合。
 
 
-在LangChain中，链由链接组成，可以是原语（如LLMs）或其他链。
+
+在LangChain中，链由链接组成，链接可以是LLM或其他链等原语。
 
 
-链的最核心类型是LLMChain，由PromptTemplate和LLM组成。
+
+链式操作的主要类型是LLMChain，它由PromptTemplate和LLM组成。
 
 
-通过扩展之前的例子，我们可以构建一个LLMChain，它接受用户输入，使用PromptTemplate格式化它，然后将格式化的回复传递给LLM。
+
+在上面的例子的基础上，我们可以构建一个LLMChain，该链接收用户输入并使用PromptTemplate对其进行格式化，然后将格式化的响应传递给LLM。
+
 
 
 ```python
@@ -238,7 +282,7 @@ prompt = PromptTemplate(
 
     input_variables=["product"],
 
-    template="What is a good name for a company that makes {product}?",
+    template="一家制造{product}的公司需要一个好的名字，您有什么推荐吗？",
 
 )
 
@@ -246,7 +290,8 @@ prompt = PromptTemplate(
 
 
 
-现在我们可以创建一个非常简单的链，它将接受用户输入，使用它来格式化提示，然后将其发送到LLM：
+现在，我们可以创建一个非常简单的链，该链将接收用户输入，使用它来格式化提示，然后将其发送给LLM：
+
 
 
 ```python
@@ -259,54 +304,70 @@ chain = LLMChain(llm=llm, prompt=prompt)
 
 
 
-现在我们可以只指定产品来运行该链！
+现在，我们可以只指定产品来运行该链！
+
 
 
 ```python
 
-chain.run("colorful socks")
+chain.run("彩色袜子")
 
-# -> '\n\nSocktastic!'
+# -> '\n\n充满趣味的脚'
 
 ```
 
 
 
-好了！这就是第一个链 - 一个LLM链。
-这是一种比较简单的链的类型，但是了解它的工作原理将为您处理更复杂的链奠定基础。
+完成了！这就是第一个链 - 一个LLM Chain。
 
-
-有关更多详细信息，请参阅链入门指南](../modules/chains/getting_started.ipynb)。
-
-
-##  代理：根据用户输入动态调用链
-
-
-到目前为止，我们查看的链是按照预定顺序运行的。
-
-
-代理不再如此：它们使用LLM来确定采取的操作及其顺序。操作可以是使用工具并观察其输出，或将其返回给用户。
+这是较简单类型的链之一，但是理解它的工作原理将为您处理更复杂的链提供基础。
 
 
 
+有关更多详细信息，请查看[链式操作入门指南](../modules/chains/getting_started.ipynb)。
 
 
 
-为了加载代理，您应该了解以下概念：
+## Agents：根据用户输入动态调用链
 
 
-- 工具：执行特定任务的功能。这可以包括Google搜索、数据库查找、Python REPL和其他链。工具的接口目前是期望一个字符串作为输入，并输出一个字符串的函数。
-- LLM：代理的语言模型。
-- 代理：要使用的代理。这应该是一个引用支持的代理类的字符串。因为这个笔记本专注于最简单、最高级别的API，所以只涵盖了使用标准支持的代理。如果要实现自定义代理，请参阅自定义代理的文档（即将推出）。
+
+到目前为止，我们看到的链是按照预定义的顺序运行的。
 
 
-代理：支持的代理及其规格清单，请参阅[这里](../modules/agents/getting_started.ipynb)。
-工具**Tools**：预定义工具及其规格清单，请参阅这里](../modules/agents/tools/getting_started.md)。
+
+但是Agents不再这样做：它们使用LLM来确定要采取的行动及其顺序。行动可以是使用工具并观察其输出，或返回给用户。
+
+
+
+正确使用Agents可以非常强大。在本教程中，我们将向您展示如何通过最简单、最高级别的API轻松使用Agents。
 
 
 
 
-对于本示例，您还需要安装SerpAPI Python包。
+
+为了加载Agents，您应该了解以下概念：
+
+
+
+- 工具（Tool）：执行特定任务的函数。这可以是Google搜索、数据库查询、Python REPL或其他链。工具的接口当前期望函数的输入为字符串，输出为字符串。
+
+- LLM：驱动Agent的语言模型。
+
+- Agent：要使用的Agent。这应该是一个字符串，该字符串引用了支持的Agent类。因为本笔记本重点介绍了最简单、最高级别的API的使用，所以只介绍了使用标准支持的Agent。如果您想实现自定义的Agent，请参阅自定义Agent的文档（即将推出）。
+
+
+
+**Agents**：支持的Agent及其规格的列表，请参见[此处](../modules/agents/getting_started.ipynb)。
+
+
+
+**工具**：预定义工具及其规格的列表，请参见[此处](../modules/agents/tools/getting_started.md)。
+
+
+
+对于此示例，您还需要安装SerpAPI Python包。
+
 
 
 ```bash
@@ -320,6 +381,7 @@ pip install google-search-results
 并设置适当的环境变量。
 
 
+
 ```python
 
 import os
@@ -330,7 +392,8 @@ os.environ["SERPAPI_API_KEY"] = "..."
 
 
 
-现在我们可以开始了！
+现在我们可以开始！
+
 
 
 ```python
@@ -345,13 +408,13 @@ from langchain.llms import OpenAI
 
 
 
-# First, let's load the language model we're going to use to control the agent.
+# 首先，让我们加载要用于控制Agent的语言模型。
 
 llm = OpenAI(temperature=0)
 
 
 
-# Next, let's load some tools to use. Note that the `llm-math` tool uses an LLM, so we need to pass that in.
+# 接下来，让我们加载一些要使用的工具。请注意，“llm-math”工具使用LLM，因此我们需要传入它。
 
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
 
@@ -359,15 +422,15 @@ tools = load_tools(["serpapi", "llm-math"], llm=llm)
 
 
 
-# Finally, let's initialize an agent with the tools, the language model, and the type of agent we want to use.
+# 最后，让我们使用工具、语言模型和要使用的Agent类型初始化一个Agent。
 
 agent = initialize_agent(tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 
 
 
-# Now let's test it out!
+# 现在让我们来测试一下！
 
-agent.run("What was the high temperature in SF yesterday in Fahrenheit? What is that number raised to the .023 power?")
+agent.run("昨天旧金山的最高温度是多少摄氏度？将该数字提高到0.23次方是多少？")
 
 ```
 
@@ -376,21 +439,32 @@ agent.run("What was the high temperature in SF yesterday in Fahrenheit? What is 
 ```pycon
 
 > 进入新的AgentExecutor链...
-我首先需要找到温度，然后使用计算器将其提高到0.023的幂。
-操作：搜索
-操作输入："昨天旧金山的高温"
-观察结果：旧金山昨天的温度。昨天最高温度为57°F（下午1:56） 昨天最低温度为49°F（上午1:56） 昨天平均温度...
-思考：现在我知道了温度，所以我可以使用计算器将其提高到0.023的幂。
-操作：计算器
-操作输入：57^0.023
-观察结果：答案：1.0974509573251117
+
+我需要首先找到温度，然后使用计算器将其提升到0.23次方。
+
+行动：搜索
+
+行动输入：“昨天旧金山的最高温度”
+
+观察：旧金山昨天的温度。昨天的最高温度为57°F（下午1:56）昨天的最低温度为49°F（上午1:56）昨天的平均温度...
+
+思考：现在我有了温度，所以可以使用计算器将其提升到0.23次方。
+
+行动：计算器
+
+行动输入：“57^0.23”
+
+观察：答案：1.0974509573251117
 
 
-思考：现在我知道了最终答案
-最终答案：昨天旧金山的高温度以华氏度为单位提高到0.023的幂为1.0974509573251117。
+
+思考：我现在知道了最终的答案
+
+最终答案：昨天旧金山的最高温度提升到0.23次方为1.0974509573251117。
 
 
-> Finished chain.
+
+> 完成链。
 
 ```
 
@@ -400,16 +474,20 @@ agent.run("What was the high temperature in SF yesterday in Fahrenheit? What is 
 
 
 
-## 内存：将状态添加到链和代理
+## 存储：为链和Agents添加状态
 
 
-到目前为止，我们所处理的所有链和代理都是无状态的。但是通常情况下，您可能希望链或代理具有一些"记忆"的概念，以便它们可以记住与其之前的交互有关的信息。这在设计聊天机器人时最为明显和简单 - 您希望它记住以前的消息，以便可以使用上下文进行更好的对话。这是一种"短期记忆"的一种类型。更复杂的情况下，可以想象一条链/代理随着时间记住关键信息 - 这是一种"长期记忆"的形式。有关后一种的更具体的想法，请参阅这篇精彩的论文](https://memprompt.com/)。
+
+到目前为止，我们涉及的所有链和Agents都是无状态的。但是通常，您可能希望链或Agents具有某种"记忆"概念，以便它可以记住有关以前交互的信息。这个例子中最清晰、简单的例子是在设计聊天机器人时，您希望它记住先前的消息，以便能够利用上下文进行更好的对话。这将是一种"短期记忆"的形式。在更复杂的情况下，您可以想象一个链/Agents随时间记住关键信息的情况，这将是一种"长期记忆"的形式。有关后一种情况的更具体的想法，请参见此[出色的论文](https://memprompt.com/)。
 
 
-LangChain提供了几个专门为此目的创建的链。本笔记本介绍了其中一个链（ConversationChain）的使用方式，并使用了两种不同类型的记忆。
+
+LangChain提供了几种专门为此目的而创建的链。本笔记本介绍了如何使用其中一种链（`ConversationChain`）与两种不同类型的记忆。
 
 
-默认情况下，ConversationChain具有简单类型的记忆，它记住所有先前的输入/输出并将它们添加到传递的上下文中。让我们看看如何使用这个链（设置`verbose=True`以便我们可以看到提示）。
+
+默认情况下，`ConversationChain`具有一种简单的记忆类型，它记住所有先前的输入/输出并将它们添加到传递的上下文中。让我们看看如何使用这个链（设置`verbose=True`以便我们可以看到提示）。
+
 
 
 ```python
@@ -424,37 +502,7 @@ conversation = ConversationChain(llm=llm, verbose=True)
 
 
 
-output = conversation.predict(input="Hi there!")
-
-print(output)
-
-```
-
-
-
-```python
-
-> 进入新的链...
-格式化后的提示：
-以下是人类和AI之间的友好对话。AI健谈，提供了许多来自其上下文的具体细节。如果AI无法回答问题，它会诚实地说它不知道。
-
-
-当前对话：
-
-
-人类：你好！
-AI：
-
-
-> 完成链。
-'你好！你今天好吗？'
-```
-
-
-
-```python
-
-output = conversation.predict(input="I'm doing well! Just having a conversation with an AI.")
+output = conversation.predict(input="你好！")
 
 print(output)
 
@@ -465,38 +513,91 @@ print(output)
 ```pycon
 
 > 进入新的链...
+
 格式化后的提示：
-以下是人类和AI之间的友好对话。AI健谈，提供了许多来自其上下文的具体细节。如果AI无法回答问题，它会诚实地说它不知道。
+
+以下是人机友好的对话。AI非常健谈，并从其上下文中提供大量具体细节。如果AI不知道问题的答案，它会真实地说出来。
+
 
 
 当前对话：
 
 
+
 人类：你好！
-AI：你好！你今天好吗？
-人类：我过得很好！只是和AI聊天。
+
 AI：
 
 
+
 > 完成链。
-"太好了！你想聊什么？"
+
+' 你好！你好吗？'
+
 ```
 
 
 
-构建语言模型应用程序：聊天模型
+```python
+
+output = conversation.predict(input="我很好！只是和一个AI进行对话。")
+
+print(output)
+
+```
 
 
-类似地，您可以使用聊天模型而不是LLMs。聊天模型是语言模型的一种变体。虽然聊天模型在内部使用语言模型，但它们公开的接口略有不同：它们不是公开一个"文本输入，文本输出"的API，而是公开了一个"聊天消息"作为输入和输出的接口。
+
+```pycon
+
+> 进入新的链...
+
+格式化后的提示：
+
+以下是人机友好的对话。AI非常健谈，并从其上下文中提供大量具体细节。如果AI不知道问题的答案，它会真实地说出来。
 
 
-聊天模型API还相对较新，所以我们仍在探索正确的抽象方式。
+
+当前对话：
 
 
-从聊天模型获取消息补全
+
+人类：你好！
+
+AI： 你好！你好吗？
+
+人类：我很好！只是和一个AI进行对话。
+
+AI：
 
 
-您可以通过向聊天模型传递一个或多个消息来获取聊天补全。响应将是一条消息。LangChain当前支持的消息类型有AIMessage、HumanMessage、SystemMessage和ChatMessage - ChatMessage接受一个任意的角色参数。大多数情况下，您只需要处理HumanMessage、AIMessage和SystemMessage。
+
+> 完成链。
+
+" 这听起来很有趣！很高兴能和你聊天。你想具体聊些什么呢？"
+
+```
+
+
+
+## 构建语言模型应用程序：聊天模型
+
+
+
+类似地，您可以使用聊天模型来替代LLMs。聊天模型是对语言模型的一种变体。虽然聊天模型在内部使用语言模型，但它们公开的接口略有不同：它们不是“输入文本，输出文本”的API，而是以“聊天消息”作为输入和输出的接口。
+
+
+
+聊天模型的API还比较新，因此我们还在探索正确的抽象方式。
+
+
+
+## 从聊天模型获取消息补全
+
+
+
+通过向聊天模型传递一个或多个消息，您可以获取聊天补全。响应将是一条消息。在LangChain中支持的消息类型是`AIMessage`、`HumanMessage`、`SystemMessage`和`ChatMessage`——`ChatMessage`接受一个任意的角色参数。大多数时候，您只需要处理`HumanMessage`、`AIMessage`和`SystemMessage`。
+
 
 
 ```python
@@ -521,12 +622,13 @@ chat = ChatOpenAI(temperature=0)
 
 
 
-您可以通过传递单个消息来获取补全。
+您可以通过传递单个消息来获取完成。
+
 
 
 ```python
 
-chat([HumanMessage(content="Translate this sentence from English to French. I love programming.")])
+chat([HumanMessage(content="将这句英文句子翻译成法语。我喜欢编程。")])
 
 # -> AIMessage(content="J'aime programmer.", additional_kwargs={})
 
@@ -534,16 +636,17 @@ chat([HumanMessage(content="Translate this sentence from English to French. I lo
 
 
 
-您也可以传递多个消息给OpenAI的gpt-3.5-turbo和gpt-4模型。
+您还可以传递多个消息给OpenAI的gpt-3.5-turbo和gpt-4模型。
+
 
 
 ```python
 
 messages = [
 
-    SystemMessage(content="You are a helpful assistant that translates English to French."),
+    SystemMessage(content="您是一个可帮助翻译英语到法语的助手。")，
 
-    HumanMessage(content="I love programming.")
+    HumanMessage(content="我喜欢编程。")
 
 ]
 
@@ -555,24 +658,25 @@ chat(messages)
 
 
 
-您还可以使用`generate`为多个消息组生成补全，这将返回一个带有额外的`message`参数的`LLMResult`：
+可以进一步生成多个消息集的补全，使用`generate`方法。这将返回一个带有附加的`message`参数的`LLMResult`：
+
 ```python
 
 batch_messages = [
 
     [
 
-        SystemMessage(content="You are a helpful assistant that translates English to French."),
+        SystemMessage(content="您是一个可帮助翻译英语到法语的助手。")，
 
-        HumanMessage(content="I love programming.")
+        HumanMessage(content="我喜欢编程。")
 
     ],
 
     [
 
-        SystemMessage(content="You are a helpful assistant that translates English to French."),
+        SystemMessage(content="您是一个可帮助翻译英语到法语的助手。")，
 
-        HumanMessage(content="I love artificial intelligence.")
+        HumanMessage(content="我喜欢人工智能。")
 
     ],
 
@@ -588,7 +692,8 @@ result
 
 
 
-您可以从这个LLMResult中恢复诸如令牌使用情况之类的信息：
+您可以从此LLMResult中获取诸如token使用情况等信息：
+
 ```
 
 result.llm_output['token_usage']
@@ -602,10 +707,13 @@ result.llm_output['token_usage']
 
 
 ## 聊天提示模板
-类似于LLMs，您可以使用模板来使用`MessagePromptTemplate`。您可以从一个或多个`MessagePromptTemplate`构建`ChatPromptTemplate`。您可以使用`ChatPromptTemplate`的`format_prompt`方法 - 这将返回一个`PromptValue`，您可以将其转换为字符串或`Message`对象，具体取决于您是否希望将格式化的值用作LLM或聊天模型的输入。
+
+类似于LLMs，您可以使用模板来进行提示，通过使用`MessagePromptTemplate`来使用`ChatPromptTemplate` 。您可以根据一个或多个`MessagePromptTemplate`构建一个`ChatPromptTemplate`。您可以使用`ChatPromptTemplate`的`format_prompt`方法，可以将其转换为字符串或`Message`对象，具体取决于您是想将格式化值作为输入传递给llm还是chat model。
 
 
-为了方便起见，模板上公开了一个`from_template`方法。如果您要使用此模板，将如下所示：
+
+为了方便起见，模板上公开了`from_template`方法。如果您要使用此模板，它将如下所示：
+
 
 
 ```python
@@ -628,7 +736,7 @@ chat = ChatOpenAI(temperature=0)
 
 
 
-template = "You are a helpful assistant that translates {input_language} to {output_language}."
+template = "您是一个可帮助将{input_language}翻译为{output_language}的助手。"
 
 system_message_prompt = SystemMessagePromptTemplate.from_template(template)
 
@@ -642,9 +750,9 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 
 
 
-# get a chat completion from the formatted messages
+# 从格式化的消息中获取一个chat completion
 
-chat(chat_prompt.format_prompt(input_language="English", output_language="French", text="I love programming.").to_messages())
+chat(chat_prompt.format_prompt(input_language="英语", output_language="法语", text="我喜欢编程。").to_messages())
 
 # -> AIMessage(content="J'aime programmer.", additional_kwargs={})
 
@@ -652,8 +760,10 @@ chat(chat_prompt.format_prompt(input_language="English", output_language="French
 
 
 
-##  与聊天模型一起使用的链
-在上面的部分中讨论的`LLMChain`也可以与聊天模型一起使用：
+## 带有聊天模型的链式操作
+
+上述部分讨论的`LLMChain`也可以与聊天模型一起使用:
+
 
 
 ```python
@@ -678,7 +788,7 @@ chat = ChatOpenAI(temperature=0)
 
 
 
-template = "You are a helpful assistant that translates {input_language} to {output_language}."
+template = "您是一个可帮助将{input_language}翻译为{output_language}的助手。"
 
 system_message_prompt = SystemMessagePromptTemplate.from_template(template)
 
@@ -692,7 +802,7 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 
 chain = LLMChain(llm=chat, prompt=chat_prompt)
 
-chain.run(input_language="English", output_language="French", text="I love programming.")
+chain.run(input_language="英语", output_language="法语", text="我喜欢编程。")
 
 # -> "J'aime programmer."
 
@@ -700,8 +810,10 @@ chain.run(input_language="English", output_language="French", text="I love progr
 
 
 
-## 与聊天模型一起使用的代理
-代理也可以与聊天模型一起使用，您可以使用`AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION`作为代理类型进行初始化。
+## Agents与聊天模型
+
+Agents还可以与聊天模型一起使用，您可以使用`AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION`作为Agent类型进行初始化。
+
 
 
 ```python
@@ -718,13 +830,13 @@ from langchain.llms import OpenAI
 
 
 
-# First, let's load the language model we're going to use to control the agent.
+# 首先，让我们加载要用于控制Agent的语言模型。
 
 chat = ChatOpenAI(temperature=0)
 
 
 
-# Next, let's load some tools to use. Note that the `llm-math` tool uses an LLM, so we need to pass that in.
+# 接下来，让我们加载一些要使用的工具。请注意，“llm-math”工具使用LLM，因此我们需要传入它。
 
 llm = OpenAI(temperature=0)
 
@@ -734,15 +846,15 @@ tools = load_tools(["serpapi", "llm-math"], llm=llm)
 
 
 
-# Finally, let's initialize an agent with the tools, the language model, and the type of agent we want to use.
+# 最后，让我们使用工具、语言模型和要使用的Agent类型初始化一个Agent。
 
 agent = initialize_agent(tools, chat, agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
 
 
 
-# Now let's test it out!
+# 现在让我们来测试一下！
 
-agent.run("Who is Olivia Wilde's boyfriend? What is his current age raised to the 0.23 power?")
+agent.run("奥利维亚·王尔德的男朋友是谁？他的年龄提高到0.23次方是多少？")
 
 ```
 
@@ -753,70 +865,78 @@ agent.run("Who is Olivia Wilde's boyfriend? What is his current age raised to th
 
 
 > 进入新的AgentExecutor链...
-思考：我需要使用搜索引擎找到Olivia Wilde的男友，并使用计算器将他的年龄提高到0.23的幂。
-操作：
-{
-    "action": "Search",
-    "action_input": "Olivia Wilde boyfriend"
-}
-  "action": "Search",
 
-  "action_input": "Olivia Wilde boyfriend"
+Thought: 首先我需要找到温度，然后使用计算器将其提升到0.23次方。
 
-观察结果：Sudeikis和Wilde的关系在2020年11月结束。Wilde在2022年的CinemaCon上演示Don't Worry Darling时公开接到了关于儿童监护的法庭文件。2021年1月，Wilde在拍摄Don't Worry Darling期间与歌手Harry Styles约会。
+Action: Search
 
+Action Input: "奥利维亚·王尔德男朋友"
 
+Observation: 苏德基斯和王尔德的关系于2020年11月结束。王尔德在2022年CinemaCon展示《别担心，亲爱》期间公开收到儿童监护方面的法庭文件。2021年1月，王尔德和歌手哈里·斯泰尔斯开始约会，两人在拍摄《别担心，亲爱》期间相识。
 
-思考：我需要使用搜索引擎找到Harry Styles的当前年龄。
-操作：
-{
-    "action": "Search",
-    "action_input": "Harry Styles age"
-}
-{
+Thought: 我现在需要使用搜索引擎找到哈里·斯泰尔斯的年龄。
 
-  "action": "Search",
+Action: Search
 
-观察结果：29岁
-}
+Action Input: "哈里·斯泰尔斯年龄"
 
-思考：现在我需要计算29的0.23次方。
-操作：
-{
-    "action": "Calculator",
-    "action_input": "29^0.23"
-}
-Action:
+Observation: 29岁
 
-{
+Thought: 现在我需要计算29的0.23次方。
 
-观察结果：答案：2.169459462491557
-  "action_input": "29^0.23"
+Action: Calculator
 
-}
-
-
+Action Input: "29^0.23"
 
 Observation: Answer: 2.169459462491557
 
 
 
-思考：现在我知道了最终答案。
-最终答案：昨天旧金山的高温度以华氏度为单位提高到0.023的幂为2.169459462491557。
+Thought: 现在我知道了最终答案
+
+Final Answer: 奥利维亚·王尔德的男友年龄提高到0.23次方约为2.169459462491557。
 
 
-> Finished chain.
+
+> 完成链。
+
+'2.169459462491557'
+
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> 完成链。
 
 '2.169459462491557'
 
 ```
 
-## 内存：为链和代理添加状态
-You can use Memory with chains and agents initialized with chat models. The main difference between this and Memory for LLMs is that rather than trying to condense all previous messages into a string, we can keep them as their own unique memory object.
 
 
+## 存储：为链和Agents添加状态
+
+您可以在使用聊天模型初始化的链和Agents中使用存储。这与LLMs的存储的主要区别在于，我们不再尝试将所有先前的消息压缩为一个字符串，而是可以将它们作为自己的唯一的内存对象保留。
 
 ```python
+
+
 
 from langchain.prompts import (
 
@@ -840,7 +960,7 @@ from langchain.memory import ConversationBufferMemory
 
 prompt = ChatPromptTemplate.from_messages([
 
-    SystemMessagePromptTemplate.from_template("The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know."),
+    SystemMessagePromptTemplate.from_template("以下是人机友好的对话。AI非常健谈，并提供了许多来自其上下文的具体细节。如果AI不知道问题的答案，它会诚实地说出来。"),
 
     MessagesPlaceholder(variable_name="history"),
 
@@ -858,24 +978,23 @@ conversation = ConversationChain(memory=memory, prompt=prompt, llm=llm)
 
 
 
-conversation.predict(input="Hi there!")
+conversation.predict(input="你好！")
 
-# -> 'Hello! How can I assist you today?'
-
-
+# -> '你好！我如何帮助您？'
 
 
 
-conversation.predict(input="I'm doing well! Just having a conversation with an AI.")
-
-# -> "That sounds like fun! I'm happy to chat with you. Is there anything specific you'd like to talk about?"
 
 
+conversation.predict(input="我很好！只是和一个AI进行对话。")
 
-conversation.predict(input="Tell me about yourself.")
+# -> "听起来很有趣！很高兴和您聊天。有什么特别的事情想要聊的吗？"
 
-# -> "Sure! I am an AI language model created by OpenAI. I was trained on a large dataset of text from the internet, which allows me to understand and generate human-like language. I can answer questions, provide information, and even have conversations like this one. Is there anything else you'd like to know about me?"
 
-```
+
+conversation.predict(input="向我介绍一下自己。")
+
+# -> "当然！我是由OpenAI创建的AI语言模型。我使用互联网上的大量文本进行训练，这使我能够理解和生成人类语言。我可以回答问题、提供信息，甚至进行像这样的对话。还有什么关于我的事情您想知道的吗？"
+
 
 

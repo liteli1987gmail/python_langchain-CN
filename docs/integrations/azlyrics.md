@@ -1,19 +1,31 @@
-AZLyrics
-
-AZLyrics是一个大型的、合法的、每天都在不断增长的歌词收集网站。
-
-安装和设置
-
-没有任何特殊的设置。
+# AZLyrics 音乐歌词
 
 
-文档加载器
+>[AZLyrics](https://www.azlyrics.com/) 是一个庞大、合法且每天都在扩大的歌词收集库。
 
-查看一个使用示例。
+
+
+## 安装和设置
+
+
+
+没有任何特殊的设置要求。
+
+
+
+
+
+## 文档加载器
+
+
+
+查看[用法示例](../modules/indexes/document_loaders/examples/azlyrics.ipynb)。
+
+
 
 ```python
 
-from langchain.document_loaders import AZLyricsLoader
+从langchain.document_loaders导入AZLyricsLoader
 
 ```
 

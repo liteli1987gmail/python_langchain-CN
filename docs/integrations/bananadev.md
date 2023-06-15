@@ -1,10 +1,10 @@
-香蕉
+# 香蕉
 
 
 
-本页介绍如何在LangChain中使用香蕉生态系统。
+本页面介绍如何在LangChain内使用香蕉生态系统。
 
-它分为两部分：安装和设置，以及对特定香蕉包装器的引用。
+它分为两部分：安装和设置，以及特定香蕉包装器的参考。
 
 
 
@@ -12,9 +12,9 @@
 
 
 
-- 使用`pip install banana-dev`进行安装
+- 使用 `pip install banana-dev` 进行安装
 
-- 获取香蕉API密钥并将其设置为环境变量（`BANANA_API_KEY`）
+- 获取一个香蕉 API 密钥，并将其设置为环境变量 (`BANANA_API_KEY`)
 
 
 
@@ -22,11 +22,11 @@
 
 
 
-如果您想使用一个可用的语言模型模板，可以在此处](https://app.banana.dev/templates/conceptofmind/serverless-template-palmyra-base)找到一个。
+如果您想使用现有的语言模型模板，您可以在[这里](https://app.banana.dev/templates/conceptofmind/serverless-template-palmyra-base)找到一个。
 
-此模板使用Writer](https://writer.com/product/api/)的Palmyra-Base模型。
+此模板使用 [Writer](https://writer.com/product/api/) 的 Palmyra-Base 模型。
 
-您可以在此处](https://github.com/conceptofmind/serverless-template-palmyra-base)查看一个香蕉存储库的示例。
+您可以在[这里](https://github.com/conceptofmind/serverless-template-palmyra-base)查看一个示例香蕉代码仓库。
 
 
 
@@ -34,15 +34,15 @@
 
 
 
-香蕉应用程序必须在返回的JSON中包含"output"键。
+香蕉应用程序必须在返回的 JSON 中包含 "output" 键。
 
-有一个严格的响应结构。
+有一个固定的响应结构。
 
 
 
 ```python
 
-# Return the results as a dictionary
+# 将结果作为字典返回
 
 result = {'output': result}
 
@@ -50,13 +50,13 @@ result = {'output': result}
 
 
 
-一个示例推理函数如下：
+推理函数的示例可以是：
 
 
 
 ```python
 
-def inference(model_inputs:dict) -> dict:
+def 推理(model_inputs:dict) -> dict:
 
     global model
 
@@ -64,17 +64,17 @@ def inference(model_inputs:dict) -> dict:
 
 
 
-    # Parse out your arguments
+    # 解析参数
 
     prompt = model_inputs.get('prompt', None)
 
     if prompt == None:
 
-        return {'message': "No prompt provided"}
+        return {'message': "未提供提示"}
 
 
 
-    # Run the model
+    # 运行模型
 
     input_ids = tokenizer.encode(prompt, return_tensors='pt').cuda()
 
@@ -112,7 +112,7 @@ def inference(model_inputs:dict) -> dict:
 
     result = tokenizer.decode(output[0], skip_special_tokens=True)
 
-    # Return the results as a dictionary
+    # 将结果作为字典返回
 
     result = {'output': result}
 
@@ -122,7 +122,7 @@ def inference(model_inputs:dict) -> dict:
 
 
 
-您可以在此处](https://github.com/conceptofmind/serverless-template-palmyra-base/blob/main/app.py)找到一个完整的香蕉应用程序示例。
+您可以在[这里](https://github.com/conceptofmind/serverless-template-palmyra-base/blob/main/app.py)找到一个完整的香蕉应用示例。
 
 
 
@@ -134,7 +134,7 @@ def inference(model_inputs:dict) -> dict:
 
 
 
-存在一个香蕉LLM包装器，您可以使用以下方式访问
+存在一个香蕉 LLM 包装器，您可以使用以下方式访问
 
 
 
@@ -146,7 +146,7 @@ from langchain.llms import Banana
 
 
 
-您需要提供仪表板中的模型密钥：
+您需要提供位于仪表板中的模型密钥：
 
 
 

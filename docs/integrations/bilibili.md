@@ -1,8 +1,8 @@
-哔哩哔哩
+# BiliBili
 
 
 
->哔哩哔哩](https://www.bilibili.tv/)是中国最受喜爱的长视频网站之一。
+>[哔哩哔哩](https://www.bilibili.tv/)是中国最受喜爱的长视频网站之一。
 
 
 
@@ -22,7 +22,7 @@ pip install bilibili-api-python
 
 
 
-查看一个用法示例](../modules/indexes/document_loaders/examples/bilibili.ipynb)。
+查看[用法示例](../modules/indexes/document_loaders/examples/bilibili.ipynb)。
 
 
 

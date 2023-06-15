@@ -1,40 +1,40 @@
-# OpenAI
+# Obsidian 收藏夹
 
 
 
->[OpenAI](https://en.wikipedia.org/wiki/OpenAI)是美国的人工智能（AI）研究实验室
+> [Obsidian 收藏夹](https://obsidian.md/) 是一个功能强大且可扩展的知识库
 
->由非盈利机构'OpenAI Incorporated'和其营利性附属公司'OpenAI Limited Partnership'组成
-
->'OpenAI'进行AI研究并声明促进和发展友好AI
-
->'OpenAI'系统在'Microsoft'的基于'Azure'的超级计算平台上运行
-
-
-
-
-
->[OpenAI API](https://platform.openai.com/docs/models)由各种能力和价格不同的模型驱动
-
-
-
->'OpenAI'开发的人工智能（AI）聊天机器人[ChatGPT](https://chat.openai.com)
+，它基于您的本地文件夹中的纯文本文件进行工作。
 
 
 
 ## 安装和设置
 
-- 使用以下命令安装Python SDK
 
-```bash
+
+以下是所有的操作指南示例。
+
+
+
+## 文档加载器
+
+
+
+
+
+请参阅 [使用示例](../modules/indexes/document_loaders/examples/obsidian.ipynb)。
+
+
+
+
 
 pip install openai
 
-```
+from langchain.document_loaders import ObsidianLoader
 
-- 获取OpenAI api密钥并将其设置为环境变量（`OPENAI_API_KEY`）
+- Get an OpenAI api key and set it as an environment variable (`OPENAI_API_KEY`)
 
-- 如果您想使用OpenAI的分词器（仅适用于Python 3.9+），请安装它
+
 
 ```bash
 
@@ -58,7 +58,7 @@ from langchain.llms import OpenAI
 
 
 
-如果您正在使用托管在'Azure'上的模型，您应该使用不同的封装器:
+If you are using a model hosted on `Azure`, you should use different wrapper for that:
 
 ```python
 
@@ -66,13 +66,13 @@ from langchain.llms import AzureOpenAI
 
 ```
 
-有关'Azure'封装器的详细演练，请参见[此笔记本](../modules/models/llms/integrations/azure_openai_example.ipynb)
+For a more detailed walkthrough of the `Azure` wrapper, see [this notebook](../modules/models/llms/integrations/azure_openai_example.ipynb)
 
 
 
 
 
-## 文本嵌入模型
+## Text Embedding Model
 
 
 
@@ -82,13 +82,13 @@ from langchain.embeddings import OpenAIEmbeddings
 
 ```
 
-有关此详细步骤，请参见[此笔记本](../modules/models/text_embedding/examples/openai.ipynb)
+For a more detailed walkthrough of this, see [this notebook](../modules/models/text_embedding/examples/openai.ipynb)
 
 
 
 
 
-## 聊天模型
+## Chat Model
 
 
 
@@ -98,23 +98,23 @@ from langchain.chat_models import ChatOpenAI
 
 ```
 
-有关此详细步骤，请参见[此笔记本](../modules/models/chat/integrations/openai.ipynb)
+For a more detailed walkthrough of this, see [this notebook](../modules/models/chat/integrations/openai.ipynb)
 
 
 
 
 
-## 分词器
+## Tokenizer
 
 
 
-您可以在多个地方使用'tiktoken'分词器。默认情况下，它用于计算OpenAI LLMs的标记数
+There are several places you can use the `tiktoken` tokenizer. By default, it is used to count tokens
+
+for OpenAI LLMs.
 
 
 
-
-
-您还可以将其用于在拆分文档时计算标记数
+You can also use it to count tokens when splitting documents with 
 
 ```python
 
@@ -124,15 +124,15 @@ CharacterTextSplitter.from_tiktoken_encoder(...)
 
 ```
 
-有关此详细步骤，请参见[此笔记本](../modules/indexes/text_splitters/examples/tiktoken.ipynb)
+For a more detailed walkthrough of this, see [this notebook](../modules/indexes/text_splitters/examples/tiktoken.ipynb)
 
 
 
-## 链
+## Chain
 
 
 
-查看[使用示例](../modules/chains/examples/moderation.ipynb)
+See a [usage example](../modules/chains/examples/moderation.ipynb).
 
 
 
@@ -144,11 +144,11 @@ from langchain.chains import OpenAIModerationChain
 
 
 
-## 文档加载器
+## Document Loader
 
 
 
-查看[使用示例](../modules/indexes/document_loaders/examples/chatgpt_loader.ipynb)
+See a [usage example](../modules/indexes/document_loaders/examples/chatgpt_loader.ipynb).
 
 
 
@@ -160,11 +160,11 @@ from langchain.document_loaders.chatgpt import ChatGPTLoader
 
 
 
-## 检索器
+## Retriever
 
 
 
-查看[使用示例](../modules/indexes/retrievers/examples/chatgpt-plugin.ipynb)
+See a [usage example](../modules/indexes/retrievers/examples/chatgpt-plugin.ipynb).
 
 
 

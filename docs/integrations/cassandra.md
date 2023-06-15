@@ -1,30 +1,38 @@
-Cassandra是免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多通用服务器上提供高可用性，没有单点故障。
+# Cassandra 坎塞拉数据库
 
 
-Cassandra是一种免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多商品服务器上提供高可用性，没有单点故障。Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra)
-Cassandra是一种免费且开源的分布式宽列存储、NoSQL数据库管理系统，旨在处理大量数据，并在许多商品服务器上提供高可用性，没有单点故障。
-Cassandra支持跨多个数据中心的集群，并通过异步无主复制为所有客户端提供低延迟操作。
-Cassandra支持跨多个数据中心的集群，并通过异步无主复制为所有客户端提供低延迟操作。
-Cassandra的设计目标是实现`Amazon的Dynamo`分布式存储和复制技术与`Google的Bigtable`数据和存储引擎模型的结合。
-Cassandra的设计目标是实现`Amazon的Dynamo`分布式存储和复制技术与`Google的Bigtable`数据和存储引擎模型的结合。
- 
-
-安装和设置
+>[Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra)是一个免费且开源的分布式、宽列存储、NoSQL数据库管理系统，旨在处理大量数据并跨多台服务器进行存储，
+>提供高可用性且无单点故障。`Cassandra`支持跨多个数据中心的集群，通过异步无主复制实现对所有客户端的低延迟操作。
+>`Cassandra`的设计是结合了`Amazon's Dynamo`分布式存储和复制技术以及`Google's Bigtable`数据和存储引擎模型。
 
 
-```bash
 
-pip install cassandra-drive
-```
+## 安装和设置
+
+
+
+pip install cassandra-driver
 
 
 
 
 
-内存
+## 内存
 
 
-请参阅使用示例](../modules/memory/examples/cassandra_chat_message_history.ipynb)。
+
+查看一个[使用示例](../modules/memory/examples/cassandra_chat_message_history.ipynb)。
+
+
+
+from langchain.memory import CassandraChatMessageHistory
+
+## Memory
+
+
+
+See a [usage example](../modules/memory/examples/cassandra_chat_message_history.ipynb).
+
 
 
 ```python

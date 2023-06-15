@@ -1,22 +1,37 @@
-YouTube（油管）
+# YouTube 视频网站
 
->YouTube](https://www.youtube.com/)是由谷歌创建的在线视频分享和社交媒体平台。
->我们下载YouTube的转录文本和视频信息。
 
-安装与设置
+> [YouTube](https://www.youtube.com/) 是由 Google 创建的在线视频分享和社交媒体平台。
+
+> 我们下载了 `YouTube` 的文字转录和视频信息。
+
+
+
+## 安装和设置
+
+
 
 ```bash
 
-pip安装youtube-transcript-api
-pip安装pytube
+pip install youtube-transcript-api
+
+pip install pytube
+
 ```
 
-查看使用示例](../modules/indexes/document_loaders/examples/youtube_transcript.ipynb)。
+查看[使用示例](../modules/indexes/document_loaders/examples/youtube_transcript.ipynb)。
 
 
-文档加载器
 
-查看使用示例](../modules/indexes/document_loaders/examples/youtube_transcript.ipynb)。
+
+
+## 文档加载器
+
+
+
+查看[使用示例](../modules/indexes/document_loaders/examples/youtube_transcript.ipynb)。
+
+
 
 ```python
 

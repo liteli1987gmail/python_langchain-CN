@@ -1,8 +1,8 @@
-概述
+# 概述
 
 
 
-> 概念指南](https://docs.langchain.com/docs/use-cases/summarization)
+> [概念指引](https://docs.langchain.com/docs/use-cases/summarization)
 
 
 
@@ -14,7 +14,7 @@ Summarization涉及创建多个较长文档的较小摘要。
 
 
 
-使用summarization链的推荐方法是：
+使用摘要链的推荐方法如下：
 
 
 
@@ -30,13 +30,13 @@ chain.run(docs)
 
 
 
-存在以下资源：
+以下资源可用：
 
-- Summarization Notebook](../modules/chains/index_examples/summarize.ipynb)：通过此笔记本可以了解如何完成此任务。
+- [摘要 Notebok](../modules/chains/index_examples/summarize.ipynb): 通过演示如何完成此任务的笔记本。
 
 
 
-其他相关资源包括：
+附加的相关资源包括：
 
-- 用于处理文档的实用工具](../reference/utils.rst)：介绍如何使用几个实用工具，对于此任务非常有帮助，包括文本分割器（用于拆分长文档）。
+- [文档工具](../reference/utils.rst)：有关如何使用几个对此任务非常有帮助的实用程序的指南，包括文本拆分器（用于拆分长文档）。
 

@@ -1,52 +1,31 @@
-学校保密
+# College Confidential高校保密
+
+
+>[College Confidential](https://www.collegeconfidential.com/)提供3800多所大学的信息。
+
+
+
+## 安装和设置
+
+
+
+没有特别的设置要求。
 
 
 
 
 
->College Confidential](https://www.collegeconfidential.com/)提供了关于超过800所大学和大学的信息。
+## 文档加载器
 
 
 
-
-
-安装和设置
-
-
-
-
-
-它没有任何特殊设置。
-
-
-
-
-
-
-
-
-
-文档加载器
-
-
-
-
-
-请参阅用法示例](../modules/indexes/document_loaders/examples/college_confidential.ipynb)。
-
-
+查看[用法示例](../modules/indexes/document_loaders/examples/college_confidential.ipynb)。
 
 
 
 ```python
 
-
-
 from langchain.document_loaders import CollegeConfidentialLoader
 
-
-
 ```
-
-
 

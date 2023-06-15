@@ -1,40 +1,31 @@
-EverNote（注：印象笔记）
+# EverNote 印象笔记
 
 
-
->EverNote（注：印象笔记）](https://evernote.com/) is intended for archiving and creating notes in which photos, audio and saved web content can be embedded. Notes are stored in virtual "notebooks" and can be tagged, annotated, edited, searched, and exported.
-
+>[EverNote](https://evernote.com/) 旨在用于存档和创建笔记，其中可以嵌入照片、音频和保存的网络内容。笔记存储在虚拟的"笔记本"中，可以进行标记、注释、编辑、搜索和导出。
 
 
-安装和设置
+## 安装和设置
 
 
-
-首先，你需要安装“lxml”和“html2text” Python包。
-
+首先，您需要安装 `lxml` 和 `html2text` Python 包。
 
 
 ```bash
 
-pip安装lxml
-
-pip安装html2text
-
+pip install lxml
+pip install html2text
 ```
 
 
 
-文档加载器
+## 文档加载器
 
 
-
-查看一个 使用示例](../modules/indexes/document_loaders/examples/evernote.ipynb)。
-
+参见[使用示例](../modules/indexes/document_loaders/examples/evernote.ipynb)。
 
 
 ```python
 
 from langchain.document_loaders import EverNoteLoader
-
 ```
 

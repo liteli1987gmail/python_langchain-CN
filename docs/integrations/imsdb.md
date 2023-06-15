@@ -1,24 +1,24 @@
-IMSDB
+# IMSDb
 
 
 
-【IMSDb】（https://imsdb.com/）是互联网电影剧本数据库。
+>[IMSDb](https://imsdb.com/) 是 `互联网电影剧本数据库`。
 
- 
+> 
 
-安装和设置
-
-
-
-没有任何特殊设置。
+## 安装和设置
 
 
 
-文档加载器
+没有特殊的设置。
 
 
 
-查看【使用示例】（../modules/indexes/document_loaders/examples/imsdb.ipynb）。
+## 文档加载器
+
+
+
+查看一个[使用示例](../modules/indexes/document_loaders/examples/imsdb.ipynb)。
 
 
 

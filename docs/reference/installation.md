@@ -1,12 +1,12 @@
-安装
+# 安装
 
 
 
-官方发布
+## 官方发布
 
 
 
-LangChain可在PyPi上获得，因此可以轻松安装:
+LangChain 可在 PyPi 上获取，因此可以使用以下命令轻松安装:
 
 
 
@@ -18,23 +18,23 @@ pip install langchain
 
 
 
-这将安装LangChain的最低要求。
+这将安装 LangChain 的最低要求。
 
-当与各种模型提供程序、数据存储等集成时，LangChain的价值很大。
+当与各种模型提供者、数据存储等集成时，LangChain 的价值很大。
 
 默认情况下，不会安装执行此操作所需的依赖项。
 
-然而，有两种其他方式可以安装LangChain来引入这些依赖项。
+但是，有两种其他安装 LangChain 的方法可以带来这些依赖项。
 
 
 
-要安装常见LLM提供程序所需的模块，请运行:
+要安装常见 LLM 提供者所需的模块，请运行:
 
 
 
 ```
 
-pip install langchainllms]
+pip install langchain[llms]
 
 ```
 
@@ -46,29 +46,29 @@ pip install langchainllms]
 
 ```
 
-pip install langchainall]
+pip install langchain[all]
 
 ```
 
 
 
-请注意，如果您使用的是`zsh`，在将方括号作为参数传递给命令时，您需要将它们引用起来，例如:
+请注意，如果你使用的是 `zsh`，在将方括号作为命令参数传递时，需要用引号括起来，例如:
 
 
 
 ```
 
-pip install 'langchainall]'
+pip install 'langchain[all]'
 
 ```
 
 
 
-从源代码安装
+## 从源代码安装
 
 
 
-如果您想从源代码安装，可以通过克隆存储库并运行以下命令来完成:
+如果你想从源代码安装，可以通过克隆存储库并运行以下命令来实现:
 
 
 

@@ -1,19 +1,12 @@
-集成
+Integrations
 ===================
 
+LangChain集成了许多LLMs、系统和产品。
 
-
-LangChain与多个LLM、系统和产品集成。
-
-
-按模块分类的集成
+Integrations by Module
 --------------------------------
 
-
-
-| 按核心LangChain模块分组的集成:
-
-
+| 通过核心LangChain模块进行分组的集成：
 
 
 - `LLM Providers <./modules/models/llms/integrations.html>`_
@@ -27,35 +20,20 @@ LangChain与多个LLM、系统和产品集成。
 - `Toolkit Integrations <./modules/agents/toolkits.html>`_
 
 
-
-
-依赖
+Dependencies
 ----------------
-
-
 
 | LangChain depends on `several hungered Python packages <https://github.com/hwchase17/langchain/network/dependencies>`_.
 
 
-
-所有集成
+All Integrations
 -------------------------------------------
 
-
-
-| LangChain集成了大量的LLM、系统和产品:
-
-
-
+| 与LangChain集成的LLMs、系统和产品的完整列表：
 
 
 .. toctree::
-
    :maxdepth: 1
-
    :glob:
 
-
-
    integrations/*
-

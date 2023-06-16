@@ -81,14 +81,14 @@ html_theme = "sphinx_book_theme"
 
 html_theme_options = {
     "path_to_docs": "docs",
-    "repository_url": "https://github.com/hwchase17/langchain",
+    "repository_url": "https://github.com/liteli1987gmail/python_langchain-CN",
     "use_repository_button": True,
 }
 
 html_context = {
     "display_github": True,  # Integrate GitHub
-    "github_user": "hwchase17",  # Username
-    "github_repo": "langchain",  # Repo name
+    "github_user": "liteli1987gmail",  # Username
+    "github_repo": "python_langchain-CN",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/docs/",  # Path in the checkout to the docs root
 }

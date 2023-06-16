@@ -9,9 +9,9 @@
 
 .. toctree::
 
-   ：最大深度：1
+   :maxdepth: 1
 
-   ：全局：
+   :glob:
 
 
 

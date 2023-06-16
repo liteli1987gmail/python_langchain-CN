@@ -1,4 +1,4 @@
-欢迎使用LangChain
+🦜️🔗 LangChain中文网: 500页超详细中文文档教程，助力LLM/chatGPT应用开发
 ==========================
 
 
@@ -9,7 +9,11 @@
 | LangChain框架是根据这些原则设计的。
 
 
-| 这是关于Python的具体部分。有关LangChain的纯概念指南，请参见`here <https://docs.langchain.com/docs/>`_. 。有关JavaScript文档，请参见`here <https://js.langchain.com/docs/>`_. 。
+| 这是关于Python的具体部分。
+
+| 有关LangChain的纯概念指南，请参见 `here <https://docs.langchain.com/docs/>`_ 。
+
+| 有关JavaScript文档，请参见 `here <https://js.langchain.com.cn>`_ 。
 
 
 入门指南

@@ -1,84 +1,59 @@
-# 🦜️🔗 LangChain
+# 🦜️🔗 LangChain中文网: 500页超详细中文文档教程，助力LLM/chatGPT应用开发
 
-⚡ Building applications with LLMs through composability ⚡
+⚡ 通过组合能力（composability）利用LLMs构建应用程序 ⚡
 
-[![lint](https://github.com/hwchase17/langchain/actions/workflows/lint.yml/badge.svg)](https://github.com/hwchase17/langchain/actions/workflows/lint.yml) [![test](https://github.com/hwchase17/langchain/actions/workflows/test.yml/badge.svg)](https://github.com/hwchase17/langchain/actions/workflows/test.yml) [![linkcheck](https://github.com/hwchase17/langchain/actions/workflows/linkcheck.yml/badge.svg)](https://github.com/hwchase17/langchain/actions/workflows/linkcheck.yml) [![Downloads](https://static.pepy.tech/badge/langchain/month)](https://pepy.tech/project/langchain) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/langchainai.svg?style=social&label=Follow%20%40LangChainAI)](https://twitter.com/langchainai) [![](https://dcbadge.vercel.app/api/server/6adMQxSpJS?compact=true&style=flat)](https://discord.gg/6adMQxSpJS)
+## 🤔 LangChain这是什么？
 
-**Production Support:** As you move your LangChains into production, we'd love to offer more comprehensive support.
-Please fill out [this form](https://forms.gle/57d8AmXBYp8PP8tZA) and we'll set up a dedicated support Slack channel.
+大型语言模型（LLMs）正成为一种变革性技术，使得开发人员能够构建以前无法构建的应用程序。
+但单独使用这些LLMs往往不足以创建一个真正强大的应用程序 - 真正的力量在于当您可以将它们与其他计算或知识来源相结合时。
 
-## Quick Install
+这个库旨在帮助开发这些类型的应用程序。这些类型的应用的常见示例包括：
 
-`pip install langchain`
-or
-`conda install langchain -c conda-forge`
+## 📖 LangChain文档
 
-## 🤔 What is this?
+请参见 [此处](https://python.langchain.com.cn) 获取关于以下内容的完整文档：
 
-Large language models (LLMs) are emerging as a transformative technology, enabling
-developers to build applications that they previously could not.
-But using these LLMs in isolation is often not enough to
-create a truly powerful app - the real power comes when you can combine them with other sources of computation or knowledge.
+- 入门指南（安装、设置环境、简单示例）
+- How-To 示例（演示、集成、辅助功能）
+- 参考 （完整的API文档）
+- 资源（核心概念的高级解释）
 
-This library is aimed at assisting in the development of those types of applications. Common examples of these types of applications include:
+## 🚀 LangChain 可以帮助什么？
 
-**❓ Question Answering over specific documents**
-
-- [Documentation](https://langchain.readthedocs.io/en/latest/use_cases/question_answering.html)
-- End-to-end Example: [Question Answering over Notion Database](https://github.com/hwchase17/notion-qa)
-
-**💬 Chatbots**
-
-- [Documentation](https://langchain.readthedocs.io/en/latest/use_cases/chatbots.html)
-- End-to-end Example: [Chat-LangChain](https://github.com/hwchase17/chat-langchain)
-
-**🤖 Agents**
-
-- [Documentation](https://langchain.readthedocs.io/en/latest/modules/agents.html)
-- End-to-end Example: [GPT+WolframAlpha](https://huggingface.co/spaces/JavaFXpert/Chat-GPT-LangChain)
-
-## 📖 Documentation
-
-Please see [here](https://langchain.readthedocs.io/en/latest/?) for full documentation on:
-
-- Getting started (installation, setting up the environment, simple examples)
-- How-To examples (demos, integrations, helper functions)
-- Reference (full API docs)
-- Resources (high-level explanation of core concepts)
-
-## 🚀 What can this help with?
-
-There are six main areas that LangChain is designed to help with.
-These are, in increasing order of complexity:
+LangChain 的主要目的是提供六个核心领域的帮助。这些领域以不断升级的复杂度顺序是：
 
 **📃 LLMs and Prompts:**
 
-This includes prompt management, prompt optimization, generic interface for all LLMs, and common utilities for working with LLMs.
+这包括提示管理，提示优化，为所有LLM提供通用接口以及用于处理LLM的常见工具。
 
 **🔗 Chains:**
 
-Chains go beyond just a single LLM call, and are sequences of calls (whether to an LLM or a different utility). LangChain provides a standard interface for chains, lots of integrations with other tools, and end-to-end chains for common applications.
+链（Chains）不仅仅是单个LLM调用，它们是一系列调用（无论是对LLM还是对其他工具）。LangChain为链提供了标准接口、与其他工具的集成以及常见应用的端到端链条。
 
-**📚 Data Augmented Generation:**
+**📚 数据增强式生成 Data Augmented Generation:**
 
-Data Augmented Generation involves specific types of chains that first interact with an external datasource to fetch data to use in the generation step. Examples of this include summarization of long pieces of text and question/answering over specific data sources.
+数据增强生成（Data Augmented Generation）涉及特定类型的链，首先与外部数据源交互以获取用于生成步骤的数据。这包括长文本的摘要和针对特定数据源的问题 / 回答等示例。
 
 **🤖 Agents:**
 
-Agents involve an LLM making decisions about which Actions to take, taking that Action, seeing an Observation, and repeating that until done. LangChain provides a standard interface for agents, a selection of agents to choose from, and examples of end to end agents.
+代理（Agents）涉及LLM做出决策以确定要采取哪些行动，执行该行动，查看观察结果并重复执行步骤直到完成。LangChain为代理提供了标准接口，一系列可供选择的代理和端到端代理的示例。
 
 **🧠 Memory:**
 
-Memory is the concept of persisting state between calls of a chain/agent. LangChain provides a standard interface for memory, a collection of memory implementations, and examples of chains/agents that use memory.
+“记忆”是指在链/代理的调用之间保持状态的概念。LangChain为内存（memory）提供了标准接口、一系列内存实现和使用内存的链式/代理的示例。
 
-**🧐 Evaluation:**
+**🧐 评估:**
 
-[BETA] Generative models are notoriously hard to evaluate with traditional metrics. One new way of evaluating them is using language models themselves to do the evaluation. LangChain provides some prompts/chains for assisting in this.
+[BETA] 生成模型通常很难用传统指标进行评估。一种新的评估方法是使用语言模型本身进行评估。LangChain提供了一些提示/链条来协助这一过程。
 
-For more information on these concepts, please see our [full documentation](https://langchain.readthedocs.io/en/latest/).
+有关这些概念的更多信息，请参见我们的 [完整文档](https://python.langchain.com.cn)。
 
-## 💁 Contributing
+## 💁 贡献
 
-As an open source project in a rapidly developing field, we are extremely open to contributions, whether it be in the form of a new feature, improved infra, or better documentation.
+作为一个快速发展领域中的开源项目，我们非常欢迎贡献，无论是新功能、改进的基础架构还是更好的文档。
 
-For detailed information on how to contribute, see [here](.github/CONTRIBUTING.md).
+有关如何贡献的详细信息，请参见 [此处]（.github / CONTRIBUTING.md）。
+
+## 学习交流
+
+![LangChain](https://pica.zhimg.com/50/v2-56e8bbb52aa271012541c1fe1ceb11a2_r.gif)

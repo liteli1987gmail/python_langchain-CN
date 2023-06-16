@@ -1,6 +1,7 @@
 # 🦜️🔗 LangChain中文网: 500页超详细中文文档教程，助力LLM/chatGPT应用开发
 
 ⚡ 通过组合能力（composability）利用LLMs构建应用程序 ⚡
+![LangChain](https://pica.zhimg.com/50/v2-56e8bbb52aa271012541c1fe1ceb11a2_r.gif)
 
 ## 🤔 LangChain这是什么？
 
@@ -17,6 +18,20 @@
 - How-To 示例（演示、集成、辅助功能）
 - 参考 （完整的API文档）
 - 资源（核心概念的高级解释）
+
+
+关于 Python最新版本的中文文档，请参见
+[这里](https://python.langchain.com.cn)
+。
+
+关于 LangChain 的纯概念指南请见
+[这里](https://docs.langchain.com/docs/)
+。
+
+关于 JavaScript 的文档，请参见
+[这里](https://js.langchain.com.cn/docs/)
+。
+
 
 ## 🚀 LangChain 可以帮助什么？
 
@@ -50,10 +65,11 @@ LangChain 的主要目的是提供六个核心领域的帮助。这些领域以�
 
 ## 💁 贡献
 
-作为一个快速发展领域中的开源项目，我们非常欢迎贡献，无论是新功能、改进的基础架构还是更好的文档。
+作为一个快速发展领域中的开源项目，我们非常欢迎贡献，帮助中国LLM开发者降低阅读英文文档的压力。
 
-有关如何贡献的详细信息，请参见 [此处]（.github / CONTRIBUTING.md）。
 
 ## 学习交流
 
-![LangChain](https://pica.zhimg.com/50/v2-56e8bbb52aa271012541c1fe1ceb11a2_r.gif)
+![扫我，入群](https://pic1.zhimg.com/80/v2-31131dcb1732cb5bca7c182c9e8da046_r.jpg)
+
+
